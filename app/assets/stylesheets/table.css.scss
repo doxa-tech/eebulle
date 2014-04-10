@@ -1,0 +1,26 @@
+/* Table */
+
+#admin .table_buttons {
+	text-align: right;
+}
+
+	#admin .table_buttons a {
+		padding: 7px 10px;
+		border-radius: 3px;
+		color: #fff;
+		font-weight: lighter;
+		font-size: 14px;
+	}
+
+	#admin .table_buttons a.add {
+		background: #7f72f5;
+	}
+
+	#admin .table_buttons a.off {
+		background: #aaa;
+	}
+
+	#admin .table_buttons a.on {
+		background: #7f72f5;
+		display: none;
+	}

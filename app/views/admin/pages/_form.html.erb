@@ -1,0 +1,10 @@
+<h2><%= @page.name %></h2>
+
+<%= form_for [:admin, @page] do |f| %>
+
+	<%= render 'error_messages', object: f.object %>
+
+	<%= f.text_area :content %>
+	
+	<%= f.submit %>
+<% end %>
