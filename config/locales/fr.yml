@@ -59,7 +59,7 @@ fr:
       time: "%H:%M:%S"
       short: "%d.%m.%y %H:%M"
       long: "%A %d %B %Y %H:%M"
-      text: "le %d %b %Y à %H:%M"
+      short_time: "%H:%M"
     am: 'am'
     pm: 'pm'
 
@@ -180,7 +180,7 @@ fr:
       inclusion: "n'est pas inclus(e) dans la liste"
       exclusion: "n'est pas disponible"
       invalid: "n'est pas valide"
-      confirmation: "ne concorde pas avec la confirmation"
+      confirmation: "ne concorde pas"
       accepted: "doit être accepté(e)"
       empty: "doit être rempli(e)"
       blank: "doit être rempli(e)"
@@ -205,33 +205,98 @@ fr:
       taken: "n'est pas disponible"
       record_invalid: "La validation a échoué : %{errors}"
 
-    template: &errors_template
-      header:
-        one:   "Impossible d'enregistrer ce(tte) %{model} : 1 erreur"
-        other: "Impossible d'enregistrer ce(tte) %{model} : %{count} erreurs"
-      body: "Veuillez vérifier les champs suivants : "
-
   activemodel:
     errors:
       <<: *errors
+      messages:
+        one: "Le formulaire contient 1 erreur"
+        other: "Le formulaire contient %{count} erreurs"
   attributes:
     name: "Nom"
+    content: "Contenu"
+    time: "Heure"
+    created_at: "Créé le"
+    updated_at: "Mis à jour le"
+    password: "Mot de passe"
+    password_confirmation: "Confirmation du mot de passe"
   activerecord:
     errors:
       <<: *errors
     attributes:
+      event:
+        duration: "Durée de l'événement"
+        date: "Date de l'événement"
+      activity:
+        recurrence_id: "Récurrence"
+        day_ids: "Jours"
+      user:
+        name: "Nom d'utilisateur"
+  helpers:
+    label:
+      session:
+        name: "Nom d'utilisateur"
+        remember_me: "Se souvenir de moi"
+        password: "Mot de passe"
   will_paginate:
     previous_label: "Précédant"
     next_label: "Suivant"
     page_gap: "&hellip;"
+  application:
+    connection: "Connexion"
   layout:
     header:
       home: "Accueil"
       presentation: "Présentation"
       contact: "Contact"
+      events: "Evénements"
+      activities: "Activités"
   page:
     admin:
       index: "Pages"
       edit:
         title: "Editer une page"
         success: "Page éditée"
+  event:
+    admin:
+      index: "Evénements"
+      new:
+        title: "Créer un événement"
+        success: "Evénement créé"
+      edit:
+        title: "Editer un événement"
+        success: "Evénement édité"
+      destroy:
+        success: "Evénement supprimé"
+  activity:
+    admin:
+      index: "Activités"
+      new:
+        title: "Créer une activité"
+        success: "Activité créé"
+      edit:
+        title: "Editer une activité"
+        success: "Activité édité"
+      destroy:
+        success: "Activité supprimé"
+  user:
+    index: "Mon profil"
+    edit:
+      title: "Editer mon profil"
+      success: "Profil édité"
+    admin:
+      index: "Utilisateurs"
+      new:
+        title: "Créer un utilisateur"
+        success: "Utilisateur créé"
+      edit:
+        title: "Editer un utilisateur"
+        success: "Utilisateur édité"
+      destroy:
+        success: "Utilisateur supprimé"
+  session:
+    unauthorize: "Non authorisé"
+    new: 
+      success: "Connecté"
+      error: "Nom d'utilisateur/mot de passe invalide"
+    destroy: 
+      success: "Déconnecté"

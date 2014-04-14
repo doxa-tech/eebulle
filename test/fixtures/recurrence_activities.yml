@@ -1,9 +1,0 @@
-# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
-
-one:
-  recurrence_id: 
-  activity_id: 
-
-two:
-  recurrence_id: 
-  activity_id: 

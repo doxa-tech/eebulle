@@ -11,15 +11,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140410171052) do
+ActiveRecord::Schema.define(version: 20140414111918) do
 
   create_table "activities", force: true do |t|
     t.string   "name"
     t.text     "content"
     t.time     "time"
+    t.integer  "recurrence_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  add_index "activities", ["recurrence_id"], name: "index_activities_on_recurrence_id"
 
   create_table "day_activities", force: true do |t|
     t.integer  "day_id"
@@ -40,7 +43,7 @@ ActiveRecord::Schema.define(version: 20140410171052) do
   create_table "events", force: true do |t|
     t.string   "name"
     t.text     "content"
-    t.date     "exp_at"
+    t.integer  "duration"
     t.datetime "date"
     t.datetime "created_at"
     t.datetime "updated_at"
@@ -53,18 +56,17 @@ ActiveRecord::Schema.define(version: 20140410171052) do
     t.datetime "updated_at"
   end
 
-  create_table "recurrence_activities", force: true do |t|
-    t.integer  "recurrence_id"
-    t.integer  "activity_id"
+  create_table "recurrences", force: true do |t|
+    t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
-  add_index "recurrence_activities", ["activity_id"], name: "index_recurrence_activities_on_activity_id"
-  add_index "recurrence_activities", ["recurrence_id"], name: "index_recurrence_activities_on_recurrence_id"
-
-  create_table "recurrences", force: true do |t|
+  create_table "users", force: true do |t|
     t.string   "name"
+    t.string   "remember_token"
+    t.string   "password_digest"
+    t.integer  "level"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

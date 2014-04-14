@@ -2,7 +2,7 @@
 	<div id="clear"></div>
 	<div id="error">
 		<p class="title">
-			Le formulaire contient <%= pluralize(object.errors.count, t('application.error')) %>
+			<%= t 'activemodel.errors.messages', count: object.errors.count %>
 		</p>
 		<ul>
 			<% object.errors.full_messages.each do |msg| %>

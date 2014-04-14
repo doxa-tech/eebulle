@@ -1,0 +1,21 @@
+<%= form_for [:admin, @activity] do |f| %>
+
+	<%= render 'error_messages', object: f.object %>
+
+	<%= f.label :name %>
+	<%= f.text_field :name %>
+
+	<%= f.label :content %>
+	<%= f.text_area :content %>
+
+	<%= f.label :time %>
+	<%= f.time_select :time %>
+
+	<%= f.label :recurrence_id %>
+	<%= f.collection_radio_buttons :recurrence_id, Recurrence.all, :id, :name %>
+
+	<%= f.label :day_ids %>
+	<%= f.collection_check_boxes :day_ids, Day.all, :id, :name %>
+	
+	<%= f.submit %>
+<% end %>

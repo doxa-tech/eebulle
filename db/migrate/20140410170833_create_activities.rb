@@ -4,6 +4,7 @@ class CreateActivities < ActiveRecord::Migration
       t.string :name
       t.text :content
       t.time :time
+      t.belongs_to :recurrence, index: true
 
       t.timestamps
     end

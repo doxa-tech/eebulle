@@ -1,4 +1,5 @@
 class Admin::PagesController < Admin::BaseController
+	before_action { |c| c.authorize_level(2) }
 
 	def index
 		@table = PageTable.new(view_context)

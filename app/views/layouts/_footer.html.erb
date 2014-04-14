@@ -1,3 +1,8 @@
 <footer>
-	Footer
+	<% if current_user.nil? %>
+		<%= link_to t('application.login'), login_path %>
+	<% else %>
+		<%= link_to current_user.name, profile_path %>
+		<%= link_to t('application.logout'), signout_path, method: :delete %>
+	<% end %>
 </footer>
