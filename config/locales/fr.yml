@@ -173,6 +173,11 @@ fr:
       create: "Créer"
       update: "Enregistrer"
       submit: "Enregistrer"
+    label:
+      session:
+        name: "Nom d'utilisateur"
+        remember_me: "Se souvenir de moi"
+        password: "Mot de passe"
 
   errors: &errors
     format: 'Le champs "%{attribute}" %{message}'
@@ -231,12 +236,6 @@ fr:
         day_ids: "Jours"
       user:
         name: "Nom d'utilisateur"
-  helpers:
-    label:
-      session:
-        name: "Nom d'utilisateur"
-        remember_me: "Se souvenir de moi"
-        password: "Mot de passe"
   will_paginate:
     previous_label: "Précédant"
     next_label: "Suivant"
@@ -250,6 +249,15 @@ fr:
       contact: "Contact"
       events: "Evénements"
       activities: "Activités"
+      galleries: "Medias"
+      messages: "Ecouter les messages"
+      admin:
+        pages: "Les pages"
+        users: "Les utilisateurs"
+        activities: "Les activités"
+        events: "Les événements"
+        galleries: "Les galeries"
+        messages: "Les messages"
   page:
     admin:
       index: "Pages"
@@ -293,6 +301,35 @@ fr:
         success: "Utilisateur édité"
       destroy:
         success: "Utilisateur supprimé"
+  gallery:
+    admin:
+      index: "Galeries"
+      new:
+        title: "Créer une galerie"
+        success: "Galerie créé"
+      edit:
+        title: "Editer une galerie"
+        success: "Galerie édité"
+        new_patinting: "Ajouter des photos"
+      destroy:
+        success: "Galerie supprimé"
+  painting:
+    admin:
+      destroy:
+        success: "Photo supprimée"
+        confirm: "Etes-vous sûr de vouloir supprimer cette photo ?"
+  message:
+    index: "Les messages"
+    admin:
+      index: "Messages"
+      new:
+        title: "Uploader un message"
+        success: "message uploadé"
+      edit:
+        title: "Editer un message"
+        success: "Message édité"
+      destroy:
+        success: "Message supprimé"
   session:
     unauthorize: "Non authorisé"
     new: 

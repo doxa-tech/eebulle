@@ -1,0 +1,12 @@
+<h1><%= t('gallery.admin.edit.title') %></h1>
+
+<%= render 'form' %>
+
+<%= link_to t('gallery.admin.edit.new_painting'), new_admin_gallery_painting_path(@gallery) %>
+
+<% @gallery.paintings.each do |painting| %>
+
+	<%= image_tag painting.image_url(:thumb) %>
+	<%= link_to "X", admin_gallery_painting_path(@gallery, painting), method: :delete, confirm: t('painting.admin.destroy.confirm') %>
+
+<% end %>

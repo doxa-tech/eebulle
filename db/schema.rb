@@ -11,12 +11,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140414111918) do
+ActiveRecord::Schema.define(version: 20140416110152) do
 
   create_table "activities", force: true do |t|
     t.string   "name"
     t.text     "content"
     t.time     "time"
+    t.boolean  "main"
     t.integer  "recurrence_id"
     t.datetime "created_at"
     t.datetime "updated_at"
@@ -49,12 +50,38 @@ ActiveRecord::Schema.define(version: 20140414111918) do
     t.datetime "updated_at"
   end
 
+  create_table "galleries", force: true do |t|
+    t.string   "name"
+    t.text     "description"
+    t.date     "date"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "messages", force: true do |t|
+    t.string   "name"
+    t.string   "file"
+    t.date     "date"
+    t.string   "speaker"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "pages", force: true do |t|
     t.text     "content"
     t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  create_table "paintings", force: true do |t|
+    t.string   "image"
+    t.integer  "gallery_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "paintings", ["gallery_id"], name: "index_paintings_on_gallery_id"
 
   create_table "recurrences", force: true do |t|
     t.string   "name"

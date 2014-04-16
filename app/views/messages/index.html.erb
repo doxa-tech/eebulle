@@ -1,0 +1,11 @@
+<h1><%= t('message.index') %></h1>
+
+<% @messages.each do |message| %>
+
+	<%= message.name %>
+	<audio controls="controls">
+		<source src="<%= message.file_url %>" type="audio/mp3" />
+		Votre navigateur n'est pas compatible
+	</audio>
+
+<% end %>

@@ -1,5 +1,5 @@
 class Admin::ActivitiesController < Admin::BaseController
-	before_action { |c| c.authorize_level(1) }
+	before_action { |c| c.authorize_level(2) }
 
 	def index
 		@table = ActivityTable.new(view_context)
@@ -43,6 +43,6 @@ class Admin::ActivitiesController < Admin::BaseController
 	private
 
 	def activity_params
-		params.require(:activity).permit(:name, :content, :time, :recurrence_id, { day_ids: [] })
+		params.require(:activity).permit(:name, :content, :time, :recurrence_id, { day_ids: [] }, :main)
 	end
 end

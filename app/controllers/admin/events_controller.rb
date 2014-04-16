@@ -1,5 +1,5 @@
 class Admin::EventsController < Admin::BaseController
-	before_action { |c| c.authorize_level(1) }
+	before_action { |c| c.authorize_level(2) }
 
 	def index
 		@table = EventTable.new(view_context)

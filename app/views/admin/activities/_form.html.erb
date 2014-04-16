@@ -16,6 +16,9 @@
 
 	<%= f.label :day_ids %>
 	<%= f.collection_check_boxes :day_ids, Day.all, :id, :name %>
+
+	<%= f.label :main %>
+	<%= f.check_box :main %>
 	
 	<%= f.submit %>
 <% end %>

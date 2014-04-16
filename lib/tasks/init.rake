@@ -29,5 +29,11 @@ namespace :init do
 		Recurrence.create(name: "toutes les semaines")
 		Recurrence.create(name: "toutes les 2 semaines")
 		Recurrence.create(name: "tous les mois")
+		Recurrence.create(name: "Aucune")
+	end
+
+	desc "Create an admin user"
+	task user: :environment do
+		User.create(name: "Admin", password: "12341", password: "12341", level: 1)
 	end
 end

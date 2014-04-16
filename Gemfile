@@ -21,6 +21,7 @@ gem 'coffee-rails', '~> 4.0.0'
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
 gem 'jquery-turbolinks', '~> 2.0.2'
+gem "jquery-fileupload-rails"
 
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
 gem 'turbolinks'
@@ -38,3 +39,10 @@ gem 'will_paginate', '~> 3.0.5'
 
 # Use ActiveModel has_secure_password
 gem 'bcrypt-ruby', '~> 3.1.0'
+
+# image uploader
+gem 'carrierwave', '~> 0.10.0'
+gem 'carrierwave-processing', '~> 1.0.0'
+
+# image manipulating
+gem "mini_magick", '~> 3.7.0'
