@@ -3,6 +3,32 @@
 	background: image-url("layout/banner.jpg");
 }
 #container.home {
+	h2 span.date {
+		color: #E20000;
+		text-shadow: 1px 1px 1px rgba(34, 34, 34, 0.15);
+		vertical-align: middle;
+		font-size: 15px;
+	}
+	.event {
+		background: #dfdfdf;
+		padding: 20px;
+		h2 {
+			text-align: center;
+			padding: 0 0 5px 0;
+			font-family: "Open sans";
+			font-size: 19px;
+		}
+		.img {
+			text-align: center;
+			padding: 20px 0;
+		}
+		.infos {
+			text-align: right;
+			padding: 5px 0 0 0;
+			font-size: 12px;
+			color: #777;
+		}
+	}
 	.activities {
 		.activity {
 			padding: 7px;
@@ -11,8 +37,22 @@
 			.wrapper {
 				background: #dfdfdf;
 				padding: 15px;
+				background-repeat: no-repeat;
+				background-position: right 50%;
+				height: 256px;
+				overflow: hidden;
+				h3 {
+					font-size: 15px;
+					font-weight: 100;
+					background: rgba(0, 0, 0, 0.71);
+					color: #fff;
+					padding: 20px;
+					text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.36);
+				}
 				.content {
 					font-size: 13px;
+					background: rgba(255, 255, 255, 0.74);
+					padding: 10px;
 				}
 			}
 		}

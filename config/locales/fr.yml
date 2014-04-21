@@ -60,6 +60,7 @@ fr:
       short: "%d.%m.%y %H:%M"
       long: "%A %d %B %Y %H:%M"
       short_time: "%H:%M"
+      text: "le %d %b %Y à %H:%M"
     am: 'am'
     pm: 'pm'
 
