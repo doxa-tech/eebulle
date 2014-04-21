@@ -15,5 +15,7 @@
 //= require jquery_ujs
 //= require jquery-fileupload/basic
 //= require jquery-fileupload/vendor/tmpl
+//= require ckeditor-jquery
+//= require fancybox
 //= require turbolinks
 //= require_tree ./sitewide

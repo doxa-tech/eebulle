@@ -43,6 +43,6 @@ class Admin::ActivitiesController < Admin::BaseController
 	private
 
 	def activity_params
-		params.require(:activity).permit(:name, :content, :time, :recurrence_id, { day_ids: [] }, :main)
+		params.require(:activity).permit(:name, :content, :time, :recurrence_id, { day_ids: [] }, :main, :image)
 	end
 end

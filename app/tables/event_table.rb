@@ -8,7 +8,8 @@ class EventTable < BaseTable
 			element.duration,
 			h.l(element.date, format: :short),
 			h.l(element.created_at, format: :short),
-			h.l(element.updated_at, format: :short)
+			h.l(element.updated_at, format: :short),
+			element.image_url
 		]
 	end
 

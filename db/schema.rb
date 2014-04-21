@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140416110152) do
+ActiveRecord::Schema.define(version: 20140421124403) do
 
   create_table "activities", force: true do |t|
     t.string   "name"
@@ -21,6 +21,7 @@ ActiveRecord::Schema.define(version: 20140416110152) do
     t.integer  "recurrence_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "image"
   end
 
   add_index "activities", ["recurrence_id"], name: "index_activities_on_recurrence_id"
@@ -48,6 +49,7 @@ ActiveRecord::Schema.define(version: 20140416110152) do
     t.datetime "date"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "image"
   end
 
   create_table "galleries", force: true do |t|

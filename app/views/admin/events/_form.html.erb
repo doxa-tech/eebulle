@@ -6,13 +6,16 @@
 	<%= f.text_field :name %>
 
 	<%= f.label :content %>
-	<%= f.text_area :content %>
+	<%= f.text_area :content, class: "ckeditor" %>
 
 	<%= f.label :date %>
 	<%= f.datetime_select :date %>
 
 	<%= f.label :duration %>
 	<%= f.number_field :duration %>
+
+	<%= f.label :image %>
+	<%= f.file_field :image %>
 	
 	<%= f.submit %>
 <% end %>

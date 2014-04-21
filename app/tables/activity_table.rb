@@ -9,7 +9,8 @@ class ActivityTable < BaseTable
 			element.main,
 			element.recurrence.name,
 			h.l(element.created_at, format: :short),
-			h.l(element.updated_at, format: :short)
+			h.l(element.updated_at, format: :short),
+			element.image_url
 		]
 	end
 

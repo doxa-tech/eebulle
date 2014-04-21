@@ -46,3 +46,7 @@ gem 'carrierwave-processing', '~> 1.0.0'
 
 # image manipulating
 gem "mini_magick", '~> 3.7.0'
+
+gem 'ckeditor_rails', '~> 4.3.1'
+
+gem 'fancybox2-rails', '~> 0.2.8'

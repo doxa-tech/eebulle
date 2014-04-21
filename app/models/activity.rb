@@ -7,4 +7,7 @@ class Activity < ActiveRecord::Base
 	validates :content, presence: true
 	validates :time, presence: true
 	validates :recurrence_id, presence: true
+	validates :image, presence: true
+
+	mount_uploader :image, ActivitiesUploader
 end

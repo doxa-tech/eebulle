@@ -234,6 +234,7 @@ fr:
       activity:
         recurrence_id: "Récurrence"
         day_ids: "Jours"
+        main: "Principal"
       user:
         name: "Nom d'utilisateur"
   will_paginate:
