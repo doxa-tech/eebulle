@@ -9,7 +9,7 @@
 
 <% unless @event.nil? %>
 	
-	<h2>Evénement <span class="date"><%= l @event.date, format: :text %></span></h2>
+	<h2>Prochainement <span class="date"><%= l @event.date, format: :text %></span></h2>
 	<div class="event">
 		<h2><%= @event.name %></h2>
 		<div class="img"><%= image_tag image_url @event.image_url %></div>
@@ -28,6 +28,7 @@
 		<div class="activity">
 			<div class="wrapper" style="background-image: url('<%= image_url(activity.image_url)%>')">
 				<h3><%= activity.name %></h3>
+				<h3 class="rec"><%= l activity.time, format: :hour_text %>, <%= activity.recurrence.name %></h3>
 				<div class="content">
 					<%= simple_format activity.content %>
 				</div>

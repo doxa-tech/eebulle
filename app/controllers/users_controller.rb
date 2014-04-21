@@ -1,6 +1,7 @@
 class UsersController < ApplicationController
 	before_action except: [:profile] { |c| c.authorize_level(2) }
 	before_action only: [:profile] { |c| c.authorize_level(4) }
+	layout 'admin'
 
 	def profile
 	end

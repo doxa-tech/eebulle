@@ -1,0 +1,15 @@
+<% content_for :id, "activity" %>
+
+<h1>Activités</h1>
+
+<div class="activities">
+	<% @activities.each do |activity| %>
+		<div class="activity" style="background-image: url('<%= image_url(activity.image_url)%>')">
+			<h3><%= activity.name %></h3>
+			<%= simple_format activity.content %>
+			<div class="rec">
+				<i class="fi-clock"></i><%= l activity.time, format: :hour_text %>, <%= activity.recurrence.name %>
+			</div>
+		</div>
+	<% end %>
+</div>

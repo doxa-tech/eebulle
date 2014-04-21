@@ -1,0 +1,19 @@
+#admin {
+	width: 80%;
+	margin: 10px auto;
+	padding: 10px;
+	min-height: 100%;
+	max-width: 1920px;
+
+	ul.form {
+		text-align: center;
+		li {
+			padding: 10px;
+			input {
+				height: 30px;
+				padding: 5px;
+			}
+		}
+	}
+
+}

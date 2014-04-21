@@ -1,0 +1,34 @@
+#container.event {
+		h2 span.date {
+			color: #E20000;
+			text-shadow: 1px 1px 1px rgba(34, 34, 34, 0.15);
+			vertical-align: middle;
+			font-size: 15px;
+		}
+		h2 {
+			i {
+				padding: 0 10px 0 0;
+				color: #777;
+			}
+		}
+	.event {
+		border-bottom: 1px dashed orange;
+		padding: 20px;
+		h2 {
+			text-align: center;
+			padding: 0 0 5px 0;
+			font-family: "Open sans";
+			font-size: 19px;
+		}
+		.img {
+			text-align: center;
+			padding: 20px 0;
+		}
+		.infos {
+			text-align: right;
+			padding: 5px 0 0 0;
+			font-size: 12px;
+			color: #777;
+		}
+	}
+}

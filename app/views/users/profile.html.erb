@@ -1,12 +1,3 @@
 <h1><%= t('user.index') %></h1>
 
 <%= link_to t('user.edit.title'), user_edit_path if authorized?(2) %>
-
-<%= link_to t('layout.header.messages'), messages_path %>
-
-<%= link_to t('layout.header.admin.pages'), admin_pages_path if authorized?(2) %>
-<%= link_to t('layout.header.admin.events'), admin_events_path if authorized?(2) %>
-<%= link_to t('layout.header.admin.activities'), admin_activities_path if authorized?(2) %>
-<%= link_to t('layout.header.admin.galleries'), admin_galleries_path if authorized?(2) %>
-<%= link_to t('layout.header.admin.messages'), admin_messages_path if authorized?(3) %>
-<%= link_to t('layout.header.admin.users'), admin_users_path if authorized?(1) %>

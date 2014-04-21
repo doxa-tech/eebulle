@@ -9,7 +9,7 @@ class MessagesUploader < CarrierWave::Uploader::Base
   end
 
   def extension_white_list
-    %w(mp3)
+    %w(mp3 m4a)
   end
 
 end

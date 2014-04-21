@@ -3,6 +3,10 @@
 	background: image-url("layout/banner.jpg");
 }
 #container.home {
+	.content {
+		padding: 0 0 5px 0;
+		border-bottom: 1px dashed red;
+	}
 	h2 span.date {
 		color: #E20000;
 		text-shadow: 1px 1px 1px rgba(34, 34, 34, 0.15);
@@ -46,13 +50,21 @@
 					font-weight: 100;
 					background: rgba(0, 0, 0, 0.71);
 					color: #fff;
-					padding: 20px;
+					padding: 20px 20px 0 20px;
 					text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.36);
+					&.rec {
+						padding: 3px 20px 20px 20px;
+						color: #ffff00;
+						font-size: 11px;
+						font-weight: 100;
+						text-align: right;
+					}
 				}
 				.content {
 					font-size: 13px;
 					background: rgba(255, 255, 255, 0.74);
 					padding: 10px;
+					border: none;
 				}
 			}
 		}

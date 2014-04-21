@@ -10,11 +10,11 @@
 <body>
 	<%= render 'layouts/flash' %>
 
-	<div id="header">
+	<div id="admin-header">
 		<%= render 'layouts/admin_header' %>
 	</div>
 	
-	<div id="admin">
+	<div id="admin" <%= "class=#{yield(:id)}" if yield(:id).presence %>>
 		<%= yield %>
 	</div>
 

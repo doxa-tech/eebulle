@@ -18,6 +18,7 @@ Eebulle::Application.routes.draw do
   resources :events, only: [:index]
   resources :activities, only: [:index]
   resources :messages, only: [:index]
+  resources :galleries, only: [:show]
 
   namespace :admin do
 
