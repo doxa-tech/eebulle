@@ -1,4 +1,8 @@
 class SessionsController < ApplicationController
+	before_action :connected?, except: :destroy
+
+	def new
+	end
 
 	def create
 		@user = User.find_by_name(params[:session][:name])
@@ -14,6 +18,12 @@ class SessionsController < ApplicationController
 	def destroy
 		sign_out
 		redirect_to root_path, success: t('session.destroy.success')
+	end
+
+	private
+
+	def connected?
+		redirect_to profile_path unless current_user.nil?
 	end
 
 end

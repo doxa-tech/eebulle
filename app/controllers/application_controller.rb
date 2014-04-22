@@ -29,7 +29,7 @@ class ApplicationController < ActionController::Base
   def authorize_level(level = 4)
     unless current_user && current_user.level <= level
       store_location
-      redirect_to root_path, error: t('session.unauthorize')
+      redirect_to login_path, error: t('session.unauthorize')
     end
   end
 end

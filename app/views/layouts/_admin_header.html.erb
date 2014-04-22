@@ -1,4 +1,5 @@
 <div class="header">
+	<%= link_to "Home", root_path %>
 	<%= link_to t('user.index'), profile_path %>
 	<%= link_to t('layout.header.messages'), messages_path %>
 	<%= link_to t('layout.header.admin.pages'), admin_pages_path if authorized?(2) %>

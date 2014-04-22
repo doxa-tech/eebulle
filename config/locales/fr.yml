@@ -245,7 +245,8 @@ fr:
     next_label: "Suivant"
     page_gap: "&hellip;"
   application:
-    connection: "Connexion"
+    login: "Connexion"
+    logout: "Déconnexion"
   layout:
     header:
       home: "Accueil"
@@ -325,6 +326,7 @@ fr:
         confirm: "Etes-vous sûr de vouloir supprimer cette photo ?"
   message:
     index: "Les messages"
+    link: "Accèder aux messages"
     admin:
       index: "Messages"
       new:
