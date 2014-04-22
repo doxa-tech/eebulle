@@ -1,27 +1,41 @@
 <%= form_for [:admin, @activity] do |f| %>
-
-	<%= render 'error_messages', object: f.object %>
-
-	<%= f.label :name %>
-	<%= f.text_field :name %>
-
-	<%= f.label :content %>
-	<%= f.text_area :content, class: "ckeditor" %>
-
-	<%= f.label :time %>
-	<%= f.time_select :time %>
-
-	<%= f.label :recurrence_id %>
-	<%= f.collection_radio_buttons :recurrence_id, Recurrence.all, :id, :name %>
-
-	<%= f.label :day_ids %>
-	<%= f.collection_check_boxes :day_ids, Day.all, :id, :name %>
-
-	<%= f.label :image %>
-	<%= f.file_field :image %>
-
-	<%= f.label :main %>
-	<%= f.check_box :main %>
-	
-	<%= f.submit %>
+	<ul class="form">
+		<%= render 'error_messages', object: f.object %>
+		<li>
+			<%= f.label :name %>
+			<%= f.text_field :name %>
+		</li>
+		<li>
+			<%= f.label :content %>
+			<%= f.text_area :content, class: "ckeditor" %>
+		</li>
+	</ul>
+	<ul class="form col2">
+		<li>
+			<%= f.label :time %>
+			<%= f.time_select :time %>
+		</li>
+		<li>
+			<%= f.label :recurrence_id %>
+			<%= f.collection_radio_buttons :recurrence_id, Recurrence.all, :id, :name %>
+		</li>
+		<li>
+			<%= f.label :day_ids %>
+			<%= f.collection_check_boxes :day_ids, Day.all, :id, :name %>
+		</li>
+	</ul>
+	<ul class="form col2">
+		<li>
+			<%= f.label :image %>
+			<%= f.file_field :image %>
+			Format recommandé : 256 x 256
+		</li>
+		<li>
+			<%= f.label :main %>
+			<%= f.check_box :main %>
+		</li>
+	</ul>
+	<ul class="center">
+		<li><%= f.submit %></li>
+	</ul>
 <% end %>

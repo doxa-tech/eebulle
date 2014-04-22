@@ -1,0 +1,95 @@
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:300,400);
+@import url(http://fonts.googleapis.com/css?family=Raleway:100,200,300,400);
+
+html, body
+{
+	font: 300 15px/17px 'Open Sans', tahoma;
+	height: 100%;
+}
+
+#wrapper {
+	min-height:100%;
+	position:relative;
+	padding-bottom:150px; // height of footer
+}
+
+a
+{
+	text-decoration: none;
+	-webkit-font-smoothing: antialiased;
+  text-shadow: 1px 1px 1px rgba(0,0,0,0.004);
+}
+
+#clear
+{
+	clear: both;
+}
+
+#container {
+
+	width: 80%;
+	margin: 10px auto;
+	padding: 10px;
+	min-height: 100%;
+	max-width: 1920px;
+
+}
+
+h1 {
+	text-align: center;
+	padding: 30px;
+	font-weight: 300;
+}
+
+h2 {
+	font-family: Raleway;
+	padding: 50px 10px 20px 10px;
+}
+
+h3 {
+	font-size: 15px;
+	padding: 5px 0;
+}
+
+input[type="submit"] {
+	line-height: 0;
+	background: #D83C3C;
+	border-radius: 0 0 3px 3px;
+	border: 0;
+	color: #fff;
+	text-transform: uppercase;
+	text-shadow: 0 -1px 0 rgba(0, 0, 0, .3);
+	font-size: 11px;
+	font-weight: 600;
+	cursor: pointer;
+	-webkit-font-smoothing: antialiased;
+	&:hover {
+		background: #e54040;
+	}
+	&:active,
+	&:focus {
+		background: #c42f2f;
+		  outline: 0; 
+	}
+}
+
+label
+{
+  display: block;
+  width: 30%;
+  min-width: 100px;
+  padding: 0 0 5px 17px;
+  font-weight: 500;
+  color: rgb(115, 103, 255);
+}
+
+input, textarea, select
+{
+	width: 100%; height: 40px;
+	padding: 0 15px;
+	background: #fff;
+	&:focus {
+		border: 1px solid #8A7DB1;
+		outline: none;
+	}
+}

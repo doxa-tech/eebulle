@@ -10,16 +10,20 @@
 <body>
 	<%= render 'layouts/flash' %>
 
-	<div id="header">
-		<%= render 'layouts/header' %>
-	</div>
-	
-	<div id="container">
-		<%= yield %>
-	</div>
+	<div id="wrapper">
+		<div id="header">
+			<%= render 'layouts/header' %>
+		</div>
 
-	<div id="footer">
-		<%= render 'layouts/footer' %>
+		<%= render 'layouts/banner' %>
+		
+		<div id="container" <%= "class=#{yield(:id)}" if yield(:id).presence %>>
+			<%= yield %>
+		</div>
+
+		<div id="footer">
+			<%= render 'layouts/footer' %>
+		</div>
 	</div>
 
 </body>

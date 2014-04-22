@@ -1,1 +1,39 @@
-<%= render "content" %>
+<% content_for :id, 'home' %>
+<% content_for :banner do %>
+	<h1>Une église <span class="a">accessible</span>, <span class="a">dynamique</span> et <span class="a">intergénérationnelle</span> !</h1>
+<% end %>
+
+<div class="content">
+	<%= render "content" %>
+</div>
+
+<% unless @event.nil? %>
+	
+	<h2>Prochainement <span class="date"><%= l @event.date, format: :text %></span></h2>
+	<div class="event">
+		<h2><%= @event.name %></h2>
+		<div class="img"><%= image_tag image_url @event.image_url %></div>
+		<%= simple_format @event.content %>
+		<div class="infos">
+			Dans <%= distance_of_time_in_words Time.now, @event.date %> <%= l @event.date, format: :text %>
+		</div>
+	</div>
+
+<% end %>
+
+<h2>Activités</h2>
+
+<div class="activities">
+	<% @activities.each do |activity| %>
+		<div class="activity">
+			<div class="wrapper" style="background-image: url('<%= image_url(activity.image_url)%>')">
+				<h3><%= activity.name %></h3>
+				<h3 class="rec"><%= l activity.time, format: :hour_text %>, <%= activity.recurrence.name %></h3>
+				<div class="content">
+					<%= simple_format activity.content %>
+				</div>
+			</div>
+		</div>
+	<% end %>
+	<div id="clear"></div>
+</div>

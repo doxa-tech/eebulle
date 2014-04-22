@@ -19,6 +19,7 @@ Eebulle::Application.routes.draw do
   resources :activities, only: [:index]
   resources :messages, only: [:index]
   resources :newsletter_emails, only: [:new, :create]
+  resources :galleries, only: [:show]
 
   namespace :admin do
 
