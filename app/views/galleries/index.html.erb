@@ -1,16 +1,19 @@
+<% content_for :id, "medias" %>
+
 <h1>Médias</h1>
 
 <h2>Messages audio</h2>
 <p>Les messages audios sont réservés à l'assemblée. Pour avoir le code nécessaire au téléchargement merci d'en faire la demande au pateur.</p>
-<%= link_to t('message.link'), messages_path %>
+<i class="fi-sound"></i> <%= link_to t('message.link'), messages_path %>
 <h2>Gallerie photos</h2>
 
 <% unless @galleries.nil? %>
 	<% @galleries.each do |gallery| %>
 		<div class="gallery">
 			<h3><%= link_to gallery.name, gallery_path(gallery) %></h3>
-			<%= simple_format gallery.description %> <%= l gallery.date, format: :text %><br>
-			<%= image_tag image_url gallery.paintings.last.image_url(:thumb) %>
+			<p><%= simple_format gallery.description %></p> 
+			<p class="date"><%= l gallery.date, format: :text %></p>
+			<p><%= image_tag image_url gallery.paintings.last.image_url(:thumb) %></p>
 		</div>
 	<% end %>
 <% end %>

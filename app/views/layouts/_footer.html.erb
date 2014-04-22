@@ -1,10 +1,20 @@
 <footer>
-	<% if current_user.nil? %>
-		<%= link_to t('application.login'), login_path %>
-	<% else %>
-		<%= t('user.index') %>:
-		<%= link_to current_user.name, profile_path %>
-		<%= link_to t('application.logout'), signout_path, method: :delete %>
-	<% end %>
-	<%= link_to t('newsletter_email.new.title'), new_newsletter_email_path %>
+	<div class="infos col2">
+		<p><b>Eglise évangélique de Bulle</b><br> Route du Verdel 8<br> 1630 Bulle</p>
+		<p>Bâtiment Riedo (1er étage)<br> CCP  17-559407-8</p>
+	</div>
+	<div class="log col2">
+		<% if current_user.nil? %>
+			<p><%= link_to t('application.login'), login_path %></p>
+		<% else %>
+			<p>
+				<%= t('user.index') %>:
+				<%= link_to current_user.name, profile_path %>
+				<%= link_to t('application.logout'), signout_path, method: :delete %>
+			</p>
+		<% end %>
+		<p><i class="fi-info"></i> <%= link_to "Contacter le pasteur", contact_path %></p>
+		<p><i class="fi-first-aid"></i> <%= link_to "Bug / Contacter le webmaster", "mailto:kocher.ke@gmail.com" %></p>
+		<p><i class="fi-mail"></i> <b><%= link_to t('newsletter_email.new.title'), new_newsletter_email_path %></b></p>
+	</div>
 </footer>

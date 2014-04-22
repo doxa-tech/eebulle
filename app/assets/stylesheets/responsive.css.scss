@@ -1,0 +1,52 @@
+/* http://getbootstrap.com/css/#responsive-utilities */
+/* Very Large devices */
+@media (max-width: 1435px)
+{
+
+} 
+/* Large devices */
+@media (max-width: 1200px) 
+{
+
+}
+
+/* Medium devices */
+@media (max-width: 992px) 
+{
+	//Home activities
+	#container.home {
+		.activities {
+			.activity {
+				width: 50%;
+			}
+		}
+	}
+}
+
+/* Small devices */
+@media (max-width: 768px) 
+{
+	//Home activities
+	#container.home {
+		.activities {
+			.activity {
+				width: 100%;
+			}
+		}
+	}
+	//footer
+	footer {
+		height: 250px;
+		.col2 {
+			width: 100%;
+			text-align: center;
+			&:last-child {
+				padding-top: 10px;
+				border-top: 1px solid #ddd;
+			}
+		}
+	}
+	#wrapper {
+		padding-bottom: 250px;
+	}
+}

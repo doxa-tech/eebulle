@@ -1,0 +1,49 @@
+#admin.profil {
+	text-align: center;
+	a {
+		line-height: 0;
+		background: #D83C3C;
+		border: 0;
+		color: #fff;
+		text-transform: uppercase;
+		text-shadow: 0 -1px 0 rgba(0, 0, 0, .3);
+		font-size: 11px;
+		font-weight: 600;
+		cursor: pointer;
+		-webkit-font-smoothing: antialiased;
+		padding: 10px;
+		&:hover {
+			background: #e54040;
+		}
+		&:active,
+		&:focus {
+			background: #c42f2f;
+			  outline: 0; 
+		}
+	}
+	.links {
+		padding: 50px 0 0 0;
+		a {
+			line-height: 0;
+			background: #A3A3A3;
+			border: 0;
+			color: #fff;
+			text-transform: uppercase;
+			text-shadow: 0 -1px 0 rgba(0, 0, 0, .3);
+			font-size: 11px;
+			font-weight: 600;
+			cursor: pointer;
+			-webkit-font-smoothing: antialiased;
+			padding: 10px;
+			&:hover {
+				background: #e54040;
+			}
+			&:active,
+			&.active,
+			&:focus {
+				background: #c42f2f;
+				  outline: 0; 
+			}
+		}		
+	}
+}
