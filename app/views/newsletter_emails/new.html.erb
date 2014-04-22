@@ -1,0 +1,12 @@
+<h1><%= t('newsletter_email.new.title') %></h1>
+
+<%= form_for @newsletter_email do |f| %>
+
+	<%= render 'error_messages', object: f.object %>
+
+	<%= f.label :email %>
+	<%= f.email_field :email %>
+	
+	<%= f.submit %>
+
+<% end %>

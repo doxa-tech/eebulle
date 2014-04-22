@@ -18,6 +18,7 @@ Eebulle::Application.routes.draw do
   resources :events, only: [:index]
   resources :activities, only: [:index]
   resources :messages, only: [:index]
+  resources :newsletter_emails, only: [:new, :create]
 
   namespace :admin do
 
@@ -26,6 +27,8 @@ Eebulle::Application.routes.draw do
   	resources :activities, except: [:show]
   	resources :users, except: [:show]
     resources :messages, except: [:show]
+    resources :emails, only: [:new, :create]
+    resources :newsletter_emails, except: [:show]
     resources :galleries, except: [:show] do
       resources :paintings, only: [:new, :create, :destroy]
     end

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140421124403) do
+ActiveRecord::Schema.define(version: 20140422115316) do
 
   create_table "activities", force: true do |t|
     t.string   "name"
@@ -65,6 +65,12 @@ ActiveRecord::Schema.define(version: 20140421124403) do
     t.string   "file"
     t.date     "date"
     t.string   "speaker"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "newsletter_emails", force: true do |t|
+    t.string   "email"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

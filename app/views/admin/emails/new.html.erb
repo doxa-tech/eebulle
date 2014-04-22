@@ -1,0 +1,10 @@
+<h1><%= t('email.admin.new.title') %></h1>
+
+<%= form_tag admin_emails_path do %>
+
+	<%= text_area_tag :content, nil, class: "ckeditor" %>
+
+	<%= submit_tag nil, data: {confirm: "Confirmez-vous l'envoi de cette newsletter ?"} %>
+
+<% end %>
+

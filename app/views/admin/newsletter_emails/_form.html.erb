@@ -1,0 +1,9 @@
+<%= form_for [:admin, @newsletter_email] do |f| %>
+
+	<%= render 'error_messages', object: f.object %>
+
+	<%= f.label :email %>
+	<%= f.email_field :email %>
+	
+	<%= f.submit %>
+<% end %>

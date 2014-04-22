@@ -259,6 +259,7 @@ fr:
         events: "Les événements"
         galleries: "Les galeries"
         messages: "Les messages"
+        newsletter_emails: "Newsletters"
   page:
     admin:
       index: "Pages"
@@ -338,3 +339,23 @@ fr:
       error: "Nom d'utilisateur/mot de passe invalide"
     destroy: 
       success: "Déconnecté"
+  email:
+    admin:
+      new:
+        title: "Envoyer une newsletter"
+        success: "Emails envoyés"
+        link: "Envoyer une newsletter"
+  newsletter_email:
+    new:
+      title: "S'inscire à la newsletter"
+      success: "Vous êtes désormais inscrit !"
+    admin:
+      index: "Emails"
+      new:
+        title: "Ajouter un email"
+        success: "Email ajouté"
+      edit:
+        title: "Editer un email"
+        success: "Email édité"
+      destroy:
+        success: "Email supprimé"
