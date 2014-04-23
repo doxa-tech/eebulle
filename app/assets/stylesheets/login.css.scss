@@ -1,0 +1,13 @@
+#container.login {
+	max-width: 350px;
+	label {
+		padding: 10px 0 10px 0;
+	}
+	.rem {
+		&>* {
+			display: inline-block;
+			width: initial;
+			height: initial;
+		}
+	}
+}
