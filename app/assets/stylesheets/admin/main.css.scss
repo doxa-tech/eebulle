@@ -23,6 +23,19 @@
 	ul.center {
 		text-align: center;
 	}
+
+	.unity {
+		.dispo {
+			display: inline-block;
+			label, input {
+				display: inline-block;
+				width: initial;
+				height: initial;
+				padding: 7px;
+				min-width: initial;
+			}
+		}
+	}
 	
 
 }

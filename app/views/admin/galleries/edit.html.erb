@@ -1,12 +1,16 @@
+<% content_for :id, "medias-edit" %>
+
 <h1><%= t('gallery.admin.edit.title') %></h1>
 
 <%= render 'form' %>
 <br>
 <%= link_to t('gallery.admin.edit.new_painting'), new_admin_gallery_painting_path(@gallery) %>
 <br><br>
-<% @gallery.paintings.each do |painting| %>
-
-	<%= image_tag painting.image_url(:thumb) %>
-	<%= link_to "X", admin_gallery_painting_path(@gallery, painting), method: :delete, confirm: t('painting.admin.destroy.confirm') %>
-
-<% end %>
+<div class="images">
+	<% @gallery.paintings.each do |painting| %>
+		<div class="paints">
+			<%= image_tag painting.image_url(:thumb) %>
+			<%= link_to "<i class='fi-x-circle'></i>".html_safe, admin_gallery_painting_path(@gallery, painting), method: :delete, confirm: t('painting.admin.destroy.confirm') %>
+		</div>
+	<% end %>
+</div>

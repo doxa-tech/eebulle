@@ -23,12 +23,20 @@
 	</ul>
 	<ul class="form col2">
 		<li>
-			<%= f.label :recurrence_id %>
-			<%= f.collection_radio_buttons :recurrence_id, Recurrence.all, :id, :name %>
+			<div class="unity">
+				<%= f.label :recurrence_id %><br>
+				<%= f.collection_radio_buttons(:recurrence_id, Recurrence.all, :id, :name) do |b| %>
+					<%= content_tag :div, "#{b.label} #{b.radio_button}".html_safe, class: 'dispo' %>
+				<% end %>
+			</div>
 		</li>
 		<li>
-			<%= f.label :day_ids %>
-			<%= f.collection_check_boxes :day_ids, Day.all, :id, :name %>
+			<div class="unity">
+				<%= f.label :day_ids %><br>
+				<%= f.collection_check_boxes :day_ids, Day.all, :id, :name do |b| %>
+					<%= content_tag :div, "#{b.label} #{b.check_box}".html_safe, class: 'dispo' %>
+				<% end %>
+			</div>
 		</li>
 	</ul>
 
