@@ -1,9 +1,9 @@
 <h1><%= t('gallery.admin.edit.title') %></h1>
 
 <%= render 'form' %>
-
+<br>
 <%= link_to t('gallery.admin.edit.new_painting'), new_admin_gallery_painting_path(@gallery) %>
-
+<br><br>
 <% @gallery.paintings.each do |painting| %>
 
 	<%= image_tag painting.image_url(:thumb) %>
