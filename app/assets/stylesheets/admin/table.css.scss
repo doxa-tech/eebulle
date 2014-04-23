@@ -1,16 +1,32 @@
 #admin_table {
 	width: 100%;
 	overflow: auto;
-
+	
 	.table_buttons {
-		padding: 20px;
-		position: absolute;
-		// text-align: right;
-		// a {
-		// 	background: #F0F8FF;
-		// 	padding: 6px 10px;
-		// 	color: #000;
-		// }
+	text-align: right;
+	padding: 20px;
+	position: absolute;
+	}
+
+	.table_buttons a {
+		padding: 7px 10px;
+		border-radius: 3px;
+		color: #fff;
+		font-weight: lighter;
+		font-size: 14px;
+	}
+
+	.table_buttons a.add {
+		background: #7f72f5;
+	}
+
+	.table_buttons a.off {
+		background: #aaa;
+	}
+
+	.table_buttons a.on {
+		background: #7f72f5;
+		display: none;
 	}
 
 	table {

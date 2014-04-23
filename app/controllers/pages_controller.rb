@@ -2,7 +2,7 @@ class PagesController < ApplicationController
 
 	def home
 		@page = Page.find_by_name('home')
-		@event = Event.where('date >=?', [Time.zone.now]).order('date ASC').first
+		@event = Event.where("date + (duration - 1)  * INTERVAL '1 day'  >= ?", [Time.zone.now]).order('date ASC').first
 		@activities = Activity.where(main: true)
 	end
 

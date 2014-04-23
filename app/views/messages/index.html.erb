@@ -3,6 +3,8 @@
 <% @messages.each do |message| %>
 
 	<%= message.name %>
+	<%= message.speaker %>
+	<%= message.date %>
 	<audio controls="controls">
 		<source src="<%= message.file_url %>" type="audio/mp3" />
 		Votre navigateur n'est pas compatible

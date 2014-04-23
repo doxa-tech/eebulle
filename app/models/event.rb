@@ -7,4 +7,8 @@ class Event < ActiveRecord::Base
 	validates :image, presence: true
 
 	mount_uploader :image, EventsUploader
+
+	def exp_at
+		date + duration.days
+	end
 end

@@ -1,18 +1,28 @@
 <%= form_for [:admin, @message] do |f| %>
 
 	<%= render 'error_messages', object: f.object %>
+	<ul class="form">
+		<li>
+			<%= f.label :name %>
+			<%= f.text_field :name %>
+		</li>
+		<li>
+			<%= f.label :date %>
+			<%= f.date_select :date %>
+		</li>
+		<li>
+			<%= f.label :speaker %>
+			<%= f.text_field :speaker %>
+		</li>
+		<li>
+			<%= f.label :file %>
+			<%= f.file_field :file %>
+		</li>
+	</ul>
 
-	<%= f.label :name %>
-	<%= f.text_field :name %>
+	<div id="clear"></div>
 
-	<%= f.label :date %>
-	<%= f.date_select :date %>
-
-	<%= f.label :speaker %>
-	<%= f.text_field :speaker %>
-
-	<%= f.label :file %>
-	<%= f.file_field :file %>
-
-	<%= f.submit %>
+	<ul class="center">
+		<li><%= f.submit %></li>
+	</ul>
 <% end %>

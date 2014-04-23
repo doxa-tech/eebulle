@@ -10,7 +10,7 @@ html, body
 #wrapper {
 	min-height:100%;
 	position:relative;
-	padding-bottom:150px; // height of footer
+	padding-bottom:200px; // height of footer
 }
 
 a
@@ -92,4 +92,9 @@ input, textarea, select
 		border: 1px solid #8A7DB1;
 		outline: none;
 	}
+}
+
+select {
+	border: 1px solid #ccc;
+	width: auto;
 }

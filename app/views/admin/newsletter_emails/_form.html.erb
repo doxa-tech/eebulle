@@ -1,9 +1,15 @@
 <%= form_for [:admin, @newsletter_email] do |f| %>
 
 	<%= render 'error_messages', object: f.object %>
+	<ul class="form">
+		<li>
+			<%= f.label :email %>
+			<%= f.email_field :email %>
+		</li>
+	</ul>
+	<div id="clear"></div>
 
-	<%= f.label :email %>
-	<%= f.email_field :email %>
-	
-	<%= f.submit %>
+	<ul class="center">
+		<li><%= f.submit %></li>
+	</ul>
 <% end %>

@@ -1,7 +1,7 @@
 <%= form_for [:admin, @user] do |f| %>
 
+	<%= render 'error_messages', object: f.object %>
 	<ul class="form col2">
-		<%= render 'error_messages', object: f.object %>
 		<li>
 			<%= f.label :name %>
 			<%= f.text_field :name %>

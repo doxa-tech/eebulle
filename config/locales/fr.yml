@@ -173,6 +173,8 @@ fr:
       user:
         create: "S'inscrire"
         update: "Mettre à jour"
+      newsletter_email:
+        create: "S'inscrire"
       create: "Créer"
       update: "Enregistrer"
       submit: "Enregistrer"
@@ -240,6 +242,8 @@ fr:
         main: "Principal"
       user:
         name: "Nom d'utilisateur"
+      painting:
+        image: "Images"
   will_paginate:
     previous_label: "Précédant"
     next_label: "Suivant"
@@ -352,7 +356,7 @@ fr:
         link: "Envoyer une newsletter"
   newsletter_email:
     new:
-      title: "S'inscire à la newsletter"
+      title: "S'inscrire à la newsletter"
       success: "Vous êtes désormais inscrit !"
     admin:
       index: "Emails"

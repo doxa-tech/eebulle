@@ -1,10 +1,16 @@
 <h1><%= t('email.admin.new.title') %></h1>
 
 <%= form_tag admin_emails_path do %>
+	
+	<ul class="form">
+		<li><%= text_area_tag :content, nil, class: "ckeditor" %></li>
+	</ul>
 
-	<%= text_area_tag :content, nil, class: "ckeditor" %>
+	<div id="clear"></div>
 
-	<%= submit_tag nil, data: {confirm: "Confirmez-vous l'envoi de cette newsletter ?"} %>
+	<ul class="center">
+		<li><%= submit_tag nil, data: {confirm: "Confirmez-vous l'envoi de cette newsletter ?"} %></li>
+	</ul>
 
 <% end %>
 

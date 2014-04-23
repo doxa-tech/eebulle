@@ -4,8 +4,12 @@
 
 <%= form_for [:admin, @gallery, @painting], :remote => true do |f| %>
 
-	<%= f.label :image %>
-	<input id="fileupload" type="file" name="painting[image]" multiple>
+	<ul class="form">
+		<li>
+			<%= f.label :image %>
+			<input id="fileupload" type="file" name="painting[image]" multiple>
+		</li>
+	</ul>
 
 	<div class="progress">
 		<span class="progress-val">0%</span>

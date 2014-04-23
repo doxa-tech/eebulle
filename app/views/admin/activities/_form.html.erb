@@ -1,30 +1,16 @@
 <%= form_for [:admin, @activity] do |f| %>
-	<ul class="form">
-		<%= render 'error_messages', object: f.object %>
+		
+	<%= render 'error_messages', object: f.object %>
+		
+	<ul class="form col2">
 		<li>
 			<%= f.label :name %>
 			<%= f.text_field :name %>
 		</li>
 		<li>
-			<%= f.label :content %>
-			<%= f.text_area :content, class: "ckeditor" %>
-		</li>
-	</ul>
-	<ul class="form col2">
-		<li>
 			<%= f.label :time %>
 			<%= f.time_select :time %>
 		</li>
-		<li>
-			<%= f.label :recurrence_id %>
-			<%= f.collection_radio_buttons :recurrence_id, Recurrence.all, :id, :name %>
-		</li>
-		<li>
-			<%= f.label :day_ids %>
-			<%= f.collection_check_boxes :day_ids, Day.all, :id, :name %>
-		</li>
-	</ul>
-	<ul class="form col2">
 		<li>
 			<%= f.label :image %>
 			<%= f.file_field :image %>
@@ -35,6 +21,27 @@
 			<%= f.check_box :main %>
 		</li>
 	</ul>
+	<ul class="form col2">
+		<li>
+			<%= f.label :recurrence_id %>
+			<%= f.collection_radio_buttons :recurrence_id, Recurrence.all, :id, :name %>
+		</li>
+		<li>
+			<%= f.label :day_ids %>
+			<%= f.collection_check_boxes :day_ids, Day.all, :id, :name %>
+		</li>
+	</ul>
+
+	<div id="clear"></div>
+
+	<ul class="form">
+		<li>
+			<%= f.text_area :content, class: "ckeditor" %>
+		</li>
+	</ul>
+
+	<div id="clear"></div>
+
 	<ul class="center">
 		<li><%= f.submit %></li>
 	</ul>

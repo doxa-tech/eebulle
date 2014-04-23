@@ -3,9 +3,9 @@
 <h1>Médias</h1>
 
 <h2>Messages audio</h2>
-<p>Les messages audios sont réservés à l'assemblée. Pour avoir le code nécessaire au téléchargement merci d'en faire la demande au pateur.</p>
-<i class="fi-sound"></i> <%= link_to t('message.link'), messages_path %>
-<h2>Gallerie photos</h2>
+<p>Les messages audios sont réservés à l'assemblée. Pour avoir le code nécessaire au téléchargement merci d'en faire la demande au pasteur.</p>
+<p class="link"><i class="fi-sound"></i> <%= link_to t('message.link'), messages_path %></p>
+<h2>Galeries photos</h2>
 
 <% unless @galleries.nil? %>
 	<% @galleries.each do |gallery| %>

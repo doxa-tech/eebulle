@@ -1,22 +1,37 @@
 <%= form_for [:admin, @event] do |f| %>
 
 	<%= render 'error_messages', object: f.object %>
+	<ul class="form col2">
+		<li>
+			<%= f.label :name %>
+			<%= f.text_field :name %>
+		</li>
+		<li>
+			<%= f.label :image %>
+			<%= f.file_field :image %>
+			Format recommandé : 1920 x 250
+		</li>
+	</ul>
+	<ul class="form col2">
+		<li>
+			<%= f.label :date %>
+			<%= f.datetime_select :date %>
+		</li>
+		<li>
+			<%= f.label :duration %>
+			<%= f.number_field :duration %>
+		</li>
+	</ul>
 
-	<%= f.label :name %>
-	<%= f.text_field :name %>
+	<div id="clear"></div>
 
-	<%= f.label :content %>
-	<%= f.text_area :content, class: "ckeditor" %>
+	<ul class="form"><li><%= f.text_area :content, class: "ckeditor" %></li></ul>
 
-	<%= f.label :date %>
-	<%= f.datetime_select :date %>
-
-	<%= f.label :duration %>
-	<%= f.number_field :duration %>
-
-	<%= f.label :image %>
-	<%= f.file_field :image %>
-	Format recommandé : 1920 x 250
+	<div id="clear"></div>
 	
-	<%= f.submit %>
+	<ul class="center">
+		<li>
+			<%= f.submit %>
+		</li>
+	</ul>
 <% end %>

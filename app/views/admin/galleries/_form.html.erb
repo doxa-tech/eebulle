@@ -1,16 +1,24 @@
 <%= form_for [:admin, @gallery] do |f| %>	
 
 	<%= render 'error_messages', object: f.object %>
+	<ul class="form">
+		<li>
+			<%= f.label :name %>
+			<%= f.text_field :name %>		
+		</li>
+		<li>
+			<%= f.label :description %>
+			<%= f.text_area :description %>
+		</li>
+		<li>
+			<%= f.label :date %>
+			<%= f.date_select :date %>
+		</li>
+	</ul>
+	<div id="clear"></div>
 
-	<%= f.label :name %>
-	<%= f.text_field :name %>		
-
-	<%= f.label :description %>
-	<%= f.text_area :description %>
-
-	<%= f.label :date %>
-	<%= f.date_select :date %>
-	
-	<%= f.submit %>
+	<ul class="center">
+		<li><%= f.submit %></li>
+	</ul>
 
 <% end %>

@@ -9,7 +9,7 @@
 		<% else %>
 			<p>
 				<%= t('user.index') %>:
-				<%= link_to current_user.name, profile_path %>
+				<%= link_to current_user.name, profile_path %> | 
 				<%= link_to t('application.logout'), signout_path, method: :delete %>
 			</p>
 		<% end %>
