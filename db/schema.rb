@@ -13,6 +13,9 @@
 
 ActiveRecord::Schema.define(version: 20140422115316) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "activities", force: true do |t|
     t.string   "name"
     t.text     "content"
@@ -24,7 +27,7 @@ ActiveRecord::Schema.define(version: 20140422115316) do
     t.string   "image"
   end
 
-  add_index "activities", ["recurrence_id"], name: "index_activities_on_recurrence_id"
+  add_index "activities", ["recurrence_id"], name: "index_activities_on_recurrence_id", using: :btree
 
   create_table "day_activities", force: true do |t|
     t.integer  "day_id"
@@ -33,8 +36,8 @@ ActiveRecord::Schema.define(version: 20140422115316) do
     t.datetime "updated_at"
   end
 
-  add_index "day_activities", ["activity_id"], name: "index_day_activities_on_activity_id"
-  add_index "day_activities", ["day_id"], name: "index_day_activities_on_day_id"
+  add_index "day_activities", ["activity_id"], name: "index_day_activities_on_activity_id", using: :btree
+  add_index "day_activities", ["day_id"], name: "index_day_activities_on_day_id", using: :btree
 
   create_table "days", force: true do |t|
     t.string   "name"
@@ -89,7 +92,7 @@ ActiveRecord::Schema.define(version: 20140422115316) do
     t.datetime "updated_at"
   end
 
-  add_index "paintings", ["gallery_id"], name: "index_paintings_on_gallery_id"
+  add_index "paintings", ["gallery_id"], name: "index_paintings_on_gallery_id", using: :btree
 
   create_table "recurrences", force: true do |t|
     t.string   "name"
