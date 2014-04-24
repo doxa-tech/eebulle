@@ -35,6 +35,13 @@
 			font-size: 12px;
 			color: #777;
 		}
+		p {
+			padding: 7px 0 0 0;
+		}
+		li {
+			list-style-type: initial;
+			margin: 0 0 0 20px;
+		}
 	}
 	.activities {
 		.activity {
@@ -42,12 +49,12 @@
 			width: 33%;
 			float: left;
 			.wrapper {
-				background: #dfdfdf;
+				//background: #dfdfdf;
 				padding: 15px;
 				background-repeat: no-repeat;
 				background-position: right 50%;
 				height: 256px;
-				overflow: scroll;
+				overflow: hidden;
 				h3 {
 					font-size: 15px;
 					font-weight: 100;

@@ -8,7 +8,7 @@
 			<h3><%= activity.name %></h3>
 			<%= simple_format activity.content %>
 			<div class="rec">
-				<i class="fi-clock"></i><%= l activity.time, format: :hour_text %>, <%= activity.recurrence.name %>
+				<i class="fi-clock"></i><%= l activity.time, format: :hour_text %>, <%= activity.days.pluck(:name).join(',') %> <%= activity.recurrence.name %>
 			</div>
 		</div>
 	<% end %>

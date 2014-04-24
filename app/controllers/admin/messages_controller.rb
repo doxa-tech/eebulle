@@ -1,5 +1,5 @@
 class Admin::MessagesController < Admin::BaseController
-	before_action { |c| c.authorize_level(3) }
+	#before_action { |c| c.authorize_level(3) }
 
 	def index
 		@table = MessageTable.new(view_context)
@@ -13,13 +13,23 @@ class Admin::MessagesController < Admin::BaseController
 		@message = Message.new
 	end
 
+	
 	def create
 		@message = Message.new(message_params)
-		if @message.save
-			redirect_to admin_messages_path, success: t('message.admin.new.success')
-		else
-			render 'new'
-		end
+    if @message.save
+    	render 'success'
+    else
+      render 'error'
+    end
+	end
+
+	def create_backup
+		@message = Message.new(message_params)
+    if @message.save
+    	redirect_to admin_messages_path, success: t('message.admin.new.success')
+    else
+      render 'new'
+    end
 	end
 
 	def edit

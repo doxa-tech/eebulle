@@ -1,5 +1,5 @@
 $(function(){
 	$('.ckeditor').ckeditor({
-	  // optional config
+	  customConfig: '/assets/ckeditor/custom_config.js'
 	});
 });
