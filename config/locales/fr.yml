@@ -239,7 +239,7 @@ fr:
       activity:
         recurrence_id: "Récurrence"
         day_ids: "Jours"
-        main: "Principal"
+        main: "Principal (Cocher pour afficher sur la page d'accueil)"
       user:
         name: "Nom d'utilisateur"
       painting:
