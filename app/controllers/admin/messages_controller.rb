@@ -39,9 +39,9 @@ class Admin::MessagesController < Admin::BaseController
 	def update
 		@message = Message.find(params[:id])
 		if @message.update_attributes(message_params)
-			redirect_to admin_messages_path, success: t('message.admin.edit.success')
+			render 'success'
 		else
-			render 'edit'
+			render 'error'
 		end
 	end
 

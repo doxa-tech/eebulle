@@ -1,0 +1,18 @@
+#container.messages {
+	text-align: center;
+	.message {
+		padding: 20px 0;
+		color: #777;
+		display: inline-block;
+		width: 350px;
+		box-shadow: 1px 1px 1px rgba(255, 0, 0, 0.38);
+		margin: 5px;
+		.orator, .name {
+			font-weight: 500;
+			color: #000;
+		}
+	}
+	p {
+		padding: 0 0 10px 0;
+	}
+}

@@ -1,13 +1,13 @@
+<% content_for :id, "messages" %>
+
 <h1><%= t('message.index') %></h1>
 
 <% @messages.each do |message| %>
-
-	<%= message.name %>
-	<%= message.speaker %>
-	<%= message.date %>
-	<audio controls="controls">
-		<source src="<%= message.file_url %>" type="audio/mp3" />
-		Votre navigateur n'est pas compatible
-	</audio>
-
+	<div class="message">
+		<p><%= content_tag :span, message.name, class: "name" %> de <%= content_tag :span, message.speaker, class: "orator" %> <%= l message.date, format: :text %></p>
+		<audio controls="controls">
+			<source src="<%= message.file_url %>" type="audio/mp3" />
+			Votre navigateur n'est pas compatible
+		</audio>
+	</div>
 <% end %>

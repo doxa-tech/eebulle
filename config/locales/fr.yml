@@ -320,7 +320,7 @@ fr:
       edit:
         title: "Editer une galerie"
         success: "Galerie édité"
-        new_patinting: "Ajouter des photos"
+        new_painting: "Ajouter des photos"
       destroy:
         success: "Galerie supprimé"
   painting:

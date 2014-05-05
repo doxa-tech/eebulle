@@ -1,1 +1,1 @@
-<%= @page.content %>
+<%= raw simple_format @page.content, {}, sanitize: false %>

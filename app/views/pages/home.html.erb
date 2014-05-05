@@ -10,7 +10,7 @@
 <% unless @event.nil? %>
 	
 	<h2>Prochainement <span class="date"><%= l @event.date, format: :text %></span></h2>
-	<div class="event">
+	<div class="event" id="ck-content">
 		<h2><%= @event.name %></h2>
 		<div class="img"><%= image_tag image_url @event.image_url %></div>
 		<%= raw simple_format(@event.content, {}, sanitize: false) %>

@@ -53,3 +53,14 @@ gem "mini_magick", '~> 3.7.0'
 gem 'ckeditor_rails', '~> 4.3.1'
 
 gem 'fancybox2-rails', '~> 0.2.8'
+
+gem 'capistrano', '~> 3.2.0'
+gem 'capistrano-rails', '~> 1.1.0'
+gem 'capistrano-bundler'
+gem 'capistrano-rbenv', '~> 2.0'
+
+gem 'unicorn'
+
+gem "figaro", '~> 0.7.0'
+
+gem 'will_paginate', '~> 3.0.5' 

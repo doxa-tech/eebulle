@@ -8,7 +8,7 @@ development:
   encoding: unicode
   database: eebulle_development
   pool: 5
-  username: nkcr
+  username: khcr
   password:
 
 # Warning: The database defined as "test" will be erased and
@@ -21,7 +21,10 @@ test:
   timeout: 5000
 
 production:
-  adapter: sqlite3
-  database: db/production.sqlite3
+  adapter: postgresql
+  encoding: unicode
+  database: eebulle_production
   pool: 5
-  timeout: 5000
+  host: localhost
+  username: eebulle
+  password: 
