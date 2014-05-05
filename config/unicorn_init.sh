@@ -3,11 +3,10 @@ set -e
 
 # Feel free to change any of the following variables for your app:
 TIMEOUT=${TIMEOUT-60}
-APP_ROOT=<%= current_path %>
-PID_DIR=$APP_ROOT/tmp/pids
-PID=$PID_DIR/unicorn.pid
-CMD="cd $APP_ROOT;  bundle exec unicorn -D -c <%= "#{shared_path}/config/unicorn.rb" %> -E <%= fetch(:rails_env) %>"
-AS_USER=<%= fetch(:deploy_user) %>
+APP_ROOT=/home/eebulle/apps/eebulle/current
+PID=$APP_ROOT/tmp/pids/unicorn.pid
+CMD="cd $APP_ROOT; bundle exec unicorn -D -c $APP_ROOT/config/unicorn.rb -E production"
+AS_USER=eebulle
 set -u
 
 OLD_PIN="$PID.oldbin"
@@ -18,12 +17,6 @@ sig () {
 
 oldsig () {
   test -s $OLD_PIN && kill -$1 `cat $OLD_PIN`
-}
-
-workersig () {
-  workerpid="$APP_ROOT/tmp/pids/unicorn.$2.pid"
-  
-  test -s "$workerpid" && kill -$1 `cat $workerpid`
 }
 
 run () {
@@ -47,15 +40,13 @@ force-stop)
   sig TERM && exit 0
   echo >&2 "Not running"
   ;;
-kill_worker)
-  workersig QUIT $2 && exit 0
-  echo >&2 "Worker not running"
-  ;;
+
 restart|reload)
-  sig USR2 && echo reloaded OK && exit 0
+  sig HUP && echo reloaded OK && exit 0
   echo >&2 "Couldn't reload, starting '$CMD' instead"
   run "$CMD"
   ;;
+
 upgrade)
   if sig USR2 && sleep 2 && sig 0 && oldsig QUIT
   then

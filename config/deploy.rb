@@ -1,88 +1,53 @@
-# config valid only for Capistrano 3.1
-lock '3.2.1'
-
-set :application, 'eebulle'
-set :deploy_user, 'eebulle'
-
-set :repo_url, 'git@github.com:khcr/eebulle.git'
-
-# setup rbenv
-set :rbenv_type, :system
-set :rbenv_ruby, '2.1.1'
-set :rbenv_prefix, "RBENV_ROOT=#{fetch(:rbenv_path)} RBENV_VERSION=#{fetch(:rbenv_ruby)} #{fetch(:rbenv_path)}/bin/rbenv exec"
-set :rbenv_map_bins, %w{rake gem bundle ruby rails}
-
-# Default deploy_to directory is /var/www/my_app
-# set :deploy_to, '/var/www/my_app'
-
-# Default value for :format is :pretty
-# set :format, :pretty
-
-# Default value for :log_level is :debug
-# set :log_level, :debug
-
-# Default value for :pty is false
-# set :pty, true
-
-set :linked_files, %w{config/database.yml config/application.yml}
-set :linked_dirs, %w{bin log tmp/pids tmp/cache tmp/sockets vendor/bundle public/system}
-
-# Default value for linked_dirs is []
-# set :linked_dirs, %w{bin log tmp/pids tmp/cache tmp/sockets vendor/bundle public/system}
-
-# Default value for default_env is {}
-# set :default_env, { path: "/opt/ruby/bin:$PATH" }
-
-set(:config_files, %w(
-  nginx.conf
-  database.example.yml
-  application.example.yml
-  log_rotation
-  unicorn.rb
-  unicorn_init.sh
-))
-
-set(:executable_config_files, %w(
-  unicorn_init.sh
-))
-
-set(:symlinks, [
-  {
-    source: "nginx.conf",
-    link: "/etc/nginx/sites-enabled/#{fetch(:full_app_name)}"
-  },
-  {
-    source: "unicorn_init.sh",
-    link: "/etc/init.d/unicorn_#{fetch(:full_app_name)}"
-  },
-  {
-    source: "log_rotation",
-   link: "/etc/logrotate.d/#{fetch(:full_app_name)}"
-  }
-])
-
+require "bundler/capistrano"
+ 
+server "146.185.163.64", :web, :app, :db, primary: true
+ 
+set :application, "eebulle"
+set :user, "eebulle"
+set :deploy_to, "/home/#{user}/apps/#{application}"
+set :deploy_via, :remote_cache
+set :use_sudo, false
+ 
+set :scm, "git"
+set :repository, "git@github.com:khcr/eebulle.git"
+set :branch, "master"
+ 
+default_run_options[:pty] = true
+ssh_options[:forward_agent] = true
+ 
+after "deploy", "deploy:cleanup" # keep only the last 5 releases
+ 
 namespace :deploy do
-  # make sure we're deploying what we think we're deploying
-  before :deploy, "deploy:check_revision"
-  # only allow a deploy with passing tests to deployed
-  before :deploy, "deploy:run_tests"
-  # compile assets locally then rsync
-  after 'deploy:symlink:shared', 'deploy:compile_assets_locally'
-  after :finishing, 'deploy:cleanup'
+  %w[start stop restart].each do |command|
+    desc "#{command} unicorn server"
+    task command, roles: :app, except: {no_release: true} do
+      run "/etc/init.d/unicorn_#{application} #{command}"
+    end
+  end
 
-  # remove the default nginx configuration as it will tend
-  # to conflict with our configs.
-  before 'deploy:setup_config', 'nginx:remove_default_vhost'
+  task :setup_config, roles: :app do
+    sudo "ln -nfs #{current_path}/config/nginx.conf /etc/nginx/sites-enabled/#{application}"
+    sudo "ln -nfs #{current_path}/config/unicorn_init.sh /etc/init.d/unicorn_#{application}"
+    run "mkdir -p #{shared_path}/config"
+    put File.read("config/database.example.yml"), "#{shared_path}/config/database.yml"
+    put File.read("config/application.example.yml"), "#{shared_path}/config/application.yml"
+    puts "Now edit the config files in #{shared_path}."
+  end
+  after "deploy:setup", "deploy:setup_config"
 
-  # reload nginx to it will pick up any modified vhosts from
-  # setup_config
-  after 'deploy:setup_config', 'nginx:reload'
+  task :symlink_config, roles: :app do
+    run "ln -nfs #{shared_path}/config/database.yml #{release_path}/config/database.yml"
+    run "ln -nfs #{shared_path}/config/application.yml #{release_path}/config/application.yml"
+  end
+  after "deploy:finalize_update", "deploy:symlink_config"
 
-  # Restart monit so it will pick up any monit configurations
-  # we've added
-  after 'deploy:setup_config', 'monit:restart'
-
-  # As of Capistrano 3.1, the `deploy:restart` task is not called
-  # automatically.
-  after 'deploy:publishing', 'deploy:restart'
+  desc "Make sure local git is in sync with remote."
+  task :check_revision, roles: :web do
+    unless `git rev-parse HEAD` == `git rev-parse origin/master`
+      puts "WARNING: HEAD is not the same as origin/master"
+      puts "Run `git push` to sync changes."
+      exit
+    end
+  end
+  before "deploy", "deploy:check_revision"
 end
