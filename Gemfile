@@ -3,9 +3,6 @@ source 'https://rubygems.org'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.0.3'
 
-# Use sqlite3 as the database for Active Record
-gem 'sqlite3'
-
 # Postgresql
 gem 'pg'
 
@@ -55,9 +52,8 @@ gem 'ckeditor_rails', '~> 4.3.1'
 gem 'fancybox2-rails', '~> 0.2.8'
 
 gem 'capistrano', '~> 2.15'
+gem "net-ssh", "~> 2.7.0"
 
 gem 'unicorn'
 
 gem "figaro", '~> 0.7.0'
-
-gem 'will_paginate', '~> 3.0.5' 
