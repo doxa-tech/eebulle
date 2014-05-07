@@ -12,7 +12,7 @@ class ApplicationController < ActionController::Base
   # * *Returns* :
   #
   def store_location
-    session[:return_to] = request.fullpath
+    cookies[:return_to] = { value: request.fullpath, expires: 1.minute.from_now }
   end
 
   # Redirect the user to the stored url or the default one provided
@@ -22,7 +22,7 @@ class ApplicationController < ActionController::Base
   # * *Returns* :
   #
   def redirect_back_or(default, message = nil)
-    redirect_to(session[:return_to] || default, message)
+    redirect_to(cookies[:return_to] || default, message)
     session.delete(:return_to)
   end
 
