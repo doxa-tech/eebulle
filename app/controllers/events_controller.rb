@@ -1,6 +1,6 @@
 class EventsController < ApplicationController
 
 	def index
-		@events = Event.all
+		@events = Event.where("date >= ?", Date.today ).order("date ASC")
 	end
 end
