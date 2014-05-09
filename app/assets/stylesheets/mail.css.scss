@@ -1,9 +1,3 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head>
-  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-  <meta name="viewport" content="width=device-width"/>
-  <style>
 /**********************************************
 * Ink v1.0.5 - Copyright 2013 ZURB Inc        *
 **********************************************/
@@ -693,8 +687,7 @@ body.outlook p {
   }
 }
 
-  </style>
-  <style>
+
 
     table.facebook td {
       background: #3b5998;
@@ -735,7 +728,7 @@ body.outlook p {
     }
 
     .header {
-      background: #e84c0a;
+      background: #999999;
     }
 
     .footer .wrapper {
@@ -769,79 +762,3 @@ body.outlook p {
         padding-right: 10px !important;
       }
     }
-
-  </style>
-</head>
-<body>
-  <table class="body">
-    <tr>
-      <td class="center" align="center" valign="top">
-        <center>
-
-          <table class="row header">
-            <tr>
-              <td class="center" align="center">
-                <center>
-
-                  <table class="container">
-                    <tr>
-                      <td class="wrapper last">
-
-                        <table class="twelve columns">
-                          <tr>
-                            <td class="six sub-columns">
-                              <img src="http://s17.postimg.org/3uknzma5r/EEB_logo_moyen.jpg">
-                            </td>
-                            <td class="six sub-columns last" style="text-align:right; vertical-align:middle;">
-                              <span class="template-label">Newsletter</span>
-                            </td>
-                            <td class="expander"></td>
-                          </tr>
-                        </table>
-
-                      </td>
-                    </tr>
-                  </table>
-
-                </center>
-              </td>
-            </tr>
-          </table>
-
-          <br>
-
-          <table class="container">
-            <tr>
-              <td>
-
-                <%= raw @content %>
-              
-                <br>
-                <br>
-                <table class="row" style="background:#e84c0a">
-                  <tr>
-                    <td class="wrapper last">
-                      <table class="twelve columns">
-                        <tr>
-                          <td class="center">
-                            <center>
-                              <span style="font-size:10px; color: #fff">EEBulle - Eglise évangélique de Bulle<br>Si vous avez des questions ou besoin d'aide, vous pouvez simplement répondre à cet email</span>
-                            </center>
-                          </td>
-                          <td class="expander"></td>
-                        </tr>
-                      </table>
-                    </td>
-                  </tr>
-                </table>
-              <!-- container end below -->
-              </td>
-            </tr>
-          </table>
-
-        </center>
-      </td>
-    </tr>
-  </table>
-</body>
-</html>

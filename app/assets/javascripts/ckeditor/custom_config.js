@@ -1,6 +1,23 @@
 CKEDITOR.editorConfig = function( config )
 {
-
+	config.contentsCss = '/assets/mail.css.scss';
+	config.extraPlugins = 'htmlbuttons';
+	config.htmlbuttons = [
+		{
+			name: 'EMAIL',
+			icon: 'mail.png',
+			html: 'container.html',
+			title: 'EMAIL'
+		},
+		{
+			name: 'EMAILBTN',
+			icon: 'mail.png',
+			html: 'button.html',
+			title: 'Email button'
+		}
+	];
+	// It's magic but allow table style class
+	config.allowedContent = true;
 };
 
 
