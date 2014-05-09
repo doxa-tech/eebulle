@@ -330,7 +330,7 @@ fr:
         confirm: "Etes-vous sûr de vouloir supprimer cette photo ?"
   message:
     index: "Les messages"
-    link: "Accèder aux messages"
+    link: "Accéder aux messages"
     admin:
       index: "Messages"
       new:
