@@ -4,11 +4,11 @@ class NewsMailer < ActionMailer::Base
 	default 'X-MC-InlineCSS'=> "true"
   default 'X-MC-Track' => "clicks_all"
 
-  def news(content)
+  def news(content, subject)
   	@content = content
   	mail(
-  		to: "nkcr.je@gmail.com", 
-  		subject: 'Nouvelles activités',
+  		to: NewsletterEmail.pluck(:email),
+  		subject: subject
   	)
   end
 

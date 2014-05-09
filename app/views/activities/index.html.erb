@@ -6,7 +6,7 @@
 	<% @activities.each do |activity| %>
 		<div class="activity" style="background-image: url('<%= image_url(activity.image_url)%>')">
 			<h3><%= activity.name %></h3>
-			<%= content_tag :div, (raw simple_format activity.content, {}, sanitize: false), id: "ck-content" %>
+			<%= render 'ck_content', content: activity.content %>
 			<div class="rec">
 				<i class="fi-clock"></i><%= l activity.time, format: :hour_text %>, <%= activity.days.pluck(:name).join(',') %> <%= activity.recurrence.name %>
 			</div>

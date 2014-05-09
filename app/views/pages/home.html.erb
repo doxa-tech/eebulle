@@ -13,7 +13,7 @@
 	<div class="event">
 		<h2><%= @event.name %></h2>
 		<div class="img"><%= image_tag image_url @event.image_url %></div>
-		<%= raw simple_format(@event.content, {}, sanitize: false) %>
+		<%= render 'ck_content', content: @event.content %>
 		<div class="infos">
 			Dans <%= distance_of_time_in_words Time.now, @event.date %> <%= l @event.date, format: :text %>
 		</div>
@@ -30,7 +30,7 @@
 				<h3><%= activity.name %></h3>
 				<h3 class="rec"><%= l activity.time, format: :hour_text %>, <%= activity.days.pluck(:name).join(',') %> <%= activity.recurrence.name %></h3>
 				<div class="content">
-					<%= raw simple_format(activity.content, {}, sanitize: false) %>
+					<%= render 'ck_content', content: activity.content %>
 				</div>
 			</div>
 		</div>

@@ -2,6 +2,7 @@ CKEDITOR.editorConfig = function( config )
 {
 	config.contentsCss = '/assets/mail.css.scss';
 	config.extraPlugins = 'htmlbuttons';
+	config.height = '400px';
 	config.htmlbuttons = [
 		{
 			name: 'EMAIL',
