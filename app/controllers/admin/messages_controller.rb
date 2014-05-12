@@ -1,5 +1,5 @@
 class Admin::MessagesController < Admin::BaseController
-	#before_action { |c| c.authorize_level(3) }
+	before_action { |c| c.authorize_level(3) }
 
 	def index
 		@table = MessageTable.new(view_context)

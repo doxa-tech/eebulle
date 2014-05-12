@@ -1,5 +1,6 @@
 class Admin::EmailsController < Admin::BaseController
-
+	before_action { |c| c.authorize_level(2) }
+	
 	def new
 	end
 
