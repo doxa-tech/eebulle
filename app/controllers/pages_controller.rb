@@ -13,4 +13,8 @@ class PagesController < ApplicationController
 	def contact
 		@page = Page.find_by_name('contact')
 	end
+
+	def kidsbulle
+		@page = Page.find_by_name('kidsbulle')
+	end
 end
