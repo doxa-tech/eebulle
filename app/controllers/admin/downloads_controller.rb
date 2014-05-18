@@ -1,0 +1,49 @@
+class Admin::DownloadsController < Admin::BaseController
+	before_action { |c| c.authorize_level(2) }
+
+	def index
+		@table = DownloadTable.new(view_context)
+		respond_to do |format|
+			format.html
+			format.js { render 'sort' }
+		end
+	end
+
+	def new
+		@download = Download.new
+	end
+
+	def create
+		@download = Download.new(download_params)
+		if @download.save
+			render 'success'
+		else
+			render 'error'
+		end
+	end
+
+	def edit
+		@download = Download.find(params[:id])
+	end
+
+	def update
+		@download = Download.find(params[:id])
+		if @download.update_attributes(download_params)
+			render 'success'
+		else
+			render 'error'
+		end
+	end
+
+	def destroy
+		Download.find(params[:id]).destroy
+		redirect_to admin_downloads_path, success: t('download.admin.destroy.success')
+	end
+
+	private
+
+	def download_params
+		params.require(:download).permit(:name, :file)
+	end
+
+end

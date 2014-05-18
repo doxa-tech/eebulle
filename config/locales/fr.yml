@@ -267,6 +267,7 @@ fr:
         galleries: "Les galeries"
         messages: "Les messages"
         newsletter_emails: "Newsletters"
+        downloads: "Ressources"
   page:
     admin:
       index: "Pages"
@@ -367,3 +368,14 @@ fr:
         success: "Email édité"
       destroy:
         success: "Email supprimé"
+  download:
+    admin:
+      index: "Ressources"
+      new:
+        title: "Uploader un fichier"
+        success: "Fichier uploadé"
+      edit:
+        title: "Editer un upload"
+        success: "Upload édité"
+      destroy:
+        success: "Upload supprimé"

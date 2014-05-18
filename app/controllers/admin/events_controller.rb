@@ -37,7 +37,7 @@ class Admin::EventsController < Admin::BaseController
 
 	def destroy
 		Event.find(params[:id]).destroy
-		redirect_to admin_activities_path, success: t('event.admin.destroy.success')
+		redirect_to admin_events_path, success: t('event.admin.destroy.success')
 	end
 
 	private

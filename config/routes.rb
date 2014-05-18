@@ -20,6 +20,7 @@ Eebulle::Application.routes.draw do
   resources :messages, only: [:index]
   resources :newsletter_emails, only: [:new, :create]
   resources :galleries, only: [:show]
+  resources :downloads, only: [:index]
 
   namespace :admin do
 
@@ -33,6 +34,7 @@ Eebulle::Application.routes.draw do
     resources :galleries, except: [:show] do
       resources :paintings, only: [:new, :create, :destroy]
     end
+    resources :downloads, except: [:show]
 
   end
 end

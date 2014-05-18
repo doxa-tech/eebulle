@@ -3,7 +3,7 @@
 <%= form_tag admin_emails_path do %>
 
 	<ul class="form">
-		<li><%= text_area_tag :subject, nil, placeholder: "Sujet" %></li>
+		<li><%= text_field_tag :subject, nil, placeholder: "Sujet" %></li>
 	</ul>
 	<ul class="form">
 		<li><%= text_area_tag :content, nil, class: "ckeditor" %></li>

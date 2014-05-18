@@ -1,0 +1,10 @@
+<h1>Ressources à télécharger</h1>
+
+<% @downloads.each do |download| %>
+	<%= link_to download.name, download.file_url %>
+	<%= number_to_human_size download.size %>
+	<%= download.extension %>
+	<% if download.extension.in? "jpeg", "jpg", "png" %>
+		<%= image_tag download.file_url %>
+	<% end %>
+<% end %>
