@@ -1,7 +1,7 @@
 class DownloadsController < ApplicationController
 
 	def index
-		@downloads = Download.all
+		@downloads = Download.order(:name)
 	end
 
 end

@@ -1,10 +1,15 @@
+<% content_for :id, 'download' %>
+
 <h1>Ressources à télécharger</h1>
 
 <% @downloads.each do |download| %>
-	<%= link_to download.name, download.file_url %>
-	<%= number_to_human_size download.size %>
-	<%= download.extension %>
-	<% if download.extension.in? "jpeg", "jpg", "png" %>
-		<%= image_tag download.file_url %>
-	<% end %>
+	<div class="download">
+		<h3><%= download.name %></h3>
+		<p>
+			<%= link_to download.name, download.file_url %>.<%= download.extension %> | <%= number_to_human_size download.size %></p>
+		</p>
+		<% if download.extension.in? "jpeg", "jpg", "png" %>
+			<%= link_to((image_tag download.file_url), download.file_url, target: "_blank") %>
+		<% end %>
+	</div>
 <% end %>

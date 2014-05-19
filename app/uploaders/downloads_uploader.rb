@@ -9,7 +9,7 @@ class DownloadsUploader < CarrierWave::Uploader::Base
   end
 
   def extension_white_list
-    %w(doc docx ppt pptx xls xlsx pdf odt odp ods jpeg jpg png)
+    %w(doc docx ppt pptx xls xlsx pdf odt odp ods jpeg jpg png psd ai)
   end
 
 end
