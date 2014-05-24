@@ -2,7 +2,11 @@
 	img {
 		max-width: 500px;
 		max-heigth: 500px;
-		padding: 10px;
+		padding: 5px;
 	}
 	text-align:center;
+	.block {
+		padding: 10px 0;
+		box-shadow: 0px 1px 1px #E7E7E7;
+	}
 }

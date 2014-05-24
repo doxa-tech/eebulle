@@ -3,7 +3,7 @@
 <h1>Ressources à télécharger</h1>
 
 <% @downloads.each do |download| %>
-	<div class="download">
+	<div class="block">
 		<h3><%= download.name %></h3>
 		<p>
 			<%= link_to download.name, download.file_url %>.<%= download.extension %> | <%= number_to_human_size download.size %></p>
