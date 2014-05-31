@@ -15,20 +15,11 @@ class Admin::MessagesController < Admin::BaseController
 
 	
 	def create
-		@message = Message.new(message_params)
-    if @message.save
+		@element = Message.new(message_params)
+    if @element.save
     	render 'success'
     else
       render 'error'
-    end
-	end
-
-	def create_backup
-		@message = Message.new(message_params)
-    if @message.save
-    	redirect_to admin_messages_path, success: t('message.admin.new.success')
-    else
-      render 'new'
     end
 	end
 
@@ -37,8 +28,8 @@ class Admin::MessagesController < Admin::BaseController
 	end
 
 	def update
-		@message = Message.find(params[:id])
-		if @message.update_attributes(message_params)
+		@element = Message.find(params[:id])
+		if @element.update_attributes(message_params)
 			render 'success'
 		else
 			render 'error'

@@ -14,8 +14,8 @@ class Admin::DownloadsController < Admin::BaseController
 	end
 
 	def create
-		@download = Download.new(download_params)
-		if @download.save
+		@element = Download.new(download_params)
+		if @element.save
 			render 'success'
 		else
 			render 'error'
@@ -27,8 +27,8 @@ class Admin::DownloadsController < Admin::BaseController
 	end
 
 	def update
-		@download = Download.find(params[:id])
-		if @download.update_attributes(download_params)
+		@element = Download.find(params[:id])
+		if @element.update_attributes(download_params)
 			render 'success'
 		else
 			render 'error'

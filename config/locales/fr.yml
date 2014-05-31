@@ -213,6 +213,7 @@ fr:
       even: "doit être pair"
       taken: "n'est pas disponible"
       record_invalid: "La validation a échoué : %{errors}"
+      extension_white_list_error: "contient un type de fichier non supporté"
 
   activemodel:
     errors:
