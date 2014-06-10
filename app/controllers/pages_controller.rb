@@ -17,4 +17,7 @@ class PagesController < ApplicationController
 	def kidsbulle
 		@page = Page.find_by_name('kidsbulle')
 	end
+
+	def broadcast
+	end
 end

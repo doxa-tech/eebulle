@@ -2,7 +2,7 @@ Eebulle::Application.routes.draw do
 
   root to: 'pages#home'
 
-  %w[home presentation contact kidsbulle].each do |page|
+  %w[home presentation contact kidsbulle broadcast].each do |page|
     get page, to: "pages##{page}"
   end
 
