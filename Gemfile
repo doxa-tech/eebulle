@@ -22,6 +22,7 @@ gem 'coffee-rails', '~> 4.0.0'
 gem 'jquery-rails'
 gem 'jquery-turbolinks', '~> 2.0.2'
 gem "jquery-fileupload-rails"
+gem "mediaelement_rails"
 
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
 gem 'turbolinks'

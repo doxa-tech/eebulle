@@ -17,5 +17,6 @@
 //= require jquery-fileupload/vendor/tmpl
 //= require ckeditor-jquery
 //= require fancybox
+//= require mediaelement_rails
 //= require turbolinks
 //= require_tree ./sitewide

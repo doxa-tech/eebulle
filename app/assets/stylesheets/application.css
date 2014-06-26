@@ -10,6 +10,7 @@
  *
  *= require_self
  *= require fancybox
+ *= require mediaelement_rails
  *= require_tree .
  *= stub mail
  */
