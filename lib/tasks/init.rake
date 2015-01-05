@@ -36,4 +36,9 @@ namespace :init do
 	task user: :environment do
 		User.create(name: "Admin", password: "12341", password: "12341", level: 1)
 	end
+
+	task onelife_page: :environment do
+		Page.create(name: 'fribourg', content: "Texte à éditer")
+		Page.create(name: 'shiloa', content: "Texte à éditer")
+	end
 end

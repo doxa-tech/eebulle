@@ -20,4 +20,12 @@ class PagesController < ApplicationController
 
 	def broadcast
 	end
+
+	def shiloa
+		@page = Page.find_by_name('shiloa')
+	end
+
+	def fribourg
+		@page = Page.find_by_name('fribourg')
+	end
 end
