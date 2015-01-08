@@ -2,16 +2,25 @@
 	<div id="logo">
 		<%= link_to (image_tag image_url "layout/logo.png"), root_path %>
 	</div>
-	<nav>
-		<ul>
-			<li><%= link_to_active t('layout.header.home'), root_path %></li>
-			<li><%= link_to_active t('layout.header.vision'), vision_path %></li>
-			<li><%= link_to_active t('layout.header.presentation'), presentation_path %></li>
-			<li><%= link_to_active t('layout.header.activities'), activities_path %></li>
-			<li><%= link_to_active t('layout.header.events'), events_path %></li>
-			<li><%= link_to_active t('layout.header.galleries'), medias_path %></li>
-			<li><%= link_to_active t('layout.header.contact'), contact_path %></li>
-		</ul>
-	</nav>
-	<div id="clear"></div>
+	<div class="menus">
+		<nav class="up">
+			<ul>
+				<li class="up-title">L'église se développe</li>
+				<li><%= link_to_active "One Life Fribourg", fribourg_path %></li>
+				<li><%= link_to_active "Shiloah", shiloa_path %></li>
+			</ul>
+		</nav>
+		<nav class="down">
+			<ul>
+				<li><%= link_to_active t('layout.header.home'), root_path %></li>
+				<li><%= link_to_active t('layout.header.vision'), vision_path %></li>
+				<li><%= link_to_active t('layout.header.presentation'), presentation_path %></li>
+				<li><%= link_to_active t('layout.header.activities'), activities_path %></li>
+				<li><%= link_to_active t('layout.header.events'), events_path %></li>
+				<li><%= link_to_active t('layout.header.galleries'), medias_path %></li>
+				<li><%= link_to_active t('layout.header.contact'), contact_path %></li>
+			</ul>
+		</nav>
+		<div id="clear"></div>
+	</div>
 </header>

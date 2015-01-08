@@ -11,31 +11,61 @@ header {
 		vertical-align: middle;
 		img {
 			width: 280px;
+			padding: 13px 0 0px 0;
 		}
 	}
-	nav {
-		text-align: left;
+	.menus {
 		display: inline-block;
-		vertical-align: middle;
-		text-transform: uppercase;
-		font-size: 13px;
-		font-weight: 600;
-		ul {
-			li {
-				display: inline-block;
-				padding: 8px 20px;
-				a {
-					position: relative;
-					color: #000;
-					padding: 7px 15px;
-					transition: border .5s ease-out;
-					&:hover {
-						border-bottom: 1px solid #e84c09;
-						color: #e84c09;
-						border-bottom: 1px solid #000;
+		nav.up {
+			text-align: right;
+			ul {
+				li {
+					display: inline-block;
+					padding: 10px 10px;
+					&.up-title {
+						color: rgb(178, 178, 178);
 					}
-					&.active {
-						color: #e84c09;
+					a {
+						position: relative;
+						color: #000;
+						padding: 3px 0px;
+						transition: border .5s ease-out;
+						&:hover {
+							border-bottom: 1px solid #e84c09;
+							color: #e84c09;
+							border-bottom: 1px solid #000;
+						}
+						&.active {
+							color: #e84c09;
+						}
+					}
+				}
+			}
+		}
+		nav.down {
+			text-align: left;
+			vertical-align: middle;
+			text-transform: uppercase;
+			font-size: 13px;
+			font-weight: 600;
+			padding: 15px 0 0 0;
+			ul {
+				li {
+					display: inline-block;
+					padding: 8px 15px;
+					a {
+						position: relative;
+						color: #000;
+						padding: 7px 15px;
+						transition: border .5s ease-out;
+						&:hover {
+							border-bottom: 1px solid #e84c09;
+							color: #e84c09;
+							border-bottom: 1px solid #000;
+						}
+						&.active {
+							color: #e84c09;
+						}
 					}
 				}
 			}
