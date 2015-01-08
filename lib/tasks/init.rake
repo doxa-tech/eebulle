@@ -40,5 +40,6 @@ namespace :init do
 	task onelife_page: :environment do
 		Page.create(name: 'fribourg', content: "Texte à éditer")
 		Page.create(name: 'shiloa', content: "Texte à éditer")
+		Page.create(name: 'vision', content: "Texte à éditer")
 	end
 end

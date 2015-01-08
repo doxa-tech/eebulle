@@ -28,4 +28,8 @@ class PagesController < ApplicationController
 	def fribourg
 		@page = Page.find_by_name('fribourg')
 	end
+
+	def vision
+		@page = Page.find_by_name('vision')
+	end
 end
