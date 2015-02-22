@@ -341,7 +341,7 @@
   h3 {font-size: 32px;}
   h4 {font-size: 28px;}
   h5 {font-size: 24px;}
-  h6 {font-size: 20px;}
+  h6 {font-size: 16px;}
   body, table.body, p, td {font-size: 14px;line-height:19px;}
 
   p.lead, p.lede, p.leed {
@@ -812,16 +812,114 @@
               <tr>
                 <td>
 
-                  <%= raw @content %>
+                  <table class="row">
+                    <tbody>
+                      <tr>
+                        <td class="wrapper last">
+                        <table class="twelve columns">
+                          <tbody>
+                            <tr>
+                              <td style="padding: 30px 0 0 0">
+                              <h1><%= @title %></h1>
+
+                              <p style="color: #e84c0a; line-height: 13px"><%= @subtitle %></p>
+                              </td>
+                              <td class="expander">&nbsp;</td>
+                            </tr>
+                          </tbody>
+                        </table>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+
+                  <table class="row">
+                    <tbody>
+                      <tr>
+                        <td class="wrapper last">
+                        <table class="twelve columns">
+                          <tbody>
+                            <tr>
+                              <td>
+                              <%= @content.html_safe %>
+                              </td>
+                              <td class="expander">&nbsp;</td>
+                            </tr>
+                          </tbody>
+                        </table>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+
+
+
+                  <table style="margin-top: 60px;">
+                    <tr class="row">
+                      <td class="wrapper">
+                        <table class="six columns">
+                          <tr>
+                            <td class="center" align="center">
+                              <center>
+                                <h6 style="color: #888;">Rejoins notre page Facebook</h6>
+                              
+                                  <a style="display:inline-block; float: none; padding: 10px;" href="https://www.facebook.com/eebulle"><img src="http://s17.postimg.org/71wj0xh2z/FB_f_Logo_blue_29.png"></a>
+                               
+                              </center>
+                            </td>
+                            <td class="expander"></td>
+                          </tr>
+                        </table>
+                      </td>
+                      <td class="wrapper">
+                        <table class="six columns">
+                          <tr>
+                            <td class="center">
+                              <center>
+                                <h6 style="color: #888;">Liens importants</h6>
+                                <p style="margin-top: 10px;">
+                                  <a href="http://eebulle.ch/">Site internet</a>
+                                </p>
+                              </center>
+                            </td>
+                            <td class="expander"></td>
+                          </tr>
+                          <tr>
+                            <td class="center">
+                              <center>
+                                <p>
+                                  <a href="http://eebulle.ch/activities">Les activités de l'église</a>
+                                </p>
+                              </center>
+                            </td>
+                            <td class="expander"></td>
+                          </tr>
+                          <tr>
+                            <td class="center">
+                              <center>
+                                <p>
+                                  <a href="http://eebulle.ch/financement">Soutenir l'église financièrement</a>
+                                </p>
+                              </center>
+                            </td>
+                            <td class="expander"></td>
+                          </tr>
+                        </table>
+                      </td>
+                    </tr>
+                  </table>
+
+
+
                 
-                  <table class="row" style="background:#bb0a25">
+                  <table class="row">
                     <tr>
                       <td class="wrapper last">
                         <table class="twelve columns">
                           <tr>
                             <td class="center">
                               <center>
-                                <span style="font-size:10px; color: #fff">EEBulle - Eglise évangélique de Bulle<br>Si vous avez des questions ou besoin d'aide, vous pouvez simplement répondre à cet email</span>
+                                <span style="font-size:10px; color: #999">EEBulle - Eglise évangélique de Bulle<br>Si vous avez des questions ou besoin d'aide, vous pouvez simplement répondre à cet email</span>
                               </center>
                             </td>
                             <td class="expander"></td>

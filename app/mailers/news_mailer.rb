@@ -6,8 +6,10 @@ class NewsMailer < ActionMailer::Base
   default 'X-MC-AutoText' => 1
 	default 'X-MC-InlineCSS'=> "true"
 
-  def news(content, subject, emails)
-  	@content = content
+  def news(subject, title, subtitle, content, emails)
+    @title = title
+    @subtitle = subtitle
+    @content = content
   	mail(
   		to:  emails,
   		subject: subject

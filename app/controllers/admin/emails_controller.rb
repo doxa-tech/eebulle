@@ -6,6 +6,6 @@ class Admin::EmailsController < Admin::BaseController
 
 	def create
     emails = (params[:commit] == "Envoyer" ? NewsletterEmail.pluck(:email) : params[:email])
-		NewsMailer.news(params[:content], params[:subject], emails).deliver
+		NewsMailer.news(params[:subject], params[:title], params[:subtitle], params[:content], emails).deliver
 	end
 end

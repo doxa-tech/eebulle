@@ -3,10 +3,20 @@
 <%= form_tag admin_emails_path, remote: true do %>
 
 	<ul class="form">
-		<li><%= text_field_tag :subject, nil, placeholder: "Sujet" %></li>
+		<li><%= text_field_tag :subject, nil, placeholder: "Objet" %></li>
 	</ul>
 	<ul class="form">
-		<li><%= text_area_tag :content, nil, class: "ckeditor" %></li>
+		<li><%= text_field_tag :title, nil, placeholder: "Titre" %></li>
+	</ul>
+	<ul class="form">
+		<li><%= text_field_tag :subtitle, nil, placeholder: "Sous-titre (optionel)" %></li>
+	</ul>
+	<ul class="form">
+		<h4>Exemple de contenu</h4>
+		<div class="email-example"><%= render 'example' %></div>
+	</ul>	
+	<ul class="form">
+		<li><%= text_area_tag :content, nil, placeholder: "Contenu", rows: 10 %></li>
 	</ul>
 
 	<div id="clear"></div>
