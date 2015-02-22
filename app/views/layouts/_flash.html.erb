@@ -6,3 +6,10 @@
 		<% end %>
 	<% end %>
 <% end %>
+
+<% if params[:thanks] %>
+  <%= content_tag :div, id: "flash", class: "flash-success" do %>
+    <p>Merci de soutenir votre église locale ! </p>
+    <span class="close">fermer</span>
+  <% end %>
+<% end %>

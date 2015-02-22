@@ -32,4 +32,8 @@ class PagesController < ApplicationController
 	def vision
 		@page = Page.find_by_name('vision')
 	end
+
+	def financement
+		@page = Page.find_by_name('financement')
+	end
 end
