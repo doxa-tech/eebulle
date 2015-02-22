@@ -6,10 +6,10 @@ class NewsMailer < ActionMailer::Base
   default 'X-MC-AutoText' => 1
 	default 'X-MC-InlineCSS'=> "true"
 
-  def news(content, subject)
+  def news(content, subject, emails)
   	@content = content
   	mail(
-  		to: NewsletterEmail.pluck(:email),
+  		to:  emails,
   		subject: subject
   	)
   end

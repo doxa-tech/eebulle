@@ -1,6 +1,6 @@
 <h1><%= t('email.admin.new.title') %></h1>
 
-<%= form_tag admin_emails_path do %>
+<%= form_tag admin_emails_path, remote: true do %>
 
 	<ul class="form">
 		<li><%= text_field_tag :subject, nil, placeholder: "Sujet" %></li>
@@ -13,6 +13,15 @@
 
 	<ul class="center">
 		<li><%= submit_tag "Envoyer", data: {confirm: "Confirmez-vous l'envoi de cette newsletter ?"} %></li>
+	</ul>
+
+	<ul class="form">
+		<li><%= label_tag "Email" %></li>
+		<li><%= text_field_tag :email %></li>
+	</ul>
+
+	<ul class="center">
+		<li><%= submit_tag "Tester" %></li>
 	</ul>
 
 <% end %>

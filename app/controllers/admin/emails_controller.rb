@@ -5,8 +5,7 @@ class Admin::EmailsController < Admin::BaseController
 	end
 
 	def create
-		# Mailer params[:content]
-		NewsMailer.news(params[:content], params[:subject]).deliver
-		redirect_to admin_newsletter_emails_path, success: t('email.admin.new.success')
+    emails = (params[:commit] == "Envoyer" ? NewsletterEmail.pluck(:email) : params[:email])
+		NewsMailer.news(params[:content], params[:subject], emails).deliver
 	end
 end
