@@ -24,6 +24,8 @@ Eebulle::Application.routes.draw do
 
   namespace :admin do
 
+    get 'files', to: "statics#files"
+
   	resources :pages, only: [:index, :edit, :update]
   	resources :events, except: [:show]
   	resources :activities, except: [:show]
