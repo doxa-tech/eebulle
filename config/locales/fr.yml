@@ -261,8 +261,9 @@ fr:
       galleries: "Medias"
       messages: "Ecouter les messages"
       admin:
+        files: "Fichiers"
         pages: "Les pages"
-        users: "Les utilisateurs"
+        users: "Utilisateurs"
         activities: "Les activités"
         events: "Les événements"
         galleries: "Les galeries"
