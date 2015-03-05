@@ -1,5 +1,5 @@
 class NewsMailer < ActionMailer::Base
-  default from: "\"David de l'EEBulle\" <david.hausmann@eebulle.ch>"
+  default from: "\"Église évangélique de Bulle\" <newsletter@eebulle.ch>"
   #
   # To overwrite, absolutely need to reset them to nil !
   #
