@@ -32,5 +32,7 @@ module Eebulle
       g.javascripts     false
       g.helper          false
     end
+
+    config.paths.add "app/tables", eager_load: true, glob: "*"
   end
 end

@@ -2,11 +2,8 @@ class Admin::DownloadsController < Admin::BaseController
 	before_action { |c| c.authorize_level(2) }
 
 	def index
-		@table = DownloadTable.new(view_context)
-		respond_to do |format|
-			format.html
-			format.js { render 'sort' }
-		end
+		@table = Table.new(self, Download)
+		@table.respond
 	end
 
 	def new

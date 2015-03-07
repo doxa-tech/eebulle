@@ -2,11 +2,8 @@ class Admin::GalleriesController < Admin::BaseController
 	before_action { |c| c.authorize_level(2) }
 
 	def index
-		@table = GalleryTable.new(view_context)
-    respond_to do |format|
-      format.html
-      format.js { render 'sort' }
-    end
+		@table = Table.new(self, Gallery)
+    @table.respond
 	end
 
 	def new

@@ -2,11 +2,8 @@ class Admin::MessagesController < Admin::BaseController
 	before_action { |c| c.authorize_level(4) }
 
 	def index
-		@table = MessageTable.new(view_context)
-		respond_to do |format|
-			format.html
-			format.js { render 'sort' }
-		end
+		@table = Table.new(self, Message)
+		@table.respond
 	end
 
 	def new

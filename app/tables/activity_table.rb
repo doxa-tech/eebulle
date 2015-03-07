@@ -1,21 +1,7 @@
 class ActivityTable < BaseTable
 
-	def attributes(element)
-		[
-			element.id,
-			element.name,
-			element.content,
-			h.l(element.time, format: :short_time),
-			element.main,
-			element.recurrence.name,
-			h.l(element.created_at, format: :short),
-			h.l(element.updated_at, format: :short),
-			element.image_url
-		]
-	end
-
-	def url(element)
-		element.id
+	def attributes
+		[:id, :name, :content, :time, :main, {recurrence: :name}, :created_at, :updated_at, :image_url]
 	end
 
 	def model

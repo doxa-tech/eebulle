@@ -2,11 +2,8 @@ class Admin::PagesController < Admin::BaseController
 	before_action { |c| c.authorize_level(2) }
 
 	def index
-		@table = PageTable.new(view_context, {buttons: false})
-		respond_to do |format|
-			format.html
-			format.js { render 'sort' }
-		end
+		@table = Table.new(self, Page, nil, buttons: false)
+		@table.respond
 	end
 
 	def edit

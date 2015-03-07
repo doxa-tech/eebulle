@@ -2,11 +2,8 @@ class Admin::UsersController < Admin::BaseController
 	before_action { |c| c.authorize_level(1) }
 
 	def index
-		@table = UserTable.new(view_context)
-		respond_to do |format|
-			format.html
-			format.js { render 'sort' }
-		end
+		@table = Table.new(self, User)
+		@table.respond
 	end
 
 	def new

@@ -3,5 +3,5 @@
 <%= link_to t('email.admin.new.link'), new_admin_email_path %>
 
 <div id="admin_table">
-	<%= present @table %>
+	<%= @table.present %>
 </div>

@@ -229,6 +229,9 @@ fr:
     updated_at: "Mis à jour le"
     password: "Mot de passe"
     password_confirmation: "Confirmation du mot de passe"
+    size: "Taille"
+    file: "Fichier"
+    speaker: "Orateur"
   activerecord:
     errors:
       <<: *errors
