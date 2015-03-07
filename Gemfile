@@ -1,26 +1,28 @@
 source 'https://rubygems.org'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '4.0.3'
+gem 'rails', '4.2'
 
 # Postgresql
 gem 'pg'
 
 # Use SCSS for stylesheets
-gem 'sass-rails', '~> 4.0.0'
+gem 'sass-rails', '~> 4.0.3'
 
 # Use Uglifier as compressor for JavaScript assets
-gem 'uglifier', '>= 1.3.0'
+gem 'uglifier'
 
-# Use CoffeeScript for .js.coffee assets and views
-gem 'coffee-rails', '~> 4.0.0'
+group :development do
+  gem 'spring'
+  gem 'web-console', '~> 2.0'
+end
 
 # See https://github.com/sstephenson/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
-gem 'jquery-turbolinks', '~> 2.0.2'
+gem 'jquery-turbolinks'
 gem "jquery-fileupload-rails"
 gem "mediaelement_rails"
 
@@ -52,9 +54,17 @@ gem 'ckeditor_rails', '~> 4.3.1'
 
 gem 'fancybox2-rails', '~> 0.2.8'
 
-gem 'capistrano', '~> 2.15'
-gem "net-ssh", "~> 2.7.0"
+gem 'capistrano', '~> 3.3.0'
+
+# rails specific capistrano funcitons
+gem 'capistrano-rails', '~> 1.1.0'
+
+# integrate bundler with capistrano
+gem 'capistrano-bundler'
+
+# if you are using RBENV
+gem 'capistrano-rvm'
+
+gem 'capistrano-maintenance', github: "capistrano/maintenance", require: false 
 
 gem 'unicorn'
-
-gem "figaro", '~> 0.7.0'

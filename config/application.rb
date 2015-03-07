@@ -4,7 +4,7 @@ require 'rails/all'
 
 # Require the gems listed in Gemfile, including any gems
 # you've limited to :test, :development, or :production.
-Bundler.require(:default, Rails.env)
+Bundler.require(*Rails.groups)
 
 module Eebulle
   class Application < Rails::Application
@@ -18,12 +18,19 @@ module Eebulle
 
     # The default locale is :en and all translations from config/locales/*.rb,yml are auto loaded.
     # config.i18n.load_path += Dir[Rails.root.join('my', 'locales', '*.{rb,yml}').to_s]
+    # config.i18n.default_locale = :de
     config.i18n.enforce_available_locales = true
     config.i18n.default_locale = :fr
 
-    # disable the automatic generators
-    config.generators.stylesheets = false
-    config.generators.javascripts = false
-    config.generators.helper = false
+    # Do not swallow errors in after_commit/after_rollback callbacks.
+    config.active_record.raise_in_transactional_callbacks = true
+
+    config.generators do |g|
+      g.orm             :active_record
+      g.template_engine :erb
+      g.stylesheets     false
+      g.javascripts     false
+      g.helper          false
+    end
   end
 end
