@@ -48,8 +48,10 @@
     text-decoration:none; 
     -ms-interpolation-mode: bicubic;
     width: auto;
+    padding-top: 10px;
+    padding-bottom: 10px;
     max-width: 100%; 
-    /*float: left; */
+    float: left;
     clear: both; 
     display: block;
   }
@@ -334,6 +336,8 @@
 
   h1, h2, h3, h4, h5, h6 {
     word-break: normal;
+    padding-top:20px;
+    padding-bottom: 20px;
   }
 
   h1 {font-size: 40px;}
@@ -790,10 +794,10 @@
                           <table class="twelve columns">
                             <tr>
                               <td class="six sub-columns">
-                                <img src="http://s12.postimg.org/t6odhj2cd/EEB_logo_moyen.jpg">
+                                <img style="padding:0;" src="http://s12.postimg.org/t6odhj2cd/EEB_logo_moyen.jpg">
                               </td>
                               <td class="six sub-columns last" style="text-align:right; vertical-align:middle;">
-                                <span class="template-label">Newsletter | <a href="http://eebulle.ch" style="color:#fff">eebulle.ch</a></span>
+                                <span class="template-label">Newsletter | <a href="http://eebulle.ch" style="color:#fff !important">eebulle.ch</a></span>
                               </td>
                               <td class="expander"></td>
                             </tr>
@@ -820,9 +824,7 @@
                           <tbody>
                             <tr>
                               <td style="padding: 30px 0 0 0">
-                              <h1><%= @title %></h1>
-
-                              <p style="color: #e84c0a; line-height: 13px"><%= @subtitle %></p>
+<h1><%= @title %></h1>
                               </td>
                               <td class="expander">&nbsp;</td>
                             </tr>
@@ -841,7 +843,7 @@
                           <tbody>
                             <tr>
                               <td>
-                              <%= @content.html_safe %>
+                                <%= @content.html_safe %>
                               </td>
                               <td class="expander">&nbsp;</td>
                             </tr>
@@ -854,59 +856,28 @@
 
 
 
-                  <table style="margin-top: 60px;">
-                    <tr class="row">
-                      <td class="wrapper">
-                        <table class="six columns">
-                          <tr>
-                            <td class="center" align="center">
-                              <center>
-                                <h6 style="color: #888;">Rejoins notre page Facebook</h6>
-                              
-                                  <a style="display:inline-block; float: none; padding: 10px;" href="https://www.facebook.com/eebulle"><img src="http://s17.postimg.org/71wj0xh2z/FB_f_Logo_blue_29.png"></a>
-                               
-                              </center>
-                            </td>
-                            <td class="expander"></td>
-                          </tr>
+                  <table class="row" style="margin-top:10px;">
+                    <tbody>
+                      <tr>
+                        <td class="wrapper last">
+                        <table class="twelve columns">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <p style="color:#676767;">
+                                  - <a href="https://www.facebook.com/eebulle">Notre page facebook</a><br>
+                                  - <a href="http://eebulle.ch/events">Les événements</a><br>
+                                  - <a href="http://eebulle.ch/activities">Les activités</a><br>
+                                  - <a href="http://eebulle.ch/">Notre site web</a>
+                                  </p>
+                              </td>
+                              <td class="expander">&nbsp;</td>
+                            </tr>
+                          </tbody>
                         </table>
-                      </td>
-                      <td class="wrapper">
-                        <table class="six columns">
-                          <tr>
-                            <td class="center">
-                              <center>
-                                <h6 style="color: #888;">Liens importants</h6>
-                                <p style="margin-top: 10px;">
-                                  <a href="http://eebulle.ch/">Site internet</a>
-                                </p>
-                              </center>
-                            </td>
-                            <td class="expander"></td>
-                          </tr>
-                          <tr>
-                            <td class="center">
-                              <center>
-                                <p>
-                                  <a href="http://eebulle.ch/activities">Les activités de l'église</a>
-                                </p>
-                              </center>
-                            </td>
-                            <td class="expander"></td>
-                          </tr>
-                          <tr>
-                            <td class="center">
-                              <center>
-                                <p>
-                                  <a href="http://eebulle.ch/financement">Soutenir l'église financièrement</a>
-                                </p>
-                              </center>
-                            </td>
-                            <td class="expander"></td>
-                          </tr>
-                        </table>
-                      </td>
-                    </tr>
+                        </td>
+                      </tr>
+                    </tbody>
                   </table>
 
 
