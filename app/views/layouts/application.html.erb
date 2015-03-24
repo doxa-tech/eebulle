@@ -1,31 +1,31 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>Eglise Evangélique Bulle</title>
-  <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
-  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
-  <%= yield :javascript %>
-  <%= csrf_meta_tags %>
-  <%= render 'layouts/favicon' %>
-</head>
-<body>
-	<%= render 'layouts/flash' %>
+  <head>
+    <title>Eglise Evangélique Bulle</title>
+    <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
+    <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+    <%= yield :javascript %>
+    <%= csrf_meta_tags %>
+    <%= render 'layouts/favicon' %>
+  </head>
+  <body>
+  	<%= render 'layouts/flash' %>
 
-	<div id="wrapper">
-		<div id="header">
-			<%= render 'layouts/header' %>
-		</div>
+  	<div id="wrapper">
+  		<div id="header">
+  			<%= render 'layouts/header' %>
+  		</div>
 
-		<%= render 'layouts/banner' %>
-		
-		<div id="container" <%= "class=#{yield(:id)}" if yield(:id).presence %>>
-			<%= yield %>
-		</div>
+  		<%= render 'layouts/banner' %>
+  		
+  		<div id="container" <%= "class=#{yield(:id)}" if yield(:id).presence %>>
+  			<%= yield %>
+  		</div>
 
-		<div id="footer">
-			<%= render 'layouts/footer' %>
-		</div>
-	</div>
+  		<div id="footer">
+  			<%= render 'layouts/footer' %>
+  		</div>
+  	</div>
 
-</body>
+  </body>
 </html>

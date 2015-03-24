@@ -34,7 +34,7 @@ namespace :init do
 
 	desc "Create an admin user"
 	task user: :environment do
-		User.create(name: "Admin", password: "12341", password: "12341", level: 1)
+		User.create(name: "Admin", password: "12341", password_confirmation: "12341", level: 1)
 	end
 
 	task onelife_page: :environment do
