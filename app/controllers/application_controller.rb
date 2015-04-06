@@ -26,7 +26,7 @@ class ApplicationController < ActionController::Base
     session.delete(:return_to)
   end
 
-  def authorize_level(level = 4)
+  def authorize_level(level = 5)
     unless current_user && current_user.level <= level
       store_location
       redirect_to login_path, error: t('session.unauthorize')
