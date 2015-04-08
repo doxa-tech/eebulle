@@ -13,7 +13,11 @@
 			<h3><%= link_to gallery.name, gallery_path(gallery) %></h3>
 			<p><%= simple_format gallery.description %></p> 
 			<p class="date"><%= l gallery.date, format: :text %></p>
-			<p><%= image_tag image_url gallery.paintings.last.image_url(:thumb) %></p>
+			<p>
+      <%= link_to gallery_path(gallery) do %>
+        <%= image_tag image_url gallery.paintings.last.image_url(:thumb) %>
+      <% end %>
+      </p>
 		</div>
 	<% end %>
 <% end %>

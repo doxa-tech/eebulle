@@ -11,12 +11,12 @@
 // about supported directives.
 //
 //= require jquery
-//= require jquery.turbolinks
 //= require jquery_ujs
 //= require jquery-fileupload/basic
 //= require jquery-fileupload/vendor/tmpl
-//= require ckeditor-jquery
-//= require fancybox
 //= require mediaelement_rails
+//= require snaptable
+//= require ../../../vendor/assets/javascripts/jquery.form
 //= require turbolinks
 //= require_tree ./sitewide
+//= require fancybox
