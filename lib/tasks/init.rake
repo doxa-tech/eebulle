@@ -1,4 +1,8 @@
 namespace :init do 
+
+	desc "Setup the environment"
+  task :all => [:pages, :days, :recurrences, :user, :onelife_page]
+
 	desc "Create the pages"
 	task pages: :environment do
 		Page.destroy_all
