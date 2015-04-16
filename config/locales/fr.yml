@@ -170,19 +170,11 @@ fr:
     select:
       prompt: "Veuillez sélectionner"
     submit:
-      user:
-        create: "S'inscrire"
-        update: "Mettre à jour"
       newsletter_email:
         create: "S'inscrire"
       create: "Créer"
       update: "Enregistrer"
       submit: "Enregistrer"
-    label:
-      session:
-        name: "Nom d'utilisateur"
-        remember_me: "Se souvenir de moi"
-        password: "Mot de passe"
   errors: &errors
     format: 'Le champs "%{attribute}" %{message}'
     messages: &errors_messages
@@ -227,8 +219,6 @@ fr:
     time: "Heure"
     created_at: "Créé le"
     updated_at: "Mis à jour le"
-    password: "Mot de passe"
-    password_confirmation: "Confirmation du mot de passe"
     size: "Taille"
     file: "Fichier"
     speaker: "Orateur"
@@ -243,8 +233,6 @@ fr:
         recurrence_id: "Récurrence"
         day_ids: "Jours"
         main: "Principal (Cocher pour afficher sur la page d'accueil)"
-      user:
-        name: "Nom d'utilisateur"
       painting:
         image: "Images"
   will_paginate:
@@ -305,17 +293,6 @@ fr:
     index: "Mon profil"
     edit:
       title: "Editer mon profil"
-      success: "Profil édité"
-    admin:
-      index: "Utilisateurs"
-      new:
-        title: "Créer un utilisateur"
-        success: "Utilisateur créé"
-      edit:
-        title: "Editer un utilisateur"
-        success: "Utilisateur édité"
-      destroy:
-        success: "Utilisateur supprimé"
   gallery:
     admin:
       index: "Galeries"
@@ -346,13 +323,6 @@ fr:
         success: "Message édité"
       destroy:
         success: "Message supprimé"
-  session:
-    unauthorize: "Non authorisé"
-    new: 
-      success: "Connecté"
-      error: "Nom d'utilisateur/mot de passe invalide"
-    destroy: 
-      success: "Déconnecté"
   email:
     admin:
       new:
