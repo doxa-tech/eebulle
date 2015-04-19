@@ -10,7 +10,7 @@ gem 'pg'
 gem 'snaptable'
 
 # user
-gem 'snapuser'
+gem 'snapuser', path: "../snapuser"
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.3'
@@ -46,7 +46,6 @@ end
 gem 'will_paginate', '~> 3.0.5'
 
 # Use ActiveModel has_secure_password
-gem 'bcrypt-ruby', '~> 3.1.0'
 
 # image uploader
 gem 'carrierwave', '~> 0.10.0'
