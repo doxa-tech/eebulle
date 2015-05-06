@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   root to: 'pages#home'
 
-  %w[home presentation contact kidsbulle broadcast fribourg shiloa vision financement profile].each do |page|
+  %w[home presentation contact kidsbulle broadcast fribourg romont shiloa vision financement profile].each do |page|
     get page, to: "pages##{page}"
   end
 
