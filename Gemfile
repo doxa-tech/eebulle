@@ -67,6 +67,6 @@ gem 'capistrano-bundler'
 # if you are using RBENV
 gem 'capistrano-rvm'
 
-gem 'capistrano-maintenance', github: 'capistrano/maintenance', require: false 
+gem 'capistrano-maintenance', github: 'capistrano/maintenance', require: false
 
 gem 'unicorn'
