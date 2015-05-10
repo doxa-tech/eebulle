@@ -8,7 +8,7 @@
 		<p>
 			<%= link_to download.name, download.file_url %>.<%= download.extension %> | <%= number_to_human_size download.size %></p>
 		</p>
-		<% if download.extension.in? "jpeg", "jpg", "png" %>
+		<% if download.extension.in?(["jpeg", "jpg", "png"]) %>
 			<%= link_to((image_tag download.file_url), download.file_url, target: "_blank") %>
 		<% end %>
 	</div>

@@ -25,7 +25,12 @@
 
 	<div id="clear"></div>
 
-	<ul class="form"><li><%= f.text_area :content %></li></ul>
+	<ul class="form">
+		<li>
+			<%= link_to "Aide pour le formatage", "https://github.com/JS-Tech/simple_markdown" %>
+		</li>
+		<li><%= f.text_area :content %></li>
+	</ul>
 
 	<div id="clear"></div>
 
