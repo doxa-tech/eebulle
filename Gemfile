@@ -10,7 +10,7 @@ gem 'pg'
 gem 'snaptable'
 
 # user
-gem 'snapuser', path: "../snapuser"
+gem 'snapuser'
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.3'
