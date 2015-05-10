@@ -1,4 +1,6 @@
 class PagesController < ApplicationController
+	before_action :require_login, only: [:profile] 
+	layout 'admin', only: :profile
 
 	def home
 		@page = Page.find_by_name('home')
@@ -29,11 +31,18 @@ class PagesController < ApplicationController
 		@page = Page.find_by_name('fribourg')
 	end
 
+	def romont
+		@page = Page.find_by_name('romont')
+	end
+
 	def vision
 		@page = Page.find_by_name('vision')
 	end
 
 	def financement
 		@page = Page.find_by_name('financement')
+	end
+
+	def profile
 	end
 end

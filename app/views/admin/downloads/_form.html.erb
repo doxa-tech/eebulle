@@ -19,14 +19,3 @@
 		<li><%= f.submit %></li>
 	</ul>
 <% end %>
-
-<%= javascript_include_tag 'jquery.form.js' %>
-<script> 
-  $(document).ready(function() {
-  	form = $('#file-upload');
-  	form.submit(function(){
-  		$('.progress').show();
-  	});
-    form.ajaxForm(); 
-  }); 
-</script>

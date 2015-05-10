@@ -27,17 +27,3 @@
 		<li><%= f.submit %></li>
 	</ul>
 <% end %>
-
-<%= content_for :javascript do %>
-	<%= javascript_include_tag 'jquery.form.js', "data-turbolinks-track" => true %>
-<% end %>
-
-<script> 
-  $(document).ready(function() {
-  	form = $('#message-upload');
-  	form.submit(function(){
-  		$('.progress').show();
-  	});
-    form.ajaxForm(); 
-  }); 
-</script>

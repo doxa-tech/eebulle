@@ -11,12 +11,12 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140518154803) do
+ActiveRecord::Schema.define(version: 20150415193853) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "activities", force: true do |t|
+  create_table "activities", force: :cascade do |t|
     t.string   "name"
     t.text     "content"
     t.time     "time"
@@ -29,7 +29,7 @@ ActiveRecord::Schema.define(version: 20140518154803) do
 
   add_index "activities", ["recurrence_id"], name: "index_activities_on_recurrence_id", using: :btree
 
-  create_table "day_activities", force: true do |t|
+  create_table "day_activities", force: :cascade do |t|
     t.integer  "day_id"
     t.integer  "activity_id"
     t.datetime "created_at"
@@ -39,13 +39,13 @@ ActiveRecord::Schema.define(version: 20140518154803) do
   add_index "day_activities", ["activity_id"], name: "index_day_activities_on_activity_id", using: :btree
   add_index "day_activities", ["day_id"], name: "index_day_activities_on_day_id", using: :btree
 
-  create_table "days", force: true do |t|
+  create_table "days", force: :cascade do |t|
     t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
-  create_table "downloads", force: true do |t|
+  create_table "downloads", force: :cascade do |t|
     t.string   "name"
     t.string   "file"
     t.string   "extension"
@@ -54,7 +54,7 @@ ActiveRecord::Schema.define(version: 20140518154803) do
     t.datetime "updated_at"
   end
 
-  create_table "events", force: true do |t|
+  create_table "events", force: :cascade do |t|
     t.string   "name"
     t.text     "content"
     t.integer  "duration"
@@ -64,7 +64,7 @@ ActiveRecord::Schema.define(version: 20140518154803) do
     t.string   "image"
   end
 
-  create_table "galleries", force: true do |t|
+  create_table "galleries", force: :cascade do |t|
     t.string   "name"
     t.text     "description"
     t.date     "date"
@@ -72,7 +72,7 @@ ActiveRecord::Schema.define(version: 20140518154803) do
     t.datetime "updated_at"
   end
 
-  create_table "messages", force: true do |t|
+  create_table "messages", force: :cascade do |t|
     t.string   "name"
     t.string   "file"
     t.date     "date"
@@ -81,20 +81,20 @@ ActiveRecord::Schema.define(version: 20140518154803) do
     t.datetime "updated_at"
   end
 
-  create_table "newsletter_emails", force: true do |t|
+  create_table "newsletter_emails", force: :cascade do |t|
     t.string   "email"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
-  create_table "pages", force: true do |t|
+  create_table "pages", force: :cascade do |t|
     t.text     "content"
     t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
-  create_table "paintings", force: true do |t|
+  create_table "paintings", force: :cascade do |t|
     t.string   "image"
     t.integer  "gallery_id"
     t.datetime "created_at"
@@ -103,19 +103,21 @@ ActiveRecord::Schema.define(version: 20140518154803) do
 
   add_index "paintings", ["gallery_id"], name: "index_paintings_on_gallery_id", using: :btree
 
-  create_table "recurrences", force: true do |t|
+  create_table "recurrences", force: :cascade do |t|
     t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
-  create_table "users", force: true do |t|
+  create_table "users", force: :cascade do |t|
     t.string   "name"
     t.string   "remember_token"
     t.string   "password_digest"
     t.integer  "level"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
   end
+
+  add_index "users", ["remember_token"], name: "index_users_on_remember_token", using: :btree
 
 end

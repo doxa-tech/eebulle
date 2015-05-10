@@ -1,10 +1,15 @@
 <h2>/<%= @page.name %></h2>
 
 <%= form_for [:admin, @page] do |f| %>
+
+  <%= render 'error_messages', object: f.object %>
+
 	<ul class="form">
-		<%= render 'error_messages', object: f.object %>
+    <li>
+      <%= link_to "Aide pour le formatage", "https://github.com/JS-Tech/simple_markdown" %>
+    </li>
 		<li>
-			<%= f.text_area :content, class: "ckeditor" %>
+			<%= f.text_area :content %>
 		</li>
 	</ul>
 	<ul class="center">

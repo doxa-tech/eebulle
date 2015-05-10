@@ -1,9 +1,3 @@
 <h1><%= t('page.admin.index') %></h1>
 
-<div id="admin_table">
-	<div class="table_buttons">
-		<a class="edit" href="#">Editer</a>
-	</div>
-
-	<%= @table.present %>
-</div>
+<%= @table.present(buttons: "buttons") %>

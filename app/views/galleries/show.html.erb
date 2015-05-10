@@ -7,29 +7,10 @@
 		<p class="date"><%= l @gallery.date, format: :text %><br><br></p>
 		<p class="img">
 			<% @gallery.paintings.sort.each do |painting| %>
-				<a class="fancybox-button" rel="fancybox-button" href="<%= painting.image_url %>">
-					<img src="<%= painting.image_url(:thumb) %>" alt="">
+				<a class="fancybox" href="<%= painting.image_url %>">
+					<img src="<%= painting.image_url(:thumb) %>">
 				</a>
 			<% end %>
 		</p>
 	</div>
 </div>
-<script>
-	$(document).ready(function() {
-		$(".fancybox-button").fancybox({
-			prevEffect		: 'none',
-			nextEffect		: 'none',
-			closeBtn		: false,
-			helpers		: {
-				title	: { type : 'inside' },
-				buttons	: {}
-			}
-		});
-	});
-</script>
-
-<script type="text/javascript">
-	$(document).ready(function() {
-		$(".fancybox").fancybox();
-	});
-</script>
