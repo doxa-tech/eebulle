@@ -14,7 +14,7 @@
 				<h2><span class="date"><%= l event.date, format: :text %></span></h2>
 		<% end %>
 				<div class="img"><%= image_tag image_url event.image_url %></div>
-				<%= render 'ck_content', content: event.content %>
+				<%= render 'md_content', content: event.content %>
 				<div class="infos">
 					Dans <%= distance_of_time_in_words Time.now, event.date %> <%= l event.date, format: :text %>
 				</div>

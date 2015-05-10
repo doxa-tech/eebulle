@@ -170,6 +170,8 @@ GEM
     sdoc (0.4.1)
       json (~> 1.7, >= 1.7.7)
       rdoc (~> 4.0)
+    simple_markdown (0.3.0)
+      rails (>= 4.2.0)
     snaptable (0.5.0)
       jquery-rails
       rails (>= 4.2.0)
@@ -233,6 +235,7 @@ DEPENDENCIES
   rails (= 4.2.1)
   sass-rails (~> 4.0.3)
   sdoc
+  simple_markdown
   snaptable
   snapuser!
   spring

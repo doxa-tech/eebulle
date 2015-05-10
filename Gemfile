@@ -70,3 +70,5 @@ gem 'capistrano-rvm'
 gem 'capistrano-maintenance', github: 'capistrano/maintenance', require: false
 
 gem 'unicorn'
+
+gem 'simple_markdown'

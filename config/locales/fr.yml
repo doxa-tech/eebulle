@@ -227,7 +227,7 @@ fr:
       <<: *errors
     attributes:
       event:
-        duration: "Durée de l'événement"
+        duration: "Durée de l'événement (en jours)"
         date: "Date de l'événement"
       activity:
         recurrence_id: "Récurrence"
