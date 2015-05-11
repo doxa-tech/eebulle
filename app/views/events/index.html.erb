@@ -13,8 +13,11 @@
 				<h2><%= event.name %></h2>
 				<h2><span class="date"><%= l event.date, format: :text %></span></h2>
 		<% end %>
-				<div class="img"><%= image_tag image_url event.image_url %></div>
-				<%= render 'md_content', content: event.content %>
+				<div class="content">
+					<%= image_tag image_url event.image_url %>
+					<%= render 'md_content', content: event.content %>
+					<div class="clear"></div>
+				</div>
 				<div class="infos">
 					Dans <%= distance_of_time_in_words Time.now, event.date %> <%= l event.date, format: :text %>
 				</div>

@@ -11,7 +11,7 @@ class EventsUploader < CarrierWave::Uploader::Base
     "uploads/#{model.class.to_s.underscore}/#{mounted_as}/#{model.id}"
   end
 
-  process :resize_to_limit => [1920, 300]
+  process :resize_to_limit => [900, 900]
   process :quality => 90
 
   def extension_white_list
