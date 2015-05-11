@@ -11,7 +11,7 @@
 	<% @galleries.each do |gallery| %>
 		<div class="gallery">
 			<h3><%= link_to gallery.name, gallery_path(gallery) %></h3>
-			<p><%= simple_format gallery.description %></p> 
+			<p><%= simple_markdown gallery.description %></p> 
 			<p class="date"><%= l gallery.date, format: :text %></p>
 			<p>
       <%= link_to gallery_path(gallery) do %>
