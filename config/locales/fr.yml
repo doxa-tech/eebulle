@@ -351,6 +351,7 @@ fr:
     admin:
       index: "Newsletters"
       send: "Envoyer une newsletter"
+      view: "Voir"
   download:
     admin:
       index: "Ressources"
