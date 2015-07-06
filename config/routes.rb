@@ -13,6 +13,7 @@ Rails.application.routes.draw do
   resources :newsletter_emails, only: [:new, :create]
   resources :galleries, only: [:show]
   resources :downloads, only: [:index]
+  resources :newsletters, only: [:show]
 
   namespace :admin do
 
@@ -22,7 +23,7 @@ Rails.application.routes.draw do
     resources :events, except: [:show]
     resources :activities, except: [:show]
     resources :messages, except: [:show]
-    resources :emails, only: [:new, :create]
+    resources :newsletters, only: [:index, :new, :create]
     resources :newsletter_emails, except: [:show]
     resources :galleries, except: [:show] do
       resources :paintings, only: [:new, :create, :destroy]

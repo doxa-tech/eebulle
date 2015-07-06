@@ -824,7 +824,7 @@
                           <tbody>
                             <tr>
                               <td style="padding: 30px 0 0 0">
-<h1><%= @title %></h1>
+<h1><%= @newsletter.title %></h1>
                               </td>
                               <td class="expander">&nbsp;</td>
                             </tr>
@@ -843,7 +843,7 @@
                           <tbody>
                             <tr>
                               <td>
-                                <%= @content.html_safe %>
+                                <%= @newsletter.content.html_safe %>
                               </td>
                               <td class="expander">&nbsp;</td>
                             </tr>
@@ -890,7 +890,7 @@
                           <tr>
                             <td class="center">
                               <center>
-                                <span style="font-size:10px; color: #999">EEBulle - Eglise évangélique de Bulle<br>Si vous avez des questions ou voulez vous désinscrire, vous pouvez simplement répondre à cet email</span>
+                                <span style="font-size:10px; color: #999">EEBulle - Eglise évangélique de Bulle<br>Si vous avez des questions ou voulez vous désinscrire, vous pouvez simplement répondre à cet email<br><%= link_to "Voir cette email en ligne", newsletter_path(@newsletter) %></span>
                               </center>
                             </td>
                             <td class="expander"></td>

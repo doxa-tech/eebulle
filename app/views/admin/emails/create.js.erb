@@ -1,6 +1,0 @@
-<% if params[:commit] != "Envoyer" %>
-  alert("Email de test envoyé à <%=j params[:email] %>");
-<% else %>
-  alert("Newsletter envoyée");
-  window.location.href = "/admin/newsletter_emails"
-<% end %>

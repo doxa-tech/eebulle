@@ -1,0 +1,41 @@
+<h1><%= t('email.admin.new.title') %></h1>
+
+<%= form_for [:admin, @newsletter], remote: true do |f| %>
+
+	<div class="errors"></div>
+
+	<ul class="form">
+		<li><%= f.text_field :subject, placeholder: "Objet" %></li>
+	</ul>
+	<ul class="form">
+		<li><%= f.text_field :title, placeholder: "Titre" %></li>
+	</ul>
+	<ul class="form">
+		<li><%= f.text_field :subtitle, placeholder: "Sous-titre (optionel)" %></li>
+	</ul>
+	<ul class="form">
+		<h4>Exemple de contenu</h4>
+		<div class="email-example"><%= render 'example' %></div>
+	</ul>	
+	<ul class="form">
+		<li><%= f.text_area :content, placeholder: "Contenu", rows: 10 %></li>
+	</ul>
+
+	<div id="clear"></div>
+
+	<ul class="center">
+		<li><%= f.submit "Envoyer", data: {confirm: "Confirmez-vous l'envoi de cette newsletter ?"} %></li>
+	</ul>
+
+	<div id="clear"></div>
+
+	<ul class="form">
+		<li><%= label_tag "Email de test" %></li>
+		<li><%= text_field_tag :email %></li>
+	</ul>
+
+	<ul class="center">
+		<li><%= f.submit "Tester" %></li>
+	</ul>
+
+<% end %>

@@ -222,6 +222,9 @@ fr:
     size: "Taille"
     file: "Fichier"
     speaker: "Orateur"
+    title: "Titre"
+    subtitle: "Sous-titre"
+    subject: "Objet"
   activerecord:
     errors:
       <<: *errors
@@ -259,7 +262,8 @@ fr:
         events: "Les événements"
         galleries: "Les galeries"
         messages: "Les messages"
-        newsletter_emails: "Newsletters"
+        newsletter_emails: "Liste d'emails"
+        newsletters: "Newsletters"
         downloads: "Ressources"
   page:
     admin:
@@ -343,6 +347,10 @@ fr:
         success: "Email édité"
       destroy:
         success: "Email supprimé"
+  newsletters:
+    admin:
+      index: "Newsletters"
+      send: "Envoyer une newsletter"
   download:
     admin:
       index: "Ressources"
