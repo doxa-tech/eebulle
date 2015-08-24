@@ -2,7 +2,10 @@
 /* Very Large devices */
 @media (max-width: 1435px)
 {
-
+	//Home event
+	#container.home .event img {
+		max-width: 600px;
+	}
 } 
 /* Large devices */
 @media (max-width: 1200px) 
@@ -20,6 +23,10 @@
 				width: 50%;
 			}
 		}
+	}
+	//Home event
+	#container.home .event img {
+		max-width: 400px;
 	}
 }
 
