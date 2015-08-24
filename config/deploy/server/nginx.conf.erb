@@ -3,7 +3,7 @@ upstream unicorn {
 }
 
 server {
-  server_name localhost;
+  server_name ~^(www\.)?eebulle.ch$;
   listen 80;
   root <%= fetch(:deploy_to) %>/current/public;
 
