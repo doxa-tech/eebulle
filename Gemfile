@@ -21,6 +21,7 @@ gem 'uglifier'
 group :development do
   gem 'spring'
   gem 'web-console', '~> 2.0'
+  gem 'capistrano3-puma'
 end
 
 # See https://github.com/sstephenson/execjs#readme for more supported runtimes
@@ -69,6 +70,7 @@ gem 'capistrano-rvm'
 
 gem 'capistrano-maintenance', github: 'capistrano/maintenance', require: false
 
-gem 'unicorn'
+# server
+gem 'puma'
 
 gem 'simple_markdown'
