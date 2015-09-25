@@ -31,6 +31,27 @@
 	// Header
 	header {
 		padding: 0;
+		#logo {
+			img {
+				width: 222px;
+			}
+		}
+		.menus {
+			.up {
+				width: 200px;
+				position: absolute;
+				top: 0;
+				right: 0;
+			}
+			.down {
+				ul {
+					text-align: center;
+					li {
+						padding: 5px 5px;
+					}
+				}
+			}
+		}
 	}
 }
 
