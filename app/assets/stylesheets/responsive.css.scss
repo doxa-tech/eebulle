@@ -10,7 +10,16 @@
 /* Large devices */
 @media (max-width: 1200px)
 {
-
+	// Header
+	header {
+		.menus {
+			.up {
+				position: absolute;
+				top: 0;
+				right: 0;
+			}
+		}
+	}
 }
 
 /* Medium devices */
