@@ -1,7 +1,9 @@
 #container.funding {
+
   #container.soutien {
     padding: 50px 0 0 0;
-    text-align:center;
+    text-align: center;
+    
     form {
       input {
         width: initial;
@@ -9,6 +11,12 @@
         border: initial;
         border-radius: 0px;
       }
+    }
+
+    .info {
+      width: 90%;
+      margin: auto;
+      padding-bottom: 20px;
     }
   }
 }
