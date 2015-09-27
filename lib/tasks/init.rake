@@ -1,7 +1,7 @@
-namespace :init do 
+namespace :init do
 
 	desc "Setup the environment"
-  task :all => [:pages, :days, :recurrences, :user, :onelife_page]
+  task :all => [:pages, :days, :recurrences, :user]
 
 	desc "Create the pages"
 	task pages: :environment do
