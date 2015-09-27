@@ -81,6 +81,14 @@
 			}
 		}
 	}
+	// Home event
+	#container.home {
+		.event {
+			img {
+				max-width: 100%;
+			}
+		}
+	}
 	//footer
 	footer {
 		height: 250px;
