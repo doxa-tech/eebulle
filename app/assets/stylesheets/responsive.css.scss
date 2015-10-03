@@ -117,4 +117,15 @@
 				}
 		}
 	}
+	// Downloads
+	#container.download {
+		.block {
+			img {
+				max-width: 100%;
+			}
+			p {
+				padding: 10px;
+			}
+		}
+	}
 }
