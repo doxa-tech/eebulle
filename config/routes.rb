@@ -1,4 +1,9 @@
 Rails.application.routes.draw do
+  get 'errors/not_found'
+
+  get "/404", to: "errors#not_found"
+  get "/500", to: "errors#internal_server_error"
+
   root to: 'pages#home'
 
   %w[home presentation contact kidsbulle broadcast fribourg romont shiloa vision financement profile].each do |page|

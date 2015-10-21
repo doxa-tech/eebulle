@@ -33,5 +33,7 @@ module Eebulle
       g.helper          false
     end
 
+    config.exceptions_app = self.routes
+
   end
 end
