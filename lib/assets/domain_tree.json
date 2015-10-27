@@ -1,0 +1,32 @@
+{
+    "id": "1",
+    "name": "eebulle.ch",
+    "data": {
+      "link": "http://eebulle.ch"
+    },
+    "children": [{
+        "id": "1_1",
+        "name": "48.eebulle.ch",
+        "data": {
+          "link": "http://48.eebulle.ch"
+        }
+    },{
+        "id": "1_2",
+        "name": "admin.eebulle.ch",
+        "data": {
+          "link": "http://admin.eebulle.ch"
+        }
+    },{
+        "id": "1_3",
+        "name": "live.eebulle.ch",
+        "data": {
+          "link": "http://live.eebulle.ch"
+        }
+    },{
+        "id": "1_4",
+        "name": "fribourg.eebulle.ch",
+        "data": {
+          "link": "http://fribourg.eebulle.ch"
+        }
+    }],
+}

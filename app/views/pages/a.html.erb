@@ -1,0 +1,152 @@
+<div id="infovis"></div>
+
+<style>
+
+#infovis {
+    position:relative;
+    width:600px;
+    height:600px;
+    margin:auto;
+    overflow:hidden;
+}
+
+#infovis-label > div {
+  color: black !important;
+  font-weight: bold;
+}
+
+/*TOOLTIPS*/
+.tip {
+    color: #111;
+    width: 139px;
+    background-color: white;
+    border:1px solid #ccc;
+    -moz-box-shadow:#555 2px 2px 8px;
+    -webkit-box-shadow:#555 2px 2px 8px;
+    -o-box-shadow:#555 2px 2px 8px;
+    box-shadow:#555 2px 2px 8px;
+    opacity:0.9;
+    filter:alpha(opacity=90);
+    font-size:10px;
+    font-family:Verdana, Geneva, Arial, Helvetica, sans-serif;
+    padding:7px;
+}
+</style>
+<script>
+var labelType, useGradients, nativeTextSupport, animate;
+
+(function() {
+  var ua = navigator.userAgent,
+      iStuff = ua.match(/iPhone/i) || ua.match(/iPad/i),
+      typeOfCanvas = typeof HTMLCanvasElement,
+      nativeCanvasSupport = (typeOfCanvas == 'object' || typeOfCanvas == 'function'),
+      textSupport = nativeCanvasSupport
+        && (typeof document.createElement('canvas').getContext('2d').fillText == 'function');
+  //I'm setting this based on the fact that ExCanvas provides text support for IE
+  //and that as of today iPhone/iPad current text support is lame
+  labelType = (!nativeCanvasSupport || (textSupport && !iStuff))? 'Native' : 'HTML';
+  nativeTextSupport = labelType == 'Native';
+  useGradients = nativeCanvasSupport;
+  animate = !(iStuff || !nativeCanvasSupport);
+})();
+
+init();
+
+function init(){
+    //init data
+    var json = {
+        "id": "1",
+        "name": "eebulle.ch",
+        "data": {
+          "link": "http://eebulle.ch"
+        },
+        "children": [{
+            "id": "1_1",
+            "name": "48.eebulle.ch",
+            "data": {
+              "link": "http://48.eebulle.ch"
+            }
+        },{
+            "id": "1_2",
+            "name": "admin.eebulle.ch",
+            "data": {
+              "link": "http://admin.eebulle.ch"
+            }
+        },{
+            "id": "1_3",
+            "name": "live.eebulle.ch",
+            "data": {
+              "link": "http://live.eebulle.ch"
+            }
+        },{
+            "id": "1_4",
+            "name": "fribourg.eebulle.ch",
+            "data": {
+              "link": "http://fribourg.eebulle.ch"
+            }
+        }],
+    };
+    //end
+    var infovis = document.getElementById('infovis');
+    var w = infovis.offsetWidth - 50, h = infovis.offsetHeight - 50;
+
+    //init Hypertree
+    var ht = new $jit.Hypertree({
+      //id of the visualization container
+      injectInto: 'infovis',
+      //canvas width and height
+      width: w,
+      height: h,
+      //Change node and edge styles such as
+      //color, width and dimensions.
+      Node: {
+          dim: 9,
+          color: "#f00"
+      },
+      Edge: {
+          lineWidth: 2,
+          color: "#088"
+      },
+      //Attach event handlers and add text to the
+      //labels. This method is only triggered on label
+      //creation
+      onCreateLabel: function(domElement, node){
+          domElement.innerHTML = node.name;
+          $jit.util.addEvent(domElement, 'click', function () {
+              window.location.href = node.data.link;
+              // ht.onClick(node.id, {
+              //     onComplete: function() {
+              //         ht.controller.onComplete();
+              //     }
+              // });
+          });
+      },
+      //Change node styles when labels are placed
+      //or moved.
+      onPlaceLabel: function(domElement, node){
+          var style = domElement.style;
+          style.display = '';
+          style.cursor = 'pointer';
+          if (node._depth == 1) {
+              style.fontSize = "0.8em";
+              style.color = "#ddd";
+
+          } else if(node._depth == 0){
+              style.fontSize = "1em";
+              style.color = "#555";
+          } else {
+              style.display = 'none';
+          }
+          var left = parseInt(style.left);
+          var w = domElement.offsetWidth;
+          style.left = (left - w / 2) + 'px';
+      },
+    });
+    //load JSON data.
+    ht.loadJSON(json);
+    //compute positions and plot.
+    ht.refresh();
+    //end
+    ht.controller.onComplete();
+}
+</script>
