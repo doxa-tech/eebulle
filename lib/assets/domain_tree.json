@@ -1,4 +1,4 @@
-{ "bla":{
+{
     "id": "1",
     "name": "eebulle.ch",
     "data": {
@@ -28,5 +28,5 @@
         "data": {
           "link": "http://fribourg.eebulle.ch"
         }
-    }],
-}}
+    }]
+}
