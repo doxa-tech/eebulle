@@ -1,0 +1,14 @@
+#container.a {
+  #infovis {
+      position:relative;
+      width:600px;
+      height:600px;
+      margin:auto;
+      overflow:hidden;
+  }
+
+  #infovis-label > div {
+    color: black !important;
+    font-weight: bold;
+  }
+}
