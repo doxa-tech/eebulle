@@ -2,7 +2,7 @@ class Admin::NewslettersController < Admin::BaseController
   before_action { |c| c.authorize_level(2) }
 
   def index
-    @table = Table.new(self, Newsletter, nil, { search: true, buttons: false })
+    @table = Table.new(self, Newsletter, nil, { search: true })
     @table.respond
   end
   

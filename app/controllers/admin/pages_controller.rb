@@ -2,7 +2,7 @@ class Admin::PagesController < Admin::BaseController
 	before_action { |c| c.authorize_level(2) }
 
 	def index
-		@table = Table.new(self, Page, nil, buttons: false)
+		@table = Table.new(self, Page)
 		@table.respond
 	end
 
