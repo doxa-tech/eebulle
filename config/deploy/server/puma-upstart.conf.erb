@@ -22,7 +22,6 @@ stop on (stopping puma-manager or runlevel [06])
 
 # change apps to match your deployment user if you want to use this as a less privileged user (recommended!)
 setuid <%= fetch(:deploy_user) %>
-setgid <%= fetch(:deploy_user) %>
 
 respawn
 respawn limit 3 30
@@ -64,6 +63,6 @@ exec /bin/bash <<'EOT'
   cd $app
   logger -t puma "Starting server: $app"
 
-  exec bundle exec puma -C shared/puma.rb
+  exec bundle exec puma -C <%= shared_path %>/puma.rb
 EOT
 end script

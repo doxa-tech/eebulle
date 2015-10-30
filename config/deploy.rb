@@ -69,7 +69,9 @@ namespace :deploy do
   # cleanup
   after :finishing, "deploy:cleanup"
 
-  before :started, "deploy:setup_config"
+  # before :started, "deploy:setup_config"
+  before :setup_config, "puma:stop"
+  after :setup_config, "puma:start"
 
   # reload nginx to it will pick up any modified vhosts from
   # setup_config

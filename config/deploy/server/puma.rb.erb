@@ -11,7 +11,7 @@ stdout_redirect '<%= shared_path %>/log/puma_access.log', '<%= shared_path %>/lo
 
 threads 1, 6
 
-bind 'unix://<%= shared_path %>/tmp/sockets/<%= fetch(:application) %>-puma.sock;'
+bind 'unix://<%= shared_path %>/tmp/sockets/<%= fetch(:application) %>-puma.sock'
 
 workers 2
 
