@@ -21,7 +21,6 @@ gem 'uglifier'
 group :development do
   gem 'spring'
   gem 'web-console', '~> 2.0'
-  gem 'capistrano3-puma'
 end
 
 # See https://github.com/sstephenson/execjs#readme for more supported runtimes
