@@ -47,6 +47,11 @@ class PagesController < ApplicationController
 		@page = Page.find_by_name('a')
 	end
 
+	def agenda
+		@page = Page.find_by_name('agenda')
+		render layout: 'agenda'
+	end
+
 	def profile
 	end
 end
