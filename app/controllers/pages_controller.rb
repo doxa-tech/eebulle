@@ -19,16 +19,9 @@ class PagesController < ApplicationController
 	def kidsbulle
 		@page = Page.find_by_name('kidsbulle')
 	end
-
-	def broadcast
-	end
-
+	
 	def shiloa
 		@page = Page.find_by_name('shiloa')
-	end
-
-	def fribourg
-		@page = Page.find_by_name('fribourg')
 	end
 
 	def romont
