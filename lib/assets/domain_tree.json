@@ -12,9 +12,9 @@
         }
     },{
         "id": "1_2",
-        "name": "admin.eebulle.ch",
+        "name": "gestion.eebulle.ch",
         "data": {
-          "link": "http://admin.eebulle.ch"
+          "link": "http://gestion.eebulle.ch"
         }
     },{
         "id": "1_3",
@@ -30,6 +30,12 @@
         }
     },{
         "id": "1_5",
+        "name": "romont.eebulle.ch",
+        "data": {
+          "link": "http://romont.eebulle.ch"
+        }
+    },{
+        "id": "1_6",
         "name": "fribourg.eebulle.ch",
         "data": {
           "link": "http://fribourg.eebulle.ch"
