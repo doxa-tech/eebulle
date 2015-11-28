@@ -24,6 +24,12 @@
         }
     },{
         "id": "1_4",
+        "name": "waykup.eebulle.ch",
+        "data": {
+          "link": "http://waykup.ch"
+        }
+    },{
+        "id": "1_5",
         "name": "fribourg.eebulle.ch",
         "data": {
           "link": "http://fribourg.eebulle.ch"
