@@ -5,6 +5,8 @@ set :application, "eebulle"
 set :applications, ["eebulle", "syncedchurch"]
 set :deploy_user, "eebulle"
 
+set :url, 'eebulle.ch'
+
 set :scm, "git"
 set :repo_url, "git@github.com:khcr/eebulle.git"
 
