@@ -1,4 +1,11 @@
 GIT
+  remote: git://github.com/JS-Tech/capistrano-server.git
+  revision: 9f995356b2bfc43e99bac4eecb53a67d22ef2296
+  specs:
+    capistrano-server (0.4.0)
+      capistrano (~> 3.1)
+
+GIT
   remote: git://github.com/capistrano/maintenance.git
   revision: b31962d2ac134fae5e2f536380956a1042895c1e
   specs:
@@ -212,6 +219,7 @@ DEPENDENCIES
   capistrano-maintenance!
   capistrano-rails (~> 1.1.0)
   capistrano-rvm
+  capistrano-server!
   carrierwave (~> 0.10.0)
   carrierwave-processing (~> 1.0.0)
   fancybox2-rails (~> 0.2.8)

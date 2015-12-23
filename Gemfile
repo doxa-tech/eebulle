@@ -69,6 +69,8 @@ gem 'capistrano-rvm'
 
 gem 'capistrano-maintenance', github: 'capistrano/maintenance', require: false
 
+gem 'capistrano-server', github: 'JS-Tech/capistrano-server'
+
 # server
 gem 'puma'
 
