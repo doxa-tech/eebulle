@@ -14,9 +14,9 @@
 //= require jquery_ujs
 //= require jquery-fileupload/basic
 //= require jquery-fileupload/vendor/tmpl
+//= require jquery.form
 //= require mediaelement_rails
 //= require snaptable
-//= require ../../../vendor/assets/javascripts/jquery.form
 //= require turbolinks
 //= require_tree ./sitewide
 //= require fancybox
