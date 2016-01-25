@@ -1,8 +1,8 @@
 GIT
   remote: git://github.com/JS-Tech/capistrano-server.git
-  revision: da4baa3c9062e4e72f3df0d4f59192d843a4aa01
+  revision: 4234a29bcd544bee5befa38fbf9b4cb6bc3f18cb
   specs:
-    capistrano-server (0.4.1)
+    capistrano-server (0.5.0)
       capistrano (~> 3.1)
 
 GIT
