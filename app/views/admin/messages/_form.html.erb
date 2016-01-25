@@ -2,6 +2,10 @@
 
 	<div class="errors"><%= render 'error_messages', object: f.object %></div>
 	<ul class="form">
+    <li>
+			<%= f.label :category %>
+			<%= f.select :category, options_for_enum(@message, :category) %>
+		</li>
 		<li>
 			<%= f.label :name %>
 			<%= f.text_field :name %>

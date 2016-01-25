@@ -225,6 +225,7 @@ fr:
     title: "Titre"
     subtitle: "Sous-titre"
     subject: "Objet"
+    category: "Catégorie"
   activerecord:
     errors:
       <<: *errors
@@ -315,6 +316,9 @@ fr:
         success: "Photo supprimée"
         confirm: "Etes-vous sûr de vouloir supprimer cette photo ?"
   message:
+    categories:
+      preaching: "Message"
+      homegroup: "Groupe de maison"
     index: "Les messages"
     link: "Accéder aux messages"
     admin:
