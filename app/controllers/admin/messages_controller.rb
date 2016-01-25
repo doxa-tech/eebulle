@@ -10,7 +10,7 @@ class Admin::MessagesController < Admin::BaseController
 		@message = Message.new
 	end
 
-	
+
 	def create
 		@element = Message.new(message_params)
     if @element.save
@@ -41,6 +41,6 @@ class Admin::MessagesController < Admin::BaseController
 	private
 
 	def message_params
-		params.require(:message).permit(:name, :file, :speaker, :date)
+		params.require(:message).permit(:name, :file, :speaker, :date, :category)
 	end
 end
