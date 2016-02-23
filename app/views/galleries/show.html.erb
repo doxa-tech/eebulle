@@ -6,9 +6,9 @@
 		<p class="description"><%= @gallery.description %></p>
 		<!-- <p class="date"><%= l @gallery.date, format: :text %><br><br></p> -->
 		<p class="img">
-			<% @gallery.paintings.sort.each do |painting| %>
-				<a class="fancybox" href="<%= painting.image_url %>">
-					<img src="<%= painting.image_url(:thumb) %>">
+      <% @gallery.paintings.sort.each do |painting| %>
+				<a class="fancybox-button" rel="fancybox-button" href="<%= painting.image_url %>">
+					<img src="<%= painting.image_url(:thumb) %>" alt="">
 				</a>
 			<% end %>
 		</p>

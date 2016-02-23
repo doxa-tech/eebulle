@@ -20,7 +20,7 @@ gem 'uglifier'
 
 group :development do
   gem 'spring'
-  gem 'web-console', '~> 2.0'
+  gem 'web-console'
 end
 
 # See https://github.com/sstephenson/execjs#readme for more supported runtimes
@@ -35,7 +35,7 @@ gem 'mediaelement_rails'
 gem 'turbolinks'
 
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
-gem 'jbuilder', '~> 1.2'
+gem 'jbuilder'
 
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
@@ -52,14 +52,14 @@ gem 'carrierwave', '~> 0.10.0'
 gem 'carrierwave-processing', '~> 1.0.0'
 
 # image manipulating
-gem 'mini_magick', '~> 3.7.0'
+gem 'mini_magick', '~> 4.4.0'
 
-gem 'fancybox2-rails', '~> 0.2.8'
+gem 'fancybox2-rails'
 
 gem 'capistrano', '~> 3.3.0'
 
 # rails specific capistrano funcitons
-gem 'capistrano-rails', '~> 1.1.0'
+gem 'capistrano-rails'
 
 # integrate bundler with capistrano
 gem 'capistrano-bundler'

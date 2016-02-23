@@ -5,12 +5,11 @@ class Admin::PaintingsController < Admin::BaseController
   def new
   	@painting = Painting.new
   end
-
+  
   def create
   	@painting = @gallery.paintings.new(painting_params)
-    if @painting.save
-    else
-      render 'new'
+    unless @painting.save
+      render nothing: true, status: 415
     end
   end
 

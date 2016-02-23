@@ -1,0 +1,19 @@
+<form>
+
+		<p>Téléverser des images:</p>
+		<input data-url="<%= url %>" id="fileupload" type="file" accept="image/gif, image/jpeg, image/png" name="painting[image]" multiple>
+
+		<div class="progress">
+			<span class="progress-val">0%</span>
+			<div class="progress-in" style="width:0%;height:13px;background:green;"></div>
+		</div>
+		<div class="console">
+      <span class="progress-message hide"><%= image_tag "medias/loader.gif" %> Chargement en cours, veuillez patienter...</span>
+    </div>
+
+		<div id="thumbs" class="cf">
+		</div>
+
+</form>
+
+<%= javascript_include_tag "file_upload" %>
