@@ -82,7 +82,7 @@ Rails.application.configure do
   # Set this to true and configure the email server for immediate delivery to raise delivery errors.
   # config.action_mailer.raise_delivery_errors = false
 
-  # ActionMailer conf
+  # email settings by nkcr
   config.action_mailer.default_url_options = { :host => 'eebulle.ch' }
   # ActionMailer Config
   # Setup for production - deliveries, no errors raised
@@ -91,10 +91,13 @@ Rails.application.configure do
   config.action_mailer.raise_delivery_errors = false
   config.action_mailer.default :charset => "utf-8"
   config.action_mailer.smtp_settings = {
-    :address   => "smtp.mandrillapp.com",
-    :port      => 587,
     :user_name => Rails.application.secrets.mail_usr,
-    :password  => Rails.application.secrets.mail_pswd
+    :password  => Rails.application.secrets.mail_pswd,
+    :domain => 'eebulle.ch',
+    :address   => "smtp.mailgun.org",
+    :port      => 587,
+    :authentication => :plain,
+    :enable_starttls_auto => true
   }
 
 end
