@@ -33,8 +33,6 @@ module Eebulle
       g.helper          false
     end
 
-    config.force_ssl = true
-
     config.exceptions_app = self.routes
 
   end
