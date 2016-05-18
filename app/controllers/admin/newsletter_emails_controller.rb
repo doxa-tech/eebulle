@@ -34,7 +34,7 @@ class Admin::NewsletterEmailsController < Admin::BaseController
 
 	def destroy
 		NewsletterEmail.find(params[:id]).destroy
-		redirect_to admin_activities_path, success: t('newsletter_email.admin.destroy.success')
+		redirect_to admin_newsletter_emails_path, success: t('newsletter_email.admin.destroy.success')
 	end
 
 	private
