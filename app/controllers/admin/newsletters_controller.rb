@@ -5,7 +5,7 @@ class Admin::NewslettersController < Admin::BaseController
     @table = Table.new(self, Newsletter, nil, { search: true })
     @table.respond
   end
-  
+
   def new
     @newsletter = Newsletter.new
   end
@@ -13,8 +13,9 @@ class Admin::NewslettersController < Admin::BaseController
   def create
     @newsletter = Newsletter.new(newsletter_params)
     @newsletter.user = current_user
-    if params[:commit] == "Envoyer" && @newsletter.save  
-      NewsMailer.news(@newsletter, NewsletterEmail.pluck(:email)).deliver_now
+    if params[:commit] == "Envoyer" && @newsletter.save
+      emails = NewsletterEmail.pluck(:email)
+      emails.each{|email| NewsMailer.news(@newsletter, email).deliver_now}
       render 'success'
     elsif params[:commit] == "Tester" && @newsletter.valid?
       @newsletter.id = 1

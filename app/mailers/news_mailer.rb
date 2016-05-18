@@ -8,6 +8,7 @@ class NewsMailer < ActionMailer::Base
 
   def news(newsletter, emails)
     @newsletter = newsletter
+    @email = emails
   	mail(
       to:  emails,
   		subject: newsletter.subject

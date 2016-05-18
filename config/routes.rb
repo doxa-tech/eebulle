@@ -4,6 +4,8 @@ Rails.application.routes.draw do
   get "/404", to: "errors#not_found"
   get "/500", to: "errors#internal_server_error"
 
+  get "/subscribers/unsubscribe/:signature", to: "newsletter_emails#unsubscribe", as: "unsubscribe"
+
   root to: 'pages#home'
 
   %w[home presentation contact kidsbulle vision financement a agenda profile].each do |page|

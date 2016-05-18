@@ -13,6 +13,16 @@ class NewsletterEmailsController < ApplicationController
 		end
 	end
 
+	def unsubscribe
+		newsletter_email = Subscriber.read_access_token(params[:signature])
+		if !newsletter_email.nil?
+			newsletter_email.destroy
+			render 'success'
+		else
+			render 'error'
+		end
+	end
+
 	private
 
 	def newsletter_email_params
