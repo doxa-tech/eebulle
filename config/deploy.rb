@@ -5,6 +5,8 @@ set :application, "eebulle"
 set :applications, ["eebulle", "syncedchurch"]
 set :deploy_user, "eebulle"
 
+set :ssl, true
+
 set :url, 'eebulle.ch'
 
 set :scm, "git"
