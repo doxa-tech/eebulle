@@ -14,7 +14,7 @@ class Admin::NewslettersController < Admin::BaseController
     @newsletter = Newsletter.new(newsletter_params)
     @newsletter.user = current_user
     if params[:commit] == "Envoyer" && @newsletter.save
-      emails = NewsletterEmail.pluck(:email)
+      emails = NewsletterEmail.where(confirmed: true).pluck(:email)
       emails.each{|email| NewsMailer.news(@newsletter, email).deliver_now}
       render 'success'
     elsif params[:commit] == "Tester" && @newsletter.valid?

@@ -827,7 +827,7 @@
                           <tbody>
                             <tr>
                               <td style="padding: 30px 0 0 0">
-<h1><%= @newsletter.title %></h1>
+                                <h1>Confirmation d'inscription à la newsletter de l'EEBulle</h1>
                               </td>
                               <td class="expander">&nbsp;</td>
                             </tr>
@@ -846,7 +846,8 @@
                           <tbody>
                             <tr>
                               <td>
-                                <%= @newsletter.content.html_safe %>
+                                <p>Pour confirmer l'inscription à notre newsletter, veuillez sélectionner le lien suivant:</p>
+                                <p><center><%= link_to confirmation_url("..."), confirmation_url(Subscriber.confirmation_token(@email)) %></center></p>
                               </td>
                               <td class="expander">&nbsp;</td>
                             </tr>
@@ -867,12 +868,7 @@
                           <tbody>
                             <tr>
                               <td>
-                                <p style="color:#676767;">
-                                  - <a href="https://www.facebook.com/eebulle">Notre page facebook</a><br>
-                                  - <a href="http://eebulle.ch/events">Les événements</a><br>
-                                  - <a href="http://eebulle.ch/activities">Les activités</a><br>
-                                  - <a href="http://eebulle.ch/">Notre site web</a>
-                                  </p>
+
                               </td>
                               <td class="expander">&nbsp;</td>
                             </tr>
@@ -893,9 +889,7 @@
                           <tr>
                             <td class="center">
                               <center>
-                                <span style="font-size:10px; color: #999">EEBulle - Eglise évangélique de Bulle<br>Si vous avez des questions vous pouvez simplement répondre à cet email<br>
-                                  <%= link_to "Voir cet email en ligne", newsletter_url(@newsletter) %><br>
-                                  Vous pouvez vous désabonner et ne plus recevoir de mails de notre part: <%= link_to "Se désinscrire", unsubscribe_url(Subscriber.unsubscribe_token(@email)) %>
+                                <span style="font-size:10px; color: #999">EEBulle - Eglise évangélique de Bulle<br>Si vous avez des questions vous pouvez simplement répondre à cet email
                                 </span>
                               </center>
                             </td>

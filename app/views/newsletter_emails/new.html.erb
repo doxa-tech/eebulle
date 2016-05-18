@@ -2,7 +2,10 @@
 
 <h1><%= t('newsletter_email.new.title') %></h1>
 
-<p> Vous voulez rester informé de nos activités par email ? Inscrivez-vous à la newsletter. <br><br></p>
+<p> Vous voulez rester informé de nos activités par email ? Inscrivez-vous à la newsletter.<br></p>
+<p> Après votre insciption, vous recevrez un email contenant un lien de confirmation. Il suffira de sélectionner le lien de
+	validation pour commencer à recevoir des emails de notre part.<br></p>
+<p> Vous pourrez à tout moment vous désinscrire, un lien de désinscription est présent dans tous les mails que vous recevrez de notre part.<br><br></p>
 
 <%= form_for @newsletter_email do |f| %>
 
@@ -10,7 +13,7 @@
 
 	<%= f.label :email %>
 	<%= f.email_field :email %>
-	
+
 	<%= f.submit %>
 
 <% end %>

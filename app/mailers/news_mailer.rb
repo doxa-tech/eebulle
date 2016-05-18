@@ -1,18 +1,15 @@
 class NewsMailer < ActionMailer::Base
   default from: "\"Église évangélique de Bulle\" <newsletter@eebulle.ch>"
-  #
-  # To overwrite, absolutely need to reset them to nil !
-  #
-  default 'X-MC-AutoText' => 1
-	default 'X-MC-InlineCSS'=> "true"
 
-  def news(newsletter, emails)
+  def confirmation(email)
+    @email = email
+    mail(to: email, subject: "Confirmation pour la newsletter EEBulle")
+  end
+
+  def news(newsletter, email)
     @newsletter = newsletter
-    @email = emails
-  	mail(
-      to:  emails,
-  		subject: newsletter.subject
-  	)
+    @email = email
+  	mail(to: email, subject: newsletter.subject)
   end
 
 end

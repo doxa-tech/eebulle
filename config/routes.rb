@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   get "/500", to: "errors#internal_server_error"
 
   get "/subscribers/unsubscribe/:signature", to: "newsletter_emails#unsubscribe", as: "unsubscribe"
+  get "/subscribers/confirmation/:signature", to: "newsletter_emails#confirmation", as: "confirmation"
 
   root to: 'pages#home'
 
