@@ -343,6 +343,8 @@ fr:
       success: "Nous avons bien reçut votre inscription. Un email de confirmation arrivera bientôt. Pensez à regarder dans vos SPAMs."
     confirmation:
       error: "Erreur dans la validation de l'email, la signature est certainement erronée"
+    unsubscribe:
+      error: "Erreur dans la désinscription, email inconnu"
     admin:
       index: "Emails"
       new:

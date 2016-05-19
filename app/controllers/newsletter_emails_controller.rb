@@ -23,11 +23,10 @@ class NewsletterEmailsController < ApplicationController
 
 	def unsubscribe
 		newsletter_email = Subscriber.read_unsubscribe_token(params[:signature])
-		if !newsletter_email.nil?
-			newsletter_email.destroy
-			render 'unsubscribe_ok'
+		if newsletter_email.nil?
+			redirect_to root_path, error: t('newsletter_email.unsubscribe.error')
 		else
-			render 'unsubscribe_fail'
+			newsletter_email.destroy
 		end
 	end
 
