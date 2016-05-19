@@ -1,5 +1,7 @@
 class NewsMailer < ActionMailer::Base
   default from: "\"Église évangélique de Bulle\" <newsletter@eebulle.ch>"
+  
+  layout 'mailer'
 
   def confirmation(email)
     @email = email
