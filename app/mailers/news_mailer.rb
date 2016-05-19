@@ -9,6 +9,7 @@ class NewsMailer < ActionMailer::Base
   def news(newsletter, email)
     @newsletter = newsletter
     @email = email
+    headers['List-Unsubscribe'] = unsubscribe_url(Subscriber.unsubscribe_token(@email))
   	mail(to: email, subject: newsletter.subject)
   end
 
