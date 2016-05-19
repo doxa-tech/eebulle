@@ -29,6 +29,6 @@ class Admin::NewslettersController < Admin::BaseController
   private
 
   def newsletter_params
-    params.require(:newsletter).permit(:subject, :title, :subtile, :content)
+    params.require(:newsletter).permit(:subject, :title, :subtitle, :content)
   end
 end
