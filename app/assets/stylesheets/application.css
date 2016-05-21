@@ -13,5 +13,5 @@
  *= require snaptable
  *= require_tree .
  *= require fancybox
- *= stub components/mail
+ *= stub mailer.css
  */

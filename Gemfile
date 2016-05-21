@@ -75,3 +75,7 @@ gem 'capistrano-server', github: 'JS-Tech/capistrano-server'
 gem 'puma'
 
 gem 'simple_markdown'
+
+# inline css in mailer
+gem 'nokogiri'
+gem 'premailer-rails'
