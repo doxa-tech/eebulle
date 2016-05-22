@@ -10,11 +10,18 @@ class NewsletterEmailsController < ApplicationController
 			NewsMailer.confirmation(newsletter_email_params[:email]).deliver_now
 			redirect_to root_path, success: t('newsletter_email.new.success')
 		elsif @newsletter_email.errors.added? :email, :taken
-			if NewsletterEmail.where(newsletter_email_params).first.confirmed
+			record = NewsletterEmail.where(newsletter_email_params).first
+			if record.confirmed
 				redirect_to root_path, notice: t('newsletter_email.new.exists')
 			else
-				NewsMailer.confirmation(newsletter_email_params[:email]).deliver_now
-				redirect_to root_path, notice: t('newsletter_email.new.resend')
+				# this prevents a mass email atttack to a single address
+				if record.confirmation_resendable
+					NewsMailer.confirmation(newsletter_email_params[:email]).deliver_now
+					record.touch
+					redirect_to root_path, notice: t('newsletter_email.new.resend')
+				else
+					redirect_to root_path, notice: t('newsletter_email.new.no_resend')
+				end
 			end
 		else
 			render 'new'

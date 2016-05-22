@@ -343,6 +343,7 @@ fr:
       success: "Nous avons bien reçut votre inscription. Un email de confirmation arrivera bientôt. Pensez à regarder dans vos SPAMs."
       exists: "Votre adresse a déjà été enregistrée et validée, il se peut que les mails que nous vous envoyons arrivent dans vos SPAMs."
       resend: "Votre adresse a déjà été enregistrée mais a besoin d'être validée. Nous avons renvoyé un email de validation. Pensez à regarder dans vos SPAMs."
+      no_resend: "Nous avons déjà envoyé un email de confirmation à cette adresse email il y a moins d'une heure. Pensez à regarder dans vos SPAMs ou réessayez dans une heure."
     confirmation:
       error: "Erreur dans la validation de l'email, la signature est certainement erronée"
       already: "Email déjà validé. Pensez à regarder dans vos SPAMs"
