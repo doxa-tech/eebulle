@@ -10,7 +10,6 @@ class NewsletterEmailsController < ApplicationController
 			NewsMailer.confirmation(newsletter_email_params[:email]).deliver_now
 			redirect_to root_path, success: t('newsletter_email.new.success')
 		elsif @newsletter_email.errors.added? :email, :taken
-			p @newsletter_email.to_yaml
 			if NewsletterEmail.where(newsletter_email_params).first.confirmed
 				redirect_to root_path, notice: t('newsletter_email.new.exists')
 			else
