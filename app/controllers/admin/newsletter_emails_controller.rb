@@ -13,6 +13,7 @@ class Admin::NewsletterEmailsController < Admin::BaseController
 	def create
 		@newsletter_email = NewsletterEmail.new(newsletter_email_params)
 		if @newsletter_email.save
+			MailgunList.add(@newsletter_email.email) if @newsletter_email.confirmed
 			redirect_to admin_newsletter_emails_path, success: t('newsletter_email.admin.new.success')
 		else
 			render 'new'
@@ -25,7 +26,11 @@ class Admin::NewsletterEmailsController < Admin::BaseController
 
 	def update
 		@newsletter_email = NewsletterEmail.find(params[:id])
-		if @newsletter_email.update_attributes(newsletter_email_params)
+		@newsletter_email.assign_attributes(newsletter_email_params)
+		if @newsletter_email.valid?
+			MailgunList.add(@newsletter_email.email)    if @newsletter_email.confirmed_changed? &&  @newsletter_email.confirmed
+			MailgunList.remove(@newsletter_email.email) if @newsletter_email.confirmed_changed? && !@newsletter_email.confirmed
+			@newsletter_email.save
 			redirect_to admin_newsletter_emails_path, success: t('newsletter_email.admin.edit.success')
 		else
 			render 'edit'
@@ -33,13 +38,16 @@ class Admin::NewsletterEmailsController < Admin::BaseController
 	end
 
 	def destroy
-		NewsletterEmail.find(params[:id]).destroy
+		@newsletter_email = NewsletterEmail.find(params[:id])
+		MailgunList.remove(@newsletter_email.email)
+		@newsletter_email.destroy
 		redirect_to admin_newsletter_emails_path, success: t('newsletter_email.admin.destroy.success')
 	end
 
 	private
 
 	def newsletter_email_params
-		params.require(:newsletter_email).permit(:email)
+		params.require(:newsletter_email).permit(:email, :confirmed)
 	end
+
 end

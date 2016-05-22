@@ -25,7 +25,10 @@ class NewsletterEmailsController < ApplicationController
 
 	def confirmation
 		newsletter_email = Subscriber.read_confirmation_token(params[:signature])
-		if newsletter_email.nil? || !newsletter_email.update_attributes(confirmed: true)
+		if !newsletter_email.nil? && newsletter_email.update_attributes(confirmed: true)
+			# add to mailgun email list
+			MailgunList.add(newsletter_email.email)
+		else
 			redirect_to root_path, error: t('newsletter_email.confirmation.error')
 		end
 	end
@@ -36,6 +39,7 @@ class NewsletterEmailsController < ApplicationController
 			redirect_to root_path, error: t('newsletter_email.unsubscribe.error')
 		else
 			newsletter_email.destroy
+			MailgunList.remove(newsletter_email.email)
 		end
 	end
 

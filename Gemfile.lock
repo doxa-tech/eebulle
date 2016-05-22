@@ -113,6 +113,8 @@ GEM
       nokogiri (>= 1.5.9)
     mail (2.6.4)
       mime-types (>= 1.16, < 4)
+    mailgun (0.8)
+      rest-client
     mediaelement_rails (0.8.2)
       jquery-rails (>= 1.0)
       railties (>= 3.1)
@@ -166,6 +168,8 @@ GEM
     rake (11.1.2)
     rdoc (4.2.2)
       json (~> 1.4)
+    rest-client (1.6.7)
+      mime-types (>= 1.16)
     sass (3.4.22)
     sass-rails (5.0.4)
       railties (>= 4.0.0, < 5.0)
@@ -230,6 +234,7 @@ DEPENDENCIES
   jbuilder
   jquery-fileupload-rails
   jquery-rails
+  mailgun
   mediaelement_rails
   mini_magick (~> 4.4.0)
   nokogiri

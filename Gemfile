@@ -79,3 +79,6 @@ gem 'simple_markdown'
 # inline css in mailer
 gem 'nokogiri'
 gem 'premailer-rails'
+
+# use mailgun api
+gem 'mailgun'
