@@ -345,6 +345,7 @@ fr:
       resend: "Votre adresse a déjà été enregistrée mais a besoin d'être validée. Nous avons renvoyé un email de validation. Pensez à regarder dans vos SPAMs."
     confirmation:
       error: "Erreur dans la validation de l'email, la signature est certainement erronée"
+      already: "Email déjà validé. Pensez à regarder dans vos SPAMs"
     unsubscribe:
       error: "Erreur dans la désinscription, email inconnu"
     admin:
