@@ -48,7 +48,7 @@ class NewsletterEmailsController < ApplicationController
 			redirect_to root_path, error: t('newsletter_email.unsubscribe.error')
 		else
 			newsletter_email.destroy
-			MailgunList.remove(newsletter_email.email)
+			MailgunList.remove(newsletter_email.email) if newsletter_email.confirmed
 		end
 	end
 
