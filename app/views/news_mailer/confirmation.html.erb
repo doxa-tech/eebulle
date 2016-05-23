@@ -2,6 +2,7 @@
 <% content_for :title, "Confirmation d'inscription à la newsletter EEBulle" %>
 <% content_for :subtitle, "" %>
 <% content_for :email, @email %>
+<% content_for :unsubscribe_url, unsubscribe_url(Subscriber.unsubscribe_token(@email), host: "eebulle.ch") %>
 
 <p>Pour confirmer l'inscription à notre newsletter, veuillez sélectionner le lien suivant:</p>
 <p><center><%= link_to confirmation_url("..."), confirmation_url(Subscriber.confirmation_token(@email)) %></center></p>

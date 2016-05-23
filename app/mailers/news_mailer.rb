@@ -1,4 +1,4 @@
-class NewsMailer < ActionMailer::Base  
+class NewsMailer < ActionMailer::Base
   default from: "\"Église évangélique de Bulle\" <newsletter@eebulle.ch>"
 
   layout 'mailer'
@@ -8,11 +8,10 @@ class NewsMailer < ActionMailer::Base
     mail(to: email, subject: "Confirmation pour la newsletter EEBulle")
   end
 
-  def news(newsletter, email)
+  # This method fakes a mailer so as to get it's body
+  def stub_news(newsletter)
     @newsletter = newsletter
-    @email = email
-    headers['List-Unsubscribe'] = unsubscribe_url(Subscriber.unsubscribe_token(@email))
-  	mail(to: email, subject: newsletter.subject)
+  	mail(to: nil, subject: newsletter.subject)
   end
 
 end

@@ -96,7 +96,7 @@
                         EEBulle - Eglise évangélique de Bulle<br>
                         Email envoyé à <%= yield(:email) %>, si vous avez des questions vous pouvez simplement répondre à cet email.<br>
                         <%= yield(:see_online) %><br>
-                        Vous pouvez vous désabonner et ne plus recevoir de mails de notre part: <%= link_to "Se désinscrire", unsubscribe_url(Subscriber.unsubscribe_token(yield(:email))) %>.
+                        Vous pouvez vous désabonner et ne plus recevoir de mails de notre part: <a href="<%= yield(:unsubscribe_url) %>">Se désinscrire</a>.
                       </center></p>
                     </th>
                     <th class="expander"></th>

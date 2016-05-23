@@ -1,6 +1,7 @@
 <% content_for :see_online, link_to("Voir cet email en ligne", newsletter_url(@newsletter)) %>
 <% content_for :title, @newsletter.title %>
 <% content_for :subtitle, @newsletter.subtitle %>
-<% content_for :email, @email %>
+<% content_for :email, "%recipient_email%" %>
+<% content_for :unsubscribe_url, "%recipient.unsubscribe_url%" %>
 
 <%= @newsletter.content.html_safe %>

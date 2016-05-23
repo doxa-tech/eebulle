@@ -100,4 +100,7 @@ Rails.application.configure do
     :enable_starttls_auto => true
   }
 
+  # This setting is necessary for models/newsletter_email.rb
+  routes.default_url_options[:host] = "eebulle.ch"
+
 end

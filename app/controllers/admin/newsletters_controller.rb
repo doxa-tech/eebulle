@@ -14,12 +14,15 @@ class Admin::NewslettersController < Admin::BaseController
     @newsletter = Newsletter.new(newsletter_params)
     @newsletter.user = current_user
     if params[:commit] == "Envoyer" && @newsletter.save
-      emails = NewsletterEmail.where(confirmed: true).pluck(:email)
-      emails.each{|email| NewsMailer.news(@newsletter, email).deliver_now}
+      newsletter_emails = NewsletterEmail.where(confirmed: true)
+      emails_params = Hash.new
+      newsletter_emails.each{|email| emails_params[email.email] = email.email_infos}
+      send_mailgun_newsletter(Rails.application.secrets.mailgun_mailing_list, emails_params)
+      @newsletter.inline_css
       render 'success'
     elsif params[:commit] == "Tester" && @newsletter.valid?
       @newsletter.id = 1
-      NewsMailer.news(@newsletter, params[:email]).deliver_now
+      send_mailgun_newsletter(params[:email])
       render 'test'
     else
       render 'error'
@@ -30,5 +33,15 @@ class Admin::NewslettersController < Admin::BaseController
 
   def newsletter_params
     params.require(:newsletter).permit(:subject, :title, :subtitle, :content)
+  end
+
+  def send_mailgun_newsletter(to, emails_params = {})
+    Mailgun().messages.send_email({
+      to:      to,
+      subject: @newsletter.subject,
+      html:    @newsletter.inlined_css,
+      from:    "newsletter@eebulle.ch",
+      "recipient-variables": emails_params.to_json
+    })
   end
 end
