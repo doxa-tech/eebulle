@@ -43,4 +43,7 @@ class PagesController < ApplicationController
 
 	def profile
 	end
+
+	def logins
+	end
 end
