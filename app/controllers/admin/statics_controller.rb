@@ -1,7 +1,11 @@
 class Admin::StaticsController < Admin::BaseController
-  before_action { |c| c.authorize_level(3) }
+  layout 'application'
+  before_action :authenticate
 
-  def files
+  def leaders
+  end
+
+  def worship
   end
 
 end

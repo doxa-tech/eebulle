@@ -11,7 +11,7 @@ class Newsletter < ActiveRecord::Base
     mailer.message.html_part.body.decoded
   end
 
-  def inline_css
+  def update_inline_css
     update_attribute(:content, inlined_css)
   end
 end

@@ -1,0 +1,14 @@
+<div class="login">
+  <p>Cette page requiert un mot de passe pour y accéder. En cas d'oubli de celui-ci, vous pouvez contacter l'administrateur à l'adresse suivante: kocher.ke [at] gmail.com.</p>
+
+	<%= form_tag do |f| %>
+
+		<div>
+			<%= label_tag :password, "Mot de passe" %><br>
+			<%= password_field_tag :password %>
+		</div>
+
+		<%= submit_tag "Entrer" %>
+
+	<% end %>
+</div>

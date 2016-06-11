@@ -5,4 +5,13 @@ class ApplicationController < ActionController::Base
   add_flash_types :error, :success, :notice
 
   include SessionsHelper
+
+  # protect pages with a simple password
+  def authenticate(key = params[:action])
+    unless params[:password] == Rails.application.secrets.passwords.fetch(key)
+      flash.now[:error] = "Mot de passe incorrect" if params[:password]
+      render 'login'
+    end
+  end
+
 end

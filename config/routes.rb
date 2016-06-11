@@ -4,20 +4,20 @@ Rails.application.routes.draw do
   get "/404", to: "errors#not_found"
   get "/500", to: "errors#internal_server_error"
 
+  root to: 'pages#home'
+
   get "/subscribers/unsubscribe/:signature", to: "newsletter_emails#unsubscribe", as: "unsubscribe"
   get "/subscribers/confirmation/:signature", to: "newsletter_emails#confirmation", as: "confirmation"
-
-  root to: 'pages#home'
 
   %w[home presentation contact kidsbulle vision financement a agenda profile].each do |page|
     get page, to: "pages##{page}"
   end
 
   get '/medias', to: "galleries#index"
+  match '/messages', to: "messages#index", via: [:get, :post]
 
   resources :events, only: [:index]
   resources :activities, only: [:index]
-  resources :messages, only: [:index]
   resources :newsletter_emails, only: [:new, :create]
   resources :galleries, only: [:show]
   resources :downloads, only: [:index]
@@ -25,7 +25,9 @@ Rails.application.routes.draw do
 
   namespace :admin do
 
-    get 'files', to: "statics#files"
+    %w[leaders worship].each do |page|
+      match page, to: "statics##{page}", via: [:get, :post]
+    end
 
     resources :pages, only: [:index, :edit, :update]
     resources :events, except: [:show]
