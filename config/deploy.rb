@@ -8,6 +8,7 @@ set :deploy_user, "eebulle"
 set :ssl, true
 
 set :url, 'eebulle.ch'
+set :subdomains, ["network"]
 
 set :scm, "git"
 set :repo_url, "git@github.com:khcr/eebulle.git"

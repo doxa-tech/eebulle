@@ -1,8 +1,8 @@
 GIT
   remote: git://github.com/JS-Tech/capistrano-server.git
-  revision: ec3006cbf33633b0dd90210bf467137b277005b4
+  revision: 5684b028496cacc5f83d2625787b49c30ddad148
   specs:
-    capistrano-server (0.5.3)
+    capistrano-server (0.6.0)
       capistrano (~> 3.1)
 
 GIT
@@ -207,7 +207,7 @@ GEM
       actionpack (>= 4.0)
       activesupport (>= 4.0)
       sprockets (>= 3.0.0)
-    sshkit (1.11.0)
+    sshkit (1.11.1)
       net-scp (>= 1.1.2)
       net-ssh (>= 2.8.0)
     thor (0.19.1)
