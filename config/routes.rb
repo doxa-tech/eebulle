@@ -4,6 +4,10 @@ Rails.application.routes.draw do
   get "/404", to: "errors#not_found"
   get "/500", to: "errors#internal_server_error"
 
+  # for development purpose:
+  # get "/network", to: "pages#network"
+  get "/", to: "pages#network", constraints: { subdomain: 'network' }
+
   root to: 'pages#home'
 
   get "/subscribers/unsubscribe/:signature", to: "newsletter_emails#unsubscribe", as: "unsubscribe"
@@ -15,10 +19,6 @@ Rails.application.routes.draw do
 
   get '/medias', to: "galleries#index"
   match '/messages', to: "messages#index", via: [:get, :post]
-  
-  # for development purpose:
-  # get "/network", to: "pages#network"
-  get "/", to: "pages#network", constraints: { subdomain: 'network' }
 
   resources :events, only: [:index]
   resources :activities, only: [:index]
