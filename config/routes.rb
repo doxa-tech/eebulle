@@ -9,12 +9,16 @@ Rails.application.routes.draw do
   get "/subscribers/unsubscribe/:signature", to: "newsletter_emails#unsubscribe", as: "unsubscribe"
   get "/subscribers/confirmation/:signature", to: "newsletter_emails#confirmation", as: "confirmation"
 
-  %w[home presentation contact kidsbulle vision financement a agenda profile logins].each do |page|
+  %w[home presentation contact kidsbulle vision financement a profile logins].each do |page|
     get page, to: "pages##{page}"
   end
 
   get '/medias', to: "galleries#index"
   match '/messages', to: "messages#index", via: [:get, :post]
+  
+  # for development purpose:
+  # get "/network", to: "pages#network"
+  get "/", to: "pages#network", constraints: { subdomain: 'network' }
 
   resources :events, only: [:index]
   resources :activities, only: [:index]

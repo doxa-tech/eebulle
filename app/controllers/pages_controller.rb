@@ -20,10 +20,6 @@ class PagesController < ApplicationController
 		@page = Page.find_by_name('kidsbulle')
 	end
 
-	def shiloa
-		@page = Page.find_by_name('shiloa')
-	end
-
 	def vision
 		@page = Page.find_by_name('vision')
 	end
@@ -36,10 +32,9 @@ class PagesController < ApplicationController
 		@page = Page.find_by_name('a')
 	end
 
-	def agenda
-		@page = Page.find_by_name('agenda')
-		render layout: 'agenda'
-	end
+  def network
+    @page = Page.find_by_name('network')
+  end
 
 	def profile
 	end
