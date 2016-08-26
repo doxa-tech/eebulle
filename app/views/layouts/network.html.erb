@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Bulle Network</title>
+    <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
+    <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+    <%= csrf_meta_tags %>
+    <%= render 'layouts/favicon' %>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  </head>
+  <body>
+  	<div id="wrapper">
+
+      <div>
+  			<a target="_blank" href="http://fribourg.eebulle.ch">Eglise sur le roc Fribourg</a>
+        <a target="_blank" href="http://romont.eebulle.ch">Eglise évangélique Romont</a>
+        <a target="_blank" href="http://rougemont.eebulle.ch">Eglise évanglique Rougemont</a>
+  		</div>
+
+  		<div id="container" <%= "class=#{yield(:id)}" if yield(:id).presence %>>
+  			<%= yield %>
+  		</div>
+
+  	</div>
+
+  </body>
+</html>

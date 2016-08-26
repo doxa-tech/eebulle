@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   get "/500", to: "errors#internal_server_error"
 
   # for development purpose:
-  # get "/network", to: "pages#network"
+  get "/network", to: "pages#network"
   get "/", to: "pages#network", constraints: { subdomain: 'network' }
 
   root to: 'pages#home'
