@@ -18,7 +18,8 @@ Rails.application.routes.draw do
   end
 
   get '/medias', to: "galleries#index"
-  match '/messages', to: "messages#index", via: [:get, :post]
+  get '/messages', to: "messages#index"
+  get '/messages/:id/download', to: "messages#download", as: :download_message
 
   resources :events, only: [:index]
   resources :activities, only: [:index]
@@ -30,7 +31,7 @@ Rails.application.routes.draw do
   namespace :admin do
 
     %w[leaders worship].each do |page|
-      match page, to: "statics##{page}", via: [:get, :post]
+      get page, to: "statics##{page}"
     end
 
     resources :pages, only: [:index, :edit, :update]

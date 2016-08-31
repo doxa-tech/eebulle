@@ -5,7 +5,8 @@
 <% @preachings.each do |message| %>
 	<div class="message">
 		<p><%= content_tag :span, message.name, class: "name" %> de <%= content_tag :span, message.speaker, class: "orator" %> <%= l message.date, format: :text %></p>
-		<audio id="player" src="<%= message.file_url %>" type="audio/mp3" controls="controls">
+		<audio id="player" src="<%= message.file_url %>" type="audio/mp3" controls="controls"></audio>
+    <%= link_to "Télécharger", download_message_path(message, password: params[:password]) %>
 	</div>
 <% end %>
 
@@ -14,6 +15,7 @@
 <% @homegroups.each do |message| %>
 <div class="message">
 	<p><%= content_tag :span, message.name, class: "name" %> de <%= content_tag :span, message.speaker, class: "orator" %> <%= l message.date, format: :text %></p>
-	<audio id="player" src="<%= message.file_url %>" type="audio/mp3" controls="controls">
+	<audio id="player" src="<%= message.file_url %>" type="audio/mp3" controls="controls"></audio>
+  <%= link_to "Télécharger", download_message_path(message, password: params[:password]) %>
 </div>
 <% end %>
