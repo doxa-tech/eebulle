@@ -34,7 +34,7 @@ class PagesController < ApplicationController
 
   def network
     @page = Page.find_by_name('network')
-    render layout: 'network'
+    #render layout: 'network'
   end
 
 	def profile

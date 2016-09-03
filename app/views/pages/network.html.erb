@@ -1,8 +1,20 @@
+<% content_for :id, "network" %>
+
+<div class="links">
+  <a target="_blank" href="http://fribourg.eebulle.ch">Eglise sur le roc Fribourg</a> -
+  <a target="_blank" href="http://romont.eebulle.ch">Eglise évangélique Romont</a> -
+  <a target="_blank" href="http://rougemont.eebulle.ch">Eglise évanglique Rougemont</a>
+</div>
+
 <%= render "content" %>
 
-INSERER LES LOGOS DES EGLISES
+<div class="logos">
+  <%= image_tag 'network/EEBulle.png' %>
+  <%= image_tag 'network/EERomont.png' %>
+  <%= image_tag 'network/ERocFribourg.png' %>
+</div>
 
 <div>
   La Charte du Bulle Network
-  <a href="downloads/charte_bulle_network.pdf">INSERER JOLIE IMAGE</a>
+  <a href="downloads/charte_bulle_network.pdf"><%= image_tag 'icons/pdf.png' %></a>
 </div>
