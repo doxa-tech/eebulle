@@ -1,20 +1,68 @@
 <% content_for :id, "network" %>
 
+<center>
+  <%= image_tag 'network/Bulle network.png' %>
+</center>
+
 <div class="links">
   <a target="_blank" href="http://fribourg.eebulle.ch">Eglise sur le roc Fribourg</a> -
   <a target="_blank" href="http://romont.eebulle.ch">Eglise évangélique Romont</a> -
   <a target="_blank" href="http://rougemont.eebulle.ch">Eglise évanglique Rougemont</a>
 </div>
 
+<div id="map-wrapper">
+  <div id="map"></div>
+</div>
+
 <%= render "content" %>
 
 <div class="logos">
-  <%= image_tag 'network/EEBulle.png' %>
-  <%= image_tag 'network/EERomont.png' %>
-  <%= image_tag 'network/ERocFribourg.png' %>
+  <%= link_to image_tag('network/EEBulle.png'), "https://eebulle.ch" %>
+  <%= link_to image_tag('network/EERomont.png'), "http://romont.eebulle.ch" %>
+  <%= link_to image_tag('network/ERocFribourg.png'), "http://fribourg.eebulle.ch" %>
 </div>
 
-<div>
-  La Charte du Bulle Network
+<div class="charte">
+  La Charte du Bulle Network:
   <a href="downloads/charte_bulle_network.pdf"><%= image_tag 'icons/pdf.png' %></a>
 </div>
+
+<script>
+  function initMap() {
+    // Create a map object and specify the DOM element for display.
+    var map = new google.maps.Map(document.getElementById('map'), {
+      center: {lat: 46.6588296, lng: 7.0394454},
+      scrollwheel: false,
+      zoom: 10
+    });
+
+    var collection = [
+      {lat: 46.800379, lng: 7.169736, text: "Eglise sur le roc Fribourg<br><a href='http://fribourg.eebulle.ch'>fribourg.eebulle.ch</a>", title: "ERocFribourg"},
+      {lat: 46.623955, lng: 7.0659088, text: "Eglise évangélique Bulle<br><a href='https://eebulle.ch'>eebulle.ch</a>", title: "EEBulle"},
+      {lat: 46.6928477, lng: 6.9097113, text: "Eglise évangélique Romont<br><a href='http://romont.eebulle.ch'>romont.eebulle.ch</a>", title: "EERomont"},
+      {lat: 46.4966917, lng: 7.1372701, text: "Eglise évangélique de Rougement<br><a href='http://rougemont.eebulle.ch'>rougemont.eebulle.ch</a>", title: "EERougemont"}
+    ]
+    for (var key in collection) {
+      var markerData = collection[key];
+      var latlng = new google.maps.LatLng(markerData.lat, markerData.lng);
+      var marker = new google.maps.Marker({
+        position: latlng,
+        map: map,
+        title: markerData.title,
+        html: markerData.text
+      });
+      var infowindow = new google.maps.InfoWindow({ content: "Holding ..." });
+      // if there is "text" key we show a popup
+      if(markerData.hasOwnProperty("text")) {
+        google.maps.event.addListener(marker, "click", function() {
+          infowindow.setContent(this.html);
+          infowindow.open(map,this);
+        });
+      }
+    }
+
+  }
+
+</script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBD85icra9Qeyxvtz52sR4lcNdegkGgodw&callback=initMap"
+async defer></script>

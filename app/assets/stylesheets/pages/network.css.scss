@@ -14,4 +14,21 @@
     }
   }
 
+  #map-wrapper {
+    height: 400px;
+    margin: 20px;
+    #map {
+      position: absolute;
+      height: 400px;
+      left: 0;
+      right: 0;
+    }
+  }
+
+  .charte {
+    img {
+      vertical-align: middle;
+    }
+  }
+
 }
