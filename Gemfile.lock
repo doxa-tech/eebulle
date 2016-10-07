@@ -1,13 +1,14 @@
 GIT
-  remote: git://github.com/JS-Tech/capistrano-server.git
-  revision: 8ff011fce0fff2d1abf2470ba97602d15d44204f
+  remote: https://github.com/JS-Tech/capistrano-server
+  revision: 7d66c3cc267385d21d1112dcf95379a3bc406835
+  tag: v0.7
   specs:
-    capistrano-server (0.6.3)
+    capistrano-server (0.7.0)
       capistrano (~> 3.1)
 
 GIT
-  remote: git://github.com/capistrano/maintenance.git
-  revision: b31962d2ac134fae5e2f536380956a1042895c1e
+  remote: https://github.com/capistrano/maintenance
+  revision: b5ed13ae67956e8c4c43a1b79db640cc4513c8f7
   specs:
     capistrano-maintenance (1.0.0)
       capistrano (>= 3.0)
@@ -264,4 +265,4 @@ DEPENDENCIES
   will_paginate (~> 3.0.5)
 
 BUNDLED WITH
-   1.11.2
+   1.13.2

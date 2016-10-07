@@ -67,9 +67,9 @@ gem 'capistrano-bundler'
 # if you are using RBENV
 gem 'capistrano-rvm'
 
-gem 'capistrano-maintenance', github: 'capistrano/maintenance', require: false
+gem 'capistrano-maintenance', git: 'https://github.com/capistrano/maintenance', require: false
 
-gem 'capistrano-server', github: 'JS-Tech/capistrano-server'
+gem 'capistrano-server', git: 'https://github.com/JS-Tech/capistrano-server', tag: 'v0.7'
 
 # server
 gem 'puma'
