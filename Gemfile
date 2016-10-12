@@ -67,7 +67,7 @@ gem 'capistrano-bundler'
 # if you are using RBENV
 gem 'capistrano-rvm'
 
-gem 'capistrano-maintenance', git: 'https://github.com/capistrano/maintenance', require: false
+gem 'capistrano-maintenance', require: false
 
 gem 'capistrano-server', git: 'https://github.com/JS-Tech/capistrano-server', tag: 'v0.7'
 
