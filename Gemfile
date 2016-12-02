@@ -7,7 +7,7 @@ gem 'rails', '4.2.5'
 gem 'pg'
 
 # tables
-gem 'snaptable'
+gem 'snaptable', "<= 2.0"
 
 # user
 gem 'snapuser'
