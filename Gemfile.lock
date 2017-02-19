@@ -233,7 +233,7 @@ DEPENDENCIES
   sass-rails (~> 5.0)
   sdoc
   simple_markdown
-  snaptable
+  snaptable (<= 2.0)
   snapuser
   spring
   turbolinks
@@ -242,4 +242,4 @@ DEPENDENCIES
   will_paginate (~> 3.0.5)
 
 BUNDLED WITH
-   1.13.2
+   1.13.6
