@@ -8,6 +8,6 @@ class MessagesController < ApplicationController
 
   def download
     message = Message.find(params[:id])
-    send_file File.join(Rails.root, "public", message.file_url), type: "audio/mpeg"
+    send_file File.join(Rails.root, message.file_url), type: "audio/mpeg"
   end
 end
