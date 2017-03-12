@@ -6,7 +6,7 @@
 	<div class="message">
 		<p><%= content_tag :span, message.name, class: "name" %> de <%= content_tag :span, message.speaker, class: "orator" %> <%= l message.date, format: :text %></p>
 		<audio id="player" src="<%= message.file_url %>" type="audio/mp3" controls="controls"></audio>
-    <%= link_to "Télécharger", download_message_path(message, password: params[:password]), "data-no-turbolink": true %>
+    <%= link_to "Télécharger", download_message_path(message, password: params[:password]), "data-turbolinks": false %>
 	</div>
 <% end %>
 
@@ -16,6 +16,6 @@
 <div class="message">
 	<p><%= content_tag :span, message.name, class: "name" %> de <%= content_tag :span, message.speaker, class: "orator" %> <%= l message.date, format: :text %></p>
 	<audio id="player" src="<%= message.file_url %>" type="audio/mp3" controls="controls"></audio>
-  <%= link_to "Télécharger", download_message_path(message, password: params[:password]), "data-no-turbolink": true  %>
+  <%= link_to "Télécharger", download_message_path(message, password: params[:password]), "data-turbolinks": false  %>
 </div>
 <% end %>
