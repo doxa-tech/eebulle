@@ -18,6 +18,8 @@ gem 'sass-rails', '~> 5.0'
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier'
 
+gem 'coffee-rails'
+
 group :development do
   gem 'spring'
   gem 'web-console'
