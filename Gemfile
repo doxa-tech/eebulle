@@ -71,7 +71,7 @@ gem 'capistrano-rvm'
 
 gem 'capistrano-maintenance', require: false
 
-gem 'capistrano-server', git: 'https://github.com/JS-Tech/capistrano-server', tag: 'v0.7'
+gem 'capistrano-server', git: 'https://github.com/JS-Tech/capistrano-server', tag: 'v0.7.1'
 
 # server
 gem 'puma'
