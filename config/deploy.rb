@@ -1,5 +1,5 @@
 # config valid only for current version of Capistrano
-lock "3.3.5"
+lock "3.6.1"
 
 set :application, "eebulle"
 set :applications, ["eebulle", "syncedchurch"]
@@ -35,7 +35,6 @@ set :linked_files, %w{config/database.yml config/secrets.yml config/puma.rb}
 # Default value for linked_dirs is []
 set :linked_dirs, %w{log tmp/pids tmp/cache tmp/sockets vendor/bundle public/system public/uploads uploads}
 
-set :bundle_binstubs, nil
 
 set :maintenance_template_path, "config/deploy/templates/maintenance.html.erb"
 

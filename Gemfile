@@ -58,7 +58,7 @@ gem 'mini_magick', '~> 4.4.0'
 
 gem 'fancybox2-rails'
 
-gem 'capistrano', '~> 3.3.0'
+gem 'capistrano', '3.6.1'
 
 # rails specific capistrano funcitons
 gem 'capistrano-rails'
