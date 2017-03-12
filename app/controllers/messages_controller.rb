@@ -6,7 +6,7 @@ class MessagesController < ApplicationController
     @homegroups = Message.homegroup.where('date >= ?', 1.month.ago).order('date DESC')
 	end
 
-  def download
+  def show
     message = Message.find(params[:id])
     send_file message.file_url, type: "audio/mpeg"
   end

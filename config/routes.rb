@@ -18,8 +18,7 @@ Rails.application.routes.draw do
   end
 
   get '/medias', to: "galleries#index"
-  get '/messages', to: "messages#index"
-  get '/messages/:id/download', to: "messages#download", as: :download_message
+  resources :messages, only: [:index, :show]
 
   resources :events, only: [:index]
   resources :activities, only: [:index]
