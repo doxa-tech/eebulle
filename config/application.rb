@@ -35,5 +35,7 @@ module Eebulle
 
     config.exceptions_app = self.routes
 
+    config.railties_order = [Snapuser::Engine, :main_app, :all]
+
   end
 end

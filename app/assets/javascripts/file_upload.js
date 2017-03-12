@@ -1,4 +1,4 @@
-$(document).on("ready page:load", function() {
+$(document).on("turbolinks:load", function() {
   var fileUpload = $('#fileupload');
   var url = fileUpload.attr('data-url'),
       thumbs = $('#thumbs'),

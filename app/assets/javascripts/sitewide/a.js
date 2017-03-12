@@ -1,4 +1,3 @@
-
 function init_domain_tree(json){
     //end
     var infovis = document.getElementById('infovis');

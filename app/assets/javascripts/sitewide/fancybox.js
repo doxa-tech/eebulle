@@ -1,4 +1,4 @@
-$(document).on("ready page:load", function() {
+$(document).on("turbolinks:load", function() {
   $(".fancybox-button").fancybox({
     prevEffect		: 'none',
     nextEffect		: 'none',
