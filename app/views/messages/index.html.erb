@@ -2,24 +2,12 @@
 
 <h1><%= t('message.index') %></h1>
 
-<% @preachings.each do |message| %>
-	<div class="message">
-		<p><%= content_tag :span, message.name, class: "name" %> de <%= content_tag :span, message.speaker, class: "orator" %> <%= l message.date, format: :text %></p>
-		<audio preload="auto" controls>
-		  <source src="<%= message_path(message, password: params[:password]) %>" type="audio/mpeg"></source>
-		</audio>
-    <div><%= link_to "Télécharger", message_path(message, password: params[:password]), "data-turbolinks": false %></div>
-	</div>
-<% end %>
+<%= render 'category', messages: @preachings %>
 
 <h2>Groupes de maison</h2>
 
-<% @homegroups.each do |message| %>
-<div class="message">
-	<p><%= content_tag :span, message.name, class: "name" %> de <%= content_tag :span, message.speaker, class: "orator" %> <%= l message.date, format: :text %></p>
-	<audio preload="auto" controls>
-		<source src="<%= message_path(message, password: params[:password]) %>" type="audio/mpeg"></source>
-	</audio>
-	<div><%= link_to "Télécharger", message_path(message, password: params[:password]), "data-turbolinks": false %></div>
-</div>
-<% end %>
+<%= render 'category', messages: @homegroups %>
+
+<h2>Enseignements & discipulat</h2>
+
+<%= render 'category', messages: @teachings %>

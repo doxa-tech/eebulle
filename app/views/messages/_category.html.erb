@@ -1,0 +1,9 @@
+<% messages.each do |message| %>
+<div class="message">
+	<p><%= content_tag :span, message.name, class: "name" %> de <%= content_tag :span, message.speaker, class: "orator" %> <%= l message.date, format: :text %></p>
+	<audio preload="auto" controls>
+		<source src="<%= message_path(message, password: params[:password]) %>" type="audio/mpeg"></source>
+	</audio>
+	<div><%= link_to "Télécharger", message_path(message, password: params[:password]), "data-turbolinks": false %></div>
+</div>
+<% end %>

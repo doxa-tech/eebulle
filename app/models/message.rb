@@ -1,5 +1,5 @@
 class Message < ActiveRecord::Base
-  enum category: [:preaching, :homegroup]
+  enum category: [:preaching, :homegroup, :teaching]
 
 	validates :name, presence: true, length: { maximum: 80 }
 	validates :speaker, presence: true, length: { maximum: 80 }
