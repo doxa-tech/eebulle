@@ -7,19 +7,45 @@
 <div class="links">
   <a target="_blank" href="http://fribourg.eebulle.ch">Eglise sur le roc Fribourg</a> -
   <a target="_blank" href="http://romont.eebulle.ch">Eglise évangélique Romont</a> -
-  <a target="_blank" href="http://rougemont.eebulle.ch">Eglise évanglique Rougemont</a>
+  <a target="_blank" href="http://rougemont.eebulle.ch">Eglise évanglique Rougemont</a> -
+  <a target="_blank" href="https://www.impact-stecroix.ch">Impact Sainte-Croix</a>
+</div>
+
+<div class="text">
+  <%= render "content" %>
 </div>
 
 <div id="map-wrapper">
   <div id="map"></div>
 </div>
 
-<%= render "content" %>
-
 <div class="logos">
   <%= link_to image_tag('network/EEBulle.png'), "https://eebulle.ch" %>
   <%= link_to image_tag('network/EERomont.png'), "http://romont.eebulle.ch" %>
   <%= link_to image_tag('network/ERocFribourg.png'), "http://fribourg.eebulle.ch" %>
+</div>
+
+<div class="text">
+  <h3>1.	Présentation</h3>
+  <p>
+    Le Bulle Network est le réseau d’églises de l’église évangélique de Bulle. Ce réseau est constitué des églises naissantes directement implantées par l’EEBulle (actuellement Fribourg, Romont, Rougemont, Morges, Sainte-Croix).<br>
+    Le Bulle Network fonctionne avec une équipe de ministères. Juridiquement, le réseau fait partie de l’association de l’église évangélique de Bulle.<br>
+    L’EEBulle étant membre des EEAR (églises évangéliques apostoliques romandes) et du RES (réseau évangélique suisse), le Bulle Network l’est aussi de fait.<br>
+  </p>
+  <h3>2.	Historique</h3>
+  <p>
+    L’EEBulle a été fondée par le pasteur Michel Renevier il y a plus de 30 ans en Gruyère. L’esprit pionnier et de foi du fondateur a soutenu la croissance de l’église locale tout au long de son parcours. Cependant, l’EEBulle a vécu les hauts et les bas que toute église locale connaît dans son histoire.<br>
+    A son arrivée en janvier 2013, le pasteur David Hausmann a rapidement eu la vision que Dieu souhaitait élargir l’œuvre par l’implantation de nouvelles églises. Cette nouvelle orientation stratégique a été validée par le leadership de Bulle et est maintenant en bonne phase de réalisation au niveau régional.
+  </p>
+  <h3>3.	Vision</h3>
+  <p>
+    Nous sommes un réseau, dirigé par l’équipe de ministères de l’EEBulle, qui implante des églises en Suisse et en Europe par l’évangélisation et la multiplication des leaders.<br>
+    Nous recrutons, formons et établissons des leaders d’églises pionniers au sein de nos implantations. Nous avons la conviction que les ressources humaines, dans la puissance du Saint Esprit, sont la clef de succès pour la croissance de l’église locale.
+  </p>
+  <h3>4.	Besoins</h3>
+  <p>
+    Au regard de notre vision et de la réalité du terrain actuelle, nos besoins s’articulent autour du financement de nos ministères et de nos ministères en formation, impliqués dans nos implantations d’églises. En effet, la stratégie de développement par l’implantation d’églises a un coût élevé en terme RH et logistique. A elle seule, l’EEBulle ne peut pas soutenir tous ces projets que Dieu a ouverts en Romandie. Nous travaillons aujourd’hui à la recherche de fonds prioritairement en faveur des ministères du Bulle Network.
+  </p>
 </div>
 
 <div class="charte">
@@ -37,10 +63,11 @@
     });
 
     var collection = [
-      {lat: 46.800379, lng: 7.169736, text: "Eglise sur le roc Fribourg<br><a href='http://fribourg.eebulle.ch'>fribourg.eebulle.ch</a>", title: "ERocFribourg"},
-      {lat: 46.623955, lng: 7.0659088, text: "Eglise évangélique Bulle<br><a href='https://eebulle.ch'>eebulle.ch</a>", title: "EEBulle"},
-      {lat: 46.6928477, lng: 6.9097113, text: "Eglise évangélique Romont<br><a href='http://romont.eebulle.ch'>romont.eebulle.ch</a>", title: "EERomont"},
-      {lat: 46.4966917, lng: 7.1372701, text: "Eglise évangélique de Rougement<br><a href='http://rougemont.eebulle.ch'>rougemont.eebulle.ch</a>", title: "EERougemont"}
+      {lat: 46.800379, lng: 7.169736, text: "Eglise sur le roc Fribourg<br><a href='http://fribourg.eebulle.ch'>fribourg.eebulle.ch</a>", title: "ERocFribourg", color: "yellow"},
+      {lat: 46.623955, lng: 7.0659088, text: "Eglise évangélique Bulle<br><a href='https://eebulle.ch'>eebulle.ch</a>", title: "EEBulle", color: "yellow"},
+      {lat: 46.6928477, lng: 6.9097113, text: "Eglise évangélique Romont<br><a href='http://romont.eebulle.ch'>romont.eebulle.ch</a>", title: "EERomont", color: "yellow"},
+      {lat: 46.4966917, lng: 7.1372701, text: "Eglise évangélique de Rougement<br><a href='http://rougemont.eebulle.ch'>rougemont.eebulle.ch</a>", title: "EERougemont", color: "yellow"},
+      {lat: 46.8225652, lng: 6.504781099999946, text: "Impact Sainte-Croix<br><a href='https://www.impact-stecroix.ch'>www.impact-stecroix.ch</a>", title: "Impact Sainte-Croix", color: "orange"}
     ]
     for (var key in collection) {
       var markerData = collection[key];
@@ -49,7 +76,8 @@
         position: latlng,
         map: map,
         title: markerData.title,
-        html: markerData.text
+        html: markerData.text,
+        icon: "http://maps.google.com/mapfiles/ms/icons/" + markerData.color + "-dot.png",
       });
       var infowindow = new google.maps.InfoWindow({ content: "Holding ..." });
       // if there is "text" key we show a popup
