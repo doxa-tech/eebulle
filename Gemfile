@@ -52,6 +52,9 @@ gem 'will_paginate', '~> 3.0.5'
 # image uploader
 gem 'carrierwave', '~> 0.10.0'
 gem 'carrierwave-processing', '~> 1.0.0'
+gem 'fog'
+gem 'google-api-client', '~> 0.8.6'
+gem "mime-types"
 
 # image manipulating
 gem 'mini_magick', '~> 4.4.0'
