@@ -1,5 +1,5 @@
 CarrierWave.configure do |config|
-  # config.provider = 'fog/google'                        # required
+  config.fog_provider = 'fog/google'                        # required
 
   config.fog_credentials = {
     provider:                         Rails.application.secrets.uploader_provider,
