@@ -1,11 +1,11 @@
 class Admin::PaintingsController < Admin::BaseController
 	before_action { |c| c.authorize_level(2) }
-	before_filter :find_gallery
+	before_action :find_gallery
 
   def new
   	@painting = Painting.new
   end
-  
+
   def create
   	@painting = @gallery.paintings.new(painting_params)
     unless @painting.save
