@@ -55,6 +55,10 @@ gem 'carrierwave', '~> 1.1'
 gem 'carrierwave-processing', '~> 1.0.0'
 gem 'carrierwave-i18n'
 
+gem 'fog-google'
+gem 'google-api-client', '> 0.8.5', '< 0.9'
+gem 'mime-types'
+
 # image manipulating
 gem 'mini_magick', '~> 4.7'
 
