@@ -1,4 +1,4 @@
-class Activity < ActiveRecord::Base
+class Activity < ApplicationRecord
 	has_many :day_activities
 	has_many :days, through: :day_activities
 	belongs_to :recurrence

@@ -1,4 +1,4 @@
-class Newsletter < ActiveRecord::Base
+class Newsletter < ApplicationRecord
   belongs_to :user
 
   validates :subject, presence: true

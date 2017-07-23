@@ -1,4 +1,4 @@
-class Message < ActiveRecord::Base
+class Message < ApplicationRecord
   enum category: [:preaching, :homegroup, :teaching]
 
 	validates :name, presence: true, length: { maximum: 80 }

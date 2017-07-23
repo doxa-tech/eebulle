@@ -8,7 +8,7 @@ class DownloadsUploader < CarrierWave::Uploader::Base
     "uploads/#{model.class.to_s.underscore}/#{model.id}"
   end
 
-  def extension_white_list
+  def extension_whitelist
     %w(doc docx ppt pptx xls xlsx pdf odt odp ods jpeg jpg png psd ai)
   end
 

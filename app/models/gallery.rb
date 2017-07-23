@@ -1,4 +1,4 @@
-class Gallery < ActiveRecord::Base
+class Gallery < ApplicationRecord
 	has_many :paintings
 
 	validates :name, presence: true, length: { maximum: 80 }

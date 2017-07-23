@@ -1,4 +1,4 @@
-class Event < ActiveRecord::Base
+class Event < ApplicationRecord
 
 	validates :name, presence: true, length: { maximum: 80 }
 	validates :content, presence: true

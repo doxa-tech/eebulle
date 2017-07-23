@@ -14,7 +14,7 @@ class EventsUploader < CarrierWave::Uploader::Base
   process :resize_to_limit => [500, 300]
   process :quality => 90
 
-  def extension_white_list
+  def extension_whitelist
     %w(jpg jpeg gif png)
   end
 

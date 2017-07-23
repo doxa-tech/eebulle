@@ -1,13 +1,13 @@
 source 'https://rubygems.org'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '4.2.5'
+gem 'rails', '5.1.1'
 
 # Postgresql
 gem 'pg'
 
 # tables
-gem 'snaptable', "<= 2.0"
+gem 'snaptable'
 
 # user
 gem 'snapuser'
@@ -23,6 +23,7 @@ gem 'coffee-rails'
 group :development do
   gem 'spring'
   gem 'web-console'
+  gem 'listen'
 end
 
 # See https://github.com/sstephenson/execjs#readme for more supported runtimes
@@ -45,16 +46,17 @@ group :doc do
 end
 
 # pagination
-gem 'will_paginate', '~> 3.0.5'
+gem 'will_paginate', '~> 3.1.0'
 
 # Use ActiveModel has_secure_password
 
 # image uploader
-gem 'carrierwave', '~> 0.10.0'
+gem 'carrierwave', '~> 1.1'
 gem 'carrierwave-processing', '~> 1.0.0'
+gem 'carrierwave-i18n'
 
 # image manipulating
-gem 'mini_magick', '~> 4.4.0'
+gem 'mini_magick', '~> 4.7'
 
 gem 'fancybox2-rails'
 

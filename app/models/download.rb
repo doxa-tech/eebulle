@@ -1,4 +1,4 @@
-class Download < ActiveRecord::Base
+class Download < ApplicationRecord
 
 	validates :name, presence: true, length: {maximum: 100}
 	validates :file, presence: true

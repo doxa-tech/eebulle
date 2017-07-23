@@ -14,7 +14,7 @@ class ActivitiesUploader < CarrierWave::Uploader::Base
   process :resize_to_fill => [256, 256]
   process :quality => 90
 
-  def extension_white_list
+  def extension_whitelist
     %w(jpg jpeg gif png)
   end
 
