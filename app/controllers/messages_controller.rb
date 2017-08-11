@@ -9,6 +9,6 @@ class MessagesController < ApplicationController
 
   def show
     message = Message.find(params[:id])
-    send_file message.file_url, type: "audio/mpeg"
+    redirect_to message.file.url, filename: "EEBulle_#{message.date}_#{message.speaker}_#{message.name}", disposition: 'attachment', x_sendfile: true, stream: 'true', buffer_size: '4096'
   end
 end
