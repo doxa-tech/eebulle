@@ -9,6 +9,6 @@ class MessagesController < ApplicationController
 
   def show
     message = Message.find(params[:id])
-    redirect_to message.file.url, filename: "EEBulle_#{message.date}_#{message.speaker}_#{message.name}", disposition: 'attachment', x_sendfile: true, stream: 'true', buffer_size: '4096'
+    send_file message.file.url, filename: "EEBulle_#{message.date}_#{message.speaker}_#{message.name}", disposition: 'attachment'
   end
 end

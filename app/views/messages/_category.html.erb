@@ -4,6 +4,6 @@
 	<audio preload="auto" controls>
 		<source src="<%= message.file.url %>" type="audio/mpeg"></source>
 	</audio>
-	<div><%= link_to "Télécharger", message_path(message, password: params[:password]), "data-turbolinks": false %></div>
+	<div><%= link_to "Télécharger", message.file.url, download: "test", "data-turbolinks": false %></div>
 </div>
 <% end %>
