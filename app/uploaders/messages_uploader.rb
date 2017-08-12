@@ -8,6 +8,13 @@ class MessagesUploader < CarrierWave::Uploader::Base
     storage :file
   end
 
+  def filename
+    if original_filename.present?
+      date = model.date.strftime("%d-%m-%y")
+      "EEBulle_#{date}_#{model.speaker}_#{model.name}.#{file.extension}"
+    end
+  end
+
   def store_dir
     "uploads/#{model.class.to_s.underscore}/#{mounted_as}/#{model.id}"
   end
@@ -18,6 +25,6 @@ class MessagesUploader < CarrierWave::Uploader::Base
 
   def fog_attributes
   { 'Content-Disposition' => "attachment" }
-end
+  end
 
 end
