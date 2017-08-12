@@ -16,4 +16,8 @@ class MessagesUploader < CarrierWave::Uploader::Base
     %w(mp3 m4a)
   end
 
+  def fog_attributes
+  { 'Content-Disposition' => "attachment" }
+end
+
 end

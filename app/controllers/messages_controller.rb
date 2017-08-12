@@ -7,8 +7,4 @@ class MessagesController < ApplicationController
     @teachings  = Message.teaching.where('date >= ?', 1.month.ago).order('date DESC')
 	end
 
-  def show
-    message = Message.find(params[:id])
-    send_file message.file.url, filename: "EEBulle_#{message.date}_#{message.speaker}_#{message.name}", disposition: 'attachment'
-  end
 end

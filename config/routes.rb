@@ -18,7 +18,7 @@ Rails.application.routes.draw do
   end
 
   get '/medias', to: "galleries#index"
-  resources :messages, only: [:index, :show]
+  resources :messages, only: [:index]
 
   resources :events, only: [:index]
   resources :activities, only: [:index]
