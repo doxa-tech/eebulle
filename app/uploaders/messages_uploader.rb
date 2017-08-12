@@ -11,7 +11,8 @@ class MessagesUploader < CarrierWave::Uploader::Base
   def filename
     if original_filename.present?
       date = model.date.strftime("%d-%m-%y")
-      "EEBulle_#{date}_#{model.speaker}_#{model.name}.#{file.extension}"
+      filename = "eebulle_#{date}_#{model.speaker}_#{model.name}.#{file.extension}"
+      return filename.parameterize(separator: "_")
     end
   end
 
