@@ -28,18 +28,7 @@
 
 <div class="activities">
 	<% @activities.each do |activity| %>
-		<div class="activity">
-			<div class="wrapper" style="background-image: url('<%= image_url(activity.image_url)%>')">
-				<%= link_to "", activities_path(anchor: CGI.escape(activity.name)), anchor: "as", class: "link" %>
-				<h3><%= activity.name %></h3>
-				<h3 class="rec">
-          <%= l activity.time, format: :hour_text %><% unless activity.recurrence.name == "Aucune" %><%= ", " + activity.days.pluck(:name).join(',') %> <%= activity.recurrence.name %><% end %>
-        </h3>
-				<div class="content">
-					<%= render 'md_content', content: activity.content %>
-				</div>
-			</div>
-		</div>
+		<%= render activity %>
 	<% end %>
 	<div id="clear"></div>
 </div>

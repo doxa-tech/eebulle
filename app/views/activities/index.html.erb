@@ -4,13 +4,6 @@
 
 <div class="activities">
 	<% @activities.each do |activity| %>
-		<div class="activity" style="background-image: url('<%= image_url(activity.image_url)%>')">
-			<h3 id="<%= CGI.escape activity.name %>"><%= activity.name %></h3>
-			<%= render 'md_content', content: activity.content %>
-			<div class="rec">
-				<i class="fi-clock"></i>
-        <%= l activity.time, format: :hour_text %><% unless activity.recurrence.name == "Aucune" %><%= ", " + activity.days.pluck(:name).join(',') %> <%= activity.recurrence.name %><% end %>
-			</div>
-		</div>
+		<%= render activity %>
 	<% end %>
 </div>

@@ -1,0 +1,12 @@
+<div class="comp-activity">
+  <%= link_to "", activities_path(anchor: CGI.escape(activity.name)) %>
+  <%= image_tag activity.image_url %>
+  <div class="activity-content">
+    <h3 id="<%= CGI.escape activity.name %>"><%= activity.name %></h3>
+    <%= render 'md_content', content: activity.content %>
+    <div class="time">
+      <i class="fi-clock"></i>
+      <%= l activity.time, format: :hour_text %><% unless activity.recurrence.name == "Aucune" %><%= ", " + activity.days.pluck(:name).join(',') %> <%= activity.recurrence.name %><% end %>
+    </div>
+  </div>
+</div>
