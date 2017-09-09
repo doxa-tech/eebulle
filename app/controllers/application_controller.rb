@@ -7,7 +7,7 @@ class ApplicationController < ActionController::Base
   include SessionsHelper
 
   # protect pages with a simple password
-  def authenticate(key = params[:action])
+  def authenticate(key = params[:action].to_sym)
     unless params[:password] == Rails.application.secrets.passwords.fetch(key)
       flash.now[:error] = "Mot de passe incorrect" if params[:password]
       render 'login'
