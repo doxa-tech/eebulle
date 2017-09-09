@@ -37,3 +37,11 @@
     width: 256px;
   }
 }
+
+@media (max-width: 1200px)
+{
+  .comp-activity {
+    flex-wrap: wrap !important;
+    justify-content: center !important;
+  }
+}
