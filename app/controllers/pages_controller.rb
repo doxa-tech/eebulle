@@ -28,6 +28,10 @@ class PagesController < ApplicationController
 		@page = Page.find_by_name('financement')
 	end
 
+	def verdel8
+		@page = Page.find_by_name('verdel8')
+	end
+
 	def a
 		@page = Page.find_by_name('a')
 	end
