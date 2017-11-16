@@ -1,6 +1,6 @@
 /* http://www.cssreset.com/how-to-keep-footer-at-bottom-of-page-with-css/ */
 footer {
-	height: 250px;
+	height: 400px;
 	margin: auto;
 	text-align: center;
 	background : #fff;
@@ -32,6 +32,12 @@ footer {
 		img {
 			max-width: 200px;
 			padding: 20px 0 0 0;
+		}
+	}
+	.bulleonair {
+		img {
+			max-width: 130px;
+			padding: 7px 0 0 0;
 		}
 	}
 }
