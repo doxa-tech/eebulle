@@ -29,6 +29,10 @@
 	flex-direction: row;
 	background: image-url("layout/banner2.jpg");
 	h1 {
+		opacity: 0;
+		animation: appears .3s linear forwards;
+		animation-delay: .7s;
+
 		span {
 			opacity: 0;
 			animation: appears .3s linear forwards;
@@ -39,7 +43,6 @@
 			width: initial;
 			vertical-align: bottom;
 			transform: translateY(15px);
-
 		}
 		path {
 			stroke-dasharray: 45;
@@ -55,9 +58,9 @@
 				rgba(0, 191, 255, 0.3), 
 				rgba(94, 255, 0, 0));
 			background-size: 400% 400%;
-			-webkit-animation: Gradient 15s ease infinite;
-			-moz-animation: Gradient 15s ease infinite;
-			animation: Gradient 15s ease infinite;
+			-webkit-animation: Gradient 25s linear infinite;
+			-moz-animation: Gradient 25s linear infinite;
+			animation: Gradient 25s linear infinite;
 			path {
 				animation-delay: 1s;
 			}
@@ -70,9 +73,9 @@
 				rgba(255, 217, 0, 0.3),  
 				rgba(94, 255, 0, 0));
 			background-size: 400% 400%;
-			-webkit-animation: Gradient 15s ease infinite;
-			-moz-animation: Gradient 15s ease infinite;
-			animation: Gradient 15s ease infinite;
+			-webkit-animation: Gradient 25s linear infinite;
+			-moz-animation: Gradient 25s linear infinite;
+			animation: Gradient 25s linear infinite;
 			path {
 				animation-delay: 1.5s;
 			}
@@ -85,9 +88,9 @@
 				rgba(0, 191, 255, 0.3), 
 				rgba(94, 255, 0, 0));
 			background-size: 400% 400%;
-			-webkit-animation: Gradient 15s ease infinite;
-			-moz-animation: Gradient 15s ease infinite;
-			animation: Gradient 15s ease infinite;
+			-webkit-animation: Gradient 25s linear infinite;
+			-moz-animation: Gradient 25s linear infinite;
+			animation: Gradient 25s linear infinite;
 			path {
 				animation-delay: 2s;
 			}
