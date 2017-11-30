@@ -1,6 +1,98 @@
+@keyframes Gradient {
+	0% {
+		background-position: 0% 50%
+	}
+	50% {
+		background-position: 100% 50%
+	}
+	100% {
+		background-position: 0% 50%
+	}
+}
+
+@keyframes dash {
+	to {
+		stroke-dashoffset: 0;
+	}
+}
+
+@keyframes appears {
+	to {
+		opacity: 1;
+	}
+}
+
 #banner.home {
-	display: block;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: row;
 	background: image-url("layout/banner2.jpg");
+	h1 {
+		span {
+			opacity: 0;
+			animation: appears .3s linear forwards;
+			animation-delay: 4s;
+		}
+		svg {
+			height: 70px;
+			width: initial;
+			vertical-align: bottom;
+			transform: translateY(15px);
+
+		}
+		path {
+			stroke-dasharray: 45;
+			stroke-dashoffset: 45;
+			animation: dash 1.5s linear forwards;
+			stroke-width: 0.7px !important;
+		}
+		svg:first-of-type {
+			background-position: 0% 0%;
+			background: linear-gradient(-45deg, 
+				rgba(123, 255, 47, 0), 
+				rgba(255, 217, 0, 0.3), 
+				rgba(0, 191, 255, 0.3), 
+				rgba(94, 255, 0, 0));
+			background-size: 400% 400%;
+			-webkit-animation: Gradient 15s ease infinite;
+			-moz-animation: Gradient 15s ease infinite;
+			animation: Gradient 15s ease infinite;
+			path {
+				animation-delay: 1s;
+			}
+		}
+		svg:nth-of-type(2) {
+			background-position: 0% 0%;
+			background: linear-gradient(-45deg, 
+				rgba(123, 255, 47, 0), 
+				rgba(0, 191, 255, 0.3),
+				rgba(255, 217, 0, 0.3),  
+				rgba(94, 255, 0, 0));
+			background-size: 400% 400%;
+			-webkit-animation: Gradient 15s ease infinite;
+			-moz-animation: Gradient 15s ease infinite;
+			animation: Gradient 15s ease infinite;
+			path {
+				animation-delay: 1.5s;
+			}
+		}
+		svg:nth-of-type(3) {
+			background-position: 0% 0%;
+			background: linear-gradient(-45deg, 
+				rgba(123, 255, 47, 0), 
+				rgba(255, 217, 0, 0.3), 
+				rgba(0, 191, 255, 0.3), 
+				rgba(94, 255, 0, 0));
+			background-size: 400% 400%;
+			-webkit-animation: Gradient 15s ease infinite;
+			-moz-animation: Gradient 15s ease infinite;
+			animation: Gradient 15s ease infinite;
+			path {
+				animation-delay: 2s;
+			}
+		}
+	}
 }
 #container.home {
 	.content {
