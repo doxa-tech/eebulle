@@ -262,7 +262,7 @@ fr:
         activities: "Les activités"
         events: "Les événements"
         galleries: "Les galeries"
-        messages: "Les messages"
+        messages: "Les prédications"
         newsletter_emails: "Liste d'emails"
         newsletters: "Newsletters"
         downloads: "Ressources"
@@ -319,7 +319,7 @@ fr:
     categories:
       preaching: "Message"
       homegroup: "Groupe de maison"
-    index: "Les messages"
+    index: "Les prédications"
     link: "Accéder aux messages"
     admin:
       index: "Messages"
