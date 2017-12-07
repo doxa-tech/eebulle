@@ -3,8 +3,9 @@ class MessagesController < ApplicationController
 
 	def index
 		@preachings = Message.preaching.where('date >= ?', 1.month.ago).order('date DESC')
-    		@homegroups = Message.homegroup.where('date >= ?', 1.month.ago).order('date DESC')
-    		@teachings  = Message.teaching.all
+		@homegroups = Message.homegroup.where('date >= ?', 1.month.ago).order('date DESC')
+		@teachings  = Message.teaching.all.order(:name)
+		@bible_studies = Message.bible_study.all.order(:name)
 	end
 
 end
