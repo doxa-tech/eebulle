@@ -1,4 +1,4 @@
-class CreateDayActivities < ActiveRecord::Migration
+class CreateDayActivities < ActiveRecord::Migration[4.2]
   def change
     create_table :day_activities do |t|
       t.belongs_to :day, index: true
