@@ -24,3 +24,6 @@
 /config/secrets.yml
 
 *.DS_Store
+
+# Docker data
+data/
