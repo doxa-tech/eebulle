@@ -10,7 +10,7 @@ gem 'pg'
 gem 'snaptable'
 
 # user
-gem 'snapuser'
+gem 'snapuser', :git => "git://github.com/khcr/snapuser.git", branch: "Fix-migration-for-Rails-5"
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'

@@ -1,4 +1,15 @@
 GIT
+  remote: git://github.com/khcr/snapuser.git
+  revision: 74f2c9d231d1d8893b6baad5fd57b634c12ad9ef
+  branch: Fix-migration-for-Rails-5
+  specs:
+    snapuser (0.2.5)
+      bcrypt-ruby
+      rails (>= 4.2.1)
+      sass-rails
+      snaptable
+
+GIT
   remote: https://github.com/JS-Tech/capistrano-server
   revision: fb3f7eaa59ffa448bc7a6f91be98b2214665030c
   tag: v0.7.1
@@ -259,11 +270,6 @@ GEM
       rails (>= 5.0.0)
       sass-rails
       will_paginate
-    snapuser (0.2.5)
-      bcrypt-ruby
-      rails (>= 4.2.1)
-      sass-rails
-      snaptable
     spring (2.0.2)
       activesupport (>= 4.2)
     sprockets (3.7.1)
@@ -330,7 +336,7 @@ DEPENDENCIES
   sdoc
   simple_markdown
   snaptable
-  snapuser
+  snapuser!
   spring
   turbolinks
   uglifier
@@ -338,4 +344,4 @@ DEPENDENCIES
   will_paginate (~> 3.1.0)
 
 BUNDLED WITH
-   1.14.3
+   1.14.6

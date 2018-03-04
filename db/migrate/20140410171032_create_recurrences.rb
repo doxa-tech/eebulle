@@ -1,4 +1,4 @@
-class CreateRecurrences < ActiveRecord::Migration
+class CreateRecurrences < ActiveRecord::Migration[4.2]
   def change
     create_table :recurrences do |t|
       t.string :name
