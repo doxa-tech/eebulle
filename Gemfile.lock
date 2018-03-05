@@ -1,21 +1,20 @@
 GIT
-  remote: git://github.com/khcr/snapuser.git
-  revision: 74f2c9d231d1d8893b6baad5fd57b634c12ad9ef
-  branch: Fix-migration-for-Rails-5
-  specs:
-    snapuser (0.2.5)
-      bcrypt-ruby
-      rails (>= 4.2.1)
-      sass-rails
-      snaptable
-
-GIT
   remote: https://github.com/JS-Tech/capistrano-server
   revision: fb3f7eaa59ffa448bc7a6f91be98b2214665030c
   tag: v0.7.1
   specs:
     capistrano-server (0.7.1)
       capistrano (~> 3.1)
+
+GIT
+  remote: https://github.com/khcr/snapuser.git
+  revision: 3777af2b513123976488aa08941be7fce1fa74a3
+  specs:
+    snapuser (0.2.5)
+      bcrypt-ruby
+      rails (>= 4.2.1)
+      sass-rails
+      snaptable
 
 GEM
   remote: https://rubygems.org/
