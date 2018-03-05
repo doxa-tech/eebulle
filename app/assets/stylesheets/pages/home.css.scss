@@ -1,21 +1,3 @@
-@keyframes Gradient {
-	0% {
-		background-position: 0% 50%
-	}
-	50% {
-		background-position: 100% 50%
-	}
-	100% {
-		background-position: 0% 50%
-	}
-}
-
-@keyframes dash {
-	to {
-		stroke-dashoffset: 0;
-	}
-}
-
 @keyframes appears {
 	to {
 		opacity: 1;
@@ -23,91 +5,153 @@
 }
 
 #banner.home {
+
 	display: flex;
 	align-items: center;
 	justify-content: center;
 	flex-direction: row;
-	background: image-url("layout/banner2.jpg");
+	background: image-url("layout/banner4.jpg");
+	
 	h1 {
 		opacity: 0;
 		animation: appears .3s linear forwards;
 		animation-delay: .7s;
 
 		span {
-			opacity: 0;
-			animation: appears .3s linear forwards;
-			animation-delay: 4s;
-		}
-		svg {
-			height: 70px;
-			width: initial;
-			vertical-align: bottom;
-			transform: translateY(15px);
-		}
-		path {
-			stroke-dasharray: 45;
-			stroke-dashoffset: 45;
-			animation: dash 1.5s linear forwards;
-			stroke-width: 0.7px !important;
-		}
-		svg:first-of-type {
-			background-position: 0% 0%;
-			background: linear-gradient(-45deg, 
-				rgba(123, 255, 47, 0), 
-				rgba(255, 217, 0, 0.3), 
-				rgba(0, 191, 255, 0.3), 
-				rgba(94, 255, 0, 0));
-			background-size: 400% 400%;
-			-webkit-animation: Gradient 25s linear infinite;
-			-moz-animation: Gradient 25s linear infinite;
-			animation: Gradient 25s linear infinite;
-			path {
-				animation-delay: 1s;
-			}
-		}
-		svg:nth-of-type(2) {
-			background-position: 0% 0%;
-			background: linear-gradient(-45deg, 
-				rgba(123, 255, 47, 0), 
-				rgba(0, 191, 255, 0.3),
-				rgba(255, 217, 0, 0.3),  
-				rgba(94, 255, 0, 0));
-			background-size: 400% 400%;
-			-webkit-animation: Gradient 25s linear infinite;
-			-moz-animation: Gradient 25s linear infinite;
-			animation: Gradient 25s linear infinite;
-			path {
-				animation-delay: 1.5s;
-			}
-		}
-		svg:nth-of-type(3) {
-			background-position: 0% 0%;
-			background: linear-gradient(-45deg, 
-				rgba(123, 255, 47, 0), 
-				rgba(255, 217, 0, 0.3), 
-				rgba(0, 191, 255, 0.3), 
-				rgba(94, 255, 0, 0));
-			background-size: 400% 400%;
-			-webkit-animation: Gradient 25s linear infinite;
-			-moz-animation: Gradient 25s linear infinite;
-			animation: Gradient 25s linear infinite;
-			path {
-				animation-delay: 2s;
-			}
+			color: #CDFFD1;
 		}
 	}
 }
+
 #container.home {
-	.content {
-		padding: 0 0 5px 0;
-		border-bottom: 1px dashed red;
+
+	div.how {
+		display: flex;
+		flex-direction: row;
+
+		div.youtube {
+			background-color: #0f0f0f;
+			flex: 1;
+			height: 370px;
+			position: relative;
+
+			iframe {
+				position: absolute;
+				top: 0;
+				left: 0;
+				width: 100%;
+				height: 100%;
+			}
+		}
+
+		div.text {
+			flex: 2;
+			overflow: hidden;
+			padding: 0 0 0 20px;
+
+			div.text-container {
+				display: flex;
+				flex-direction: column;
+
+				div.pictures {
+					overflow-x: scroll;
+					width: 100%;
+					padding: 0 0 30px 0;
+
+					&::-webkit-scrollbar {
+						overflow: hidden;
+						display: none;
+					}
+
+					div.pictures-wrap {
+						width: 128px * 26;
+
+						img {
+							float: left;
+						}
+					}
+				}
+			}
+		}
 	}
+
+	div.channels {
+		height: 100px;
+		background-color: rgb(196, 0, 0);
+		display: flex;
+		flex-direction: row;
+		justify-content: space-between;
+		color: #fff;
+		align-items: center;
+		margin: 20px 0 0 0;
+
+		div.title {
+			padding: 20px;
+			background-color: rgba(0, 0, 0, 0.2);
+			height: 100%;
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			align-items: center;
+			text-align: center;
+			flex-basis: 40%;
+			font-size: 12px;
+
+			img {
+				max-height: 50px;
+				padding: 0 0 5px 0;
+			}
+		}
+
+			div.channel-wrap {
+				flex: 1;
+				display: flex;
+				flex-direction: row;
+				justify-content: space-around;
+				height: 100%;
+
+			div.youtube, div.facebook, div.newsletter {
+				flex: 1;
+				height: 100%;
+				display: flex;
+				flex-direction: column;
+				justify-content: center;
+				align-items: center;
+				text-align: center;
+				font-size: 12px;
+				padding: 12px 20px;
+				position: relative;
+				cursor: pointer;
+
+				img {
+					max-height: 40px;
+					padding: 0 0 5px 0;
+				}
+
+				a {
+					position: absolute;
+					top: 0;
+					right: 0;
+					bottom: 0;
+					left: 0;
+					z-index: 1;
+
+					&:hover {
+						background-color: rgba(255, 255, 255, 0.2);
+					}
+				}
+			}
+		}
+	}
+
+
 	h2 span.date {
 		color: #E20000;
 		text-shadow: 1px 1px 1px rgba(34, 34, 34, 0.15);
 		vertical-align: middle;
 		font-size: 15px;
 	}
+
 	.event {
 		box-shadow: 0 2px 1px rgb(184, 184, 184);
 		padding: 20px;

@@ -6,7 +6,7 @@ namespace :init do
 	desc "Create the pages"
 	task pages: :environment do
 		lorem = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec nulla nisl, eleifend scelerisque porta non, volutpat quis elit. Nullam ornare, sapien et adipiscing sagittis, nunc felis posuere justo, fermentum lobortis dui massa nec lorem. Mauris sollicitudin nisl vel dapibus vehicula. Etiam sagittis, tortor sed tristique tincidunt, leo ante eleifend purus, ut gravida eros justo blandit enim. Nunc id urna a diam dictum dignissim. Fusce dictum lectus vel eros tempus porta. Etiam ac tortor vulputate, volutpat magna quis, semper velit. Nunc vel ligula nunc. Ut vitae commodo nulla, nec adipiscing tortor. Morbi ullamcorper diam euismod lacus imperdiet, eget aliquam erat viverra. In hac habitasse platea dictumst."
-		%w[home presentation contact kidsbulle vision financement network verdel8].each do |page|
+		%w[home home_youtube presentation contact kidsbulle vision financement network verdel8].each do |page|
 			Page.create(name: page, content: lorem) if Page.find_by_name(page).nil?
 		end
 	end
