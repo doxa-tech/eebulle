@@ -109,10 +109,12 @@
 				flex-direction: row;
 				justify-content: space-around;
 				height: 100%;
+				flex-wrap: wrap;
 
 			div.youtube, div.facebook, div.newsletter, div.my-eebulle {
 				flex: 1;
 				height: 100%;
+				min-width: 100px;
 				display: flex;
 				flex-direction: column;
 				justify-content: center;
@@ -186,7 +188,7 @@
 
 		div.channels {
 			flex-direction: column !important;
-			height: 200px !important;
+			height: initial !important;
 
 			div.title {
 				width: 100% !important;
