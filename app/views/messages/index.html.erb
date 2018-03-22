@@ -2,6 +2,12 @@
 
 <h1><%= t('message.index') %></h1>
 
+<h2>V.I.P (Vision, Information, Partage)</h2>
+
+<%= render 'category', messages: @vips %>
+
+<h2>Les prédications</h2>
+
 <%= render 'category', messages: @preachings %>
 
 <h2>Groupes de maison</h2>
