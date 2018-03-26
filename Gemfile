@@ -1,10 +1,10 @@
 source 'https://rubygems.org'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '5.1.1'
+gem 'rails', '~> 5.1.0'
 
 # Postgresql
-gem 'pg'
+gem 'pg', '~> 0.21'
 
 # tables
 gem 'snaptable'
@@ -13,7 +13,7 @@ gem 'snaptable'
 gem 'snapuser', git: "https://github.com/khcr/snapuser.git"
 
 # Use SCSS for stylesheets
-gem 'sass-rails', '~> 5.0'
+gem 'sass-rails'
 
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier'
@@ -21,7 +21,23 @@ gem 'uglifier'
 gem 'coffee-rails'
 
 group :development do
+  gem 'capistrano', '3.6.1'
+
+  # rails specific capistrano funcitons
+  gem 'capistrano-rails'
+
+  # integrate bundler with capistrano
+  gem 'capistrano-bundler'
+
+  # if you are using RBENV
+  gem 'capistrano-rvm'
+
+  gem 'capistrano-maintenance', require: false
+
+  gem 'capistrano-server', git: 'https://github.com/JS-Tech/capistrano-server', tag: 'v0.7.1'
+
   gem 'spring'
+  gem 'spring-watcher-listen'
   gem 'web-console'
   gem 'listen'
 end
@@ -35,52 +51,29 @@ gem 'jquery-fileupload-rails'
 gem 'mediaelement_rails'
 
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
-gem 'turbolinks'
+gem 'turbolinks', '~> 5.1'
 
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
-gem 'jbuilder'
-
-group :doc do
-  # bundle exec rake doc:rails generates the API under doc/api.
-  gem 'sdoc', require: false
-end
+gem 'jbuilder', '~> 2.6'
 
 # pagination
-gem 'will_paginate', '~> 3.1.0'
-
-# Use ActiveModel has_secure_password
+gem 'will_paginate'
 
 # image uploader
-gem 'carrierwave', '~> 1.1'
-gem 'carrierwave-processing', '~> 1.0.0'
+gem 'carrierwave', '~> 1.2.0'
+gem 'carrierwave-processing'
 gem 'carrierwave-i18n'
 
 gem 'fog-google'
-gem 'google-api-client', '> 0.8.5', '< 0.9'
 gem 'mime-types'
 
 # image manipulating
-gem 'mini_magick', '~> 4.7'
+gem 'mini_magick'
 
 gem 'fancybox2-rails'
 
-gem 'capistrano', '3.6.1'
-
-# rails specific capistrano funcitons
-gem 'capistrano-rails'
-
-# integrate bundler with capistrano
-gem 'capistrano-bundler'
-
-# if you are using RBENV
-gem 'capistrano-rvm'
-
-gem 'capistrano-maintenance', require: false
-
-gem 'capistrano-server', git: 'https://github.com/JS-Tech/capistrano-server', tag: 'v0.7.1'
-
 # server
-gem 'puma'
+gem 'puma', '~> 3.11'
 
 gem 'simple_markdown'
 
