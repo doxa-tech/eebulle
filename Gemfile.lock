@@ -6,16 +6,6 @@ GIT
     capistrano-server (0.7.1)
       capistrano (~> 3.1)
 
-GIT
-  remote: https://github.com/khcr/snapuser.git
-  revision: 621294ab9c238899f5e5a2db42a508783d00cb26
-  specs:
-    snapuser (0.2.5)
-      bcrypt-ruby
-      rails (>= 4.2.1)
-      sass-rails
-      snaptable
-
 GEM
   remote: https://rubygems.org/
   specs:
@@ -105,7 +95,7 @@ GEM
     declarative (0.0.10)
     declarative-option (0.1.0)
     erubi (1.7.1)
-    excon (0.61.0)
+    excon (0.62.0)
     execjs (2.7.0)
     fancybox2-rails (0.2.7)
       railties (>= 3.1.0)
@@ -208,7 +198,7 @@ GEM
     public_suffix (3.0.2)
     puma (3.11.3)
     rack (2.0.4)
-    rack-test (0.8.3)
+    rack-test (1.0.0)
       rack (>= 1.0, < 3)
     rails (5.1.5)
       actioncable (= 5.1.5)
@@ -237,7 +227,6 @@ GEM
     rb-fsevent (0.10.3)
     rb-inotify (0.9.10)
       ffi (>= 0.5.0, < 2)
-    rdoc (6.0.3)
     representable (3.0.4)
       declarative (< 0.1.0)
       declarative-option (< 0.2.0)
@@ -255,8 +244,6 @@ GEM
       sprockets (>= 2.8, < 4.0)
       sprockets-rails (>= 2.0, < 4.0)
       tilt (>= 1.1, < 3)
-    sdoc (1.0.0)
-      rdoc (>= 5.0)
     signet (0.8.1)
       addressable (~> 2.3)
       faraday (~> 0.9)
@@ -269,6 +256,11 @@ GEM
       rails (>= 5.0.0)
       sass-rails
       will_paginate
+    snapuser (0.2.6)
+      bcrypt-ruby
+      rails (>= 4.2.1)
+      sass-rails
+      snaptable
     spring (2.0.2)
       activesupport (>= 4.2)
     spring-watcher-listen (2.0.1)
@@ -335,10 +327,9 @@ DEPENDENCIES
   puma (~> 3.11)
   rails (~> 5.1.0)
   sass-rails
-  sdoc
   simple_markdown
   snaptable
-  snapuser!
+  snapuser
   spring
   spring-watcher-listen
   turbolinks (~> 5.1)
