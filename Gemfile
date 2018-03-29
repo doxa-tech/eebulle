@@ -10,7 +10,7 @@ gem 'pg', '~> 0.21'
 gem 'snaptable'
 
 # user
-gem 'snapuser', git: "https://github.com/khcr/snapuser.git"
+gem 'snapuser'
 
 # Use SCSS for stylesheets
 gem 'sass-rails'
