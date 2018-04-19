@@ -17,7 +17,8 @@ Rails.application.configure do
   config.cache_store = :null_store
 
   config.action_mailer.perform_caching = false
-  config.action_mailer.default_url_options = { :host => 'localhost:3000' }
+  config.action_mailer.default_url_options = { :host => "localhost:3000" }
+  config.action_mailer.asset_host = "localhost:3000"
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.perform_deliveries = true
   config.action_mailer.raise_delivery_errors = true
@@ -25,22 +26,21 @@ Rails.application.configure do
   config.action_mailer.smtp_settings = {
     :user_name => Rails.application.secrets.mailgun_smtp_login,
     :password  => Rails.application.secrets.mailgun_default_pswd,
-    :domain => 'eebulle.ch',
+    :domain => "eebulle.ch",
     :address   => "smtp.mailgun.org",
     :port      => 587,
     :authentication => :plain,
     :enable_starttls_auto => true
   }
 
-  # This setting is necessary for emails
-  routes.default_url_options[:host] = "localhost"
-  routes.default_url_options[:port] = "3000"
-
   # Print deprecation notices to the Rails logger.
   config.active_support.deprecation = :log
 
   # Raise an error on page load if there are pending migrations.
   config.active_record.migration_error = :page_load
+
+  # Highlight code that triggered database queries in logs.
+  config.active_record.verbose_query_logs = true
 
   # Debug mode disables concatenation and preprocessing of assets.
   # This option may cause significant delays in view rendering with a large
@@ -56,4 +56,5 @@ Rails.application.configure do
   # Use an evented file watcher to asynchronously detect changes in source code,
   # routes, locales, etc. This feature depends on the listen gem.
   config.file_watcher = ActiveSupport::EventedFileUpdateChecker
+
 end

@@ -110,6 +110,6 @@ Rails.application.configure do
     :enable_starttls_auto => true
   }
 
-  # This setting is necessary emails
-  routes.default_url_options[:host] = "eebulle.ch"
+  config.action_mailer.default_url_options = { :host => "https://eebulle.ch" }
+  config.action_mailer.asset_host = "https://eebulle.ch"
 end

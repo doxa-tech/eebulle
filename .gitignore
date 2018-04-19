@@ -21,8 +21,6 @@
 
 /config/puma.rb.erb
 
-/config/secrets.yml
-
 *.DS_Store
 
 # Docker data

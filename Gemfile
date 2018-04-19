@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '~> 5.1.0'
+gem 'rails', '~> 5.2.0'
 
 # Postgresql
 gem 'pg', '~> 0.21'
@@ -41,6 +41,9 @@ group :development do
   gem 'web-console'
   gem 'listen'
 end
+
+# reduces boot time
+gem 'bootsnap', require: false
 
 # See https://github.com/sstephenson/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
