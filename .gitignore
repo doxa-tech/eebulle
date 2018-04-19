@@ -21,6 +21,8 @@
 
 /config/puma.rb.erb
 
+/config/master.key
+
 *.DS_Store
 
 # Docker data
