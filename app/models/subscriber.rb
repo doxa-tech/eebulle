@@ -27,7 +27,7 @@ class Subscriber
   private
 
   def self.verifier(key_type)
-    ActiveSupport::MessageVerifier.new(Rails.application.secrets[key_type])
+    ActiveSupport::MessageVerifier.new(Rails.application.credentials[key_type])
   end
 
 end

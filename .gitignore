@@ -19,8 +19,6 @@
 
 /config/database.yml
 
-/config/puma.rb.erb
-
 /config/master.key
 
 *.DS_Store

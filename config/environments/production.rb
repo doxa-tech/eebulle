@@ -101,8 +101,8 @@ Rails.application.configure do
   config.action_mailer.raise_delivery_errors = false
   config.action_mailer.default :charset => "utf-8"
   config.action_mailer.smtp_settings = {
-    :user_name => Rails.application.secrets.mailgun_smtp_login,
-    :password  => Rails.application.secrets.mailgun_default_pswd,
+    :user_name => Rails.application.credentials.mailgun_smtp_login,
+    :password  => Rails.application.credentials.mailgun_default_pswd,
     :domain => 'eebulle.ch',
     :address   => "smtp.mailgun.org",
     :port      => 587,

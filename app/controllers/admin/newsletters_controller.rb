@@ -17,7 +17,7 @@ class Admin::NewslettersController < Admin::BaseController
       newsletter_emails = NewsletterEmail.where(confirmed: true)
       emails_params = Hash.new
       newsletter_emails.each { |email| emails_params[email.email] = email.email_infos }
-      send_mailgun_newsletter(Rails.application.secrets.mailgun_mailing_list, emails_params)
+      send_mailgun_newsletter(Rails.application.credentials.mailgun_mailing_list, emails_params)
       @newsletter.update_inline_css
       render 'success'
     elsif params[:commit] == "Tester" && @newsletter.valid?
