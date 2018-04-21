@@ -319,6 +319,9 @@ fr:
     categories:
       preaching: "Message"
       homegroup: "Groupe de maison"
+      teaching: "Discipulat"
+      bible_study: "Etudes bibliques"
+      vip: "V.I.P"
     index: "Les prédications"
     link: "Accéder aux messages"
     admin:
