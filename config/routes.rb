@@ -13,7 +13,7 @@ Rails.application.routes.draw do
   get "/subscribers/unsubscribe/:signature", to: "newsletter_emails#unsubscribe", as: "unsubscribe"
   get "/subscribers/confirmation/:signature", to: "newsletter_emails#confirmation", as: "confirmation"
 
-  %w[home presentation contact kidsbulle vision financement a profile logins verdel8].each do |page|
+  %w[home presentation contact vision financement profile logins verdel8].each do |page|
     get page, to: "pages##{page}"
   end
 
