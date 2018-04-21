@@ -25,3 +25,4 @@
 
 # Docker data
 data/
+config/gcs.json
