@@ -34,7 +34,7 @@ group :development do
 
   gem 'capistrano-maintenance', require: false
 
-  gem 'capistrano-server', git: 'https://github.com/JS-Tech/capistrano-server', tag: 'v0.7.1'
+  gem 'capistrano-server', git: 'https://github.com/JS-Tech/capistrano-server'
 
   gem 'spring'
   gem 'spring-watcher-listen'

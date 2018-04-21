@@ -10,7 +10,6 @@ set :ssl, true
 set :url, 'eebulle.ch'
 set :subdomains, ["network"]
 
-set :scm, "git"
 set :repo_url, "git@github.com:khcr/eebulle.git"
 
 # Default branch is :master
@@ -30,11 +29,10 @@ set :deploy_to, "/home/#{fetch(:deploy_user)}/apps/#{fetch(:application)}"
 
 # Default value for :linked_files is []
 # set :linked_files, fetch(:linked_files, []).push("config/database.yml")
-set :linked_files, %w{config/database.yml config/secrets.yml config/puma.rb}
+set :linked_files, %w{config/database.yml config/master.key config/puma.rb}
 
 # Default value for linked_dirs is []
-set :linked_dirs, %w{log tmp/pids tmp/cache tmp/sockets vendor/bundle public/system public/uploads uploads}
-
+set :linked_dirs, %w{log tmp/pids tmp/cache tmp/sockets vendor/bundle public/system}
 
 set :maintenance_template_path, "config/deploy/templates/maintenance.html.erb"
 
