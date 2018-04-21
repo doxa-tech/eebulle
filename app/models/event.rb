@@ -6,7 +6,7 @@ class Event < ApplicationRecord
 	validates :duration, presence: true, numericality: true
 	validates :image, presence: true
 
-	mount_uploader :image, EventsUploader
+	has_one_attached :image
 
 	def exp_at
 		date + duration.days

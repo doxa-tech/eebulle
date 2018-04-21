@@ -6,5 +6,5 @@ class Message < ApplicationRecord
 	validates :file, presence: true
 	validates :date, presence: true
 
-	mount_uploader :file, MessagesUploader
+	has_one_attached :file
 end

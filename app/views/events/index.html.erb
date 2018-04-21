@@ -14,7 +14,7 @@
 				<h2><span class="date"><%= l event.date, format: :text %></span></h2>
 		<% end %>
 				<div>
-					<%= image_tag image_url event.image_url %>
+					<%= image_tag event.image.variant(resize: "500x300") %>
 					<%= render 'md_content', content: event.content %>
 					<div class="clear"></div>
 				</div>

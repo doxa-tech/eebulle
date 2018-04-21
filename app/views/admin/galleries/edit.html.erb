@@ -9,7 +9,7 @@
 <div class="images">
 	<% @gallery.paintings.each do |painting| %>
 		<div class="paints">
-			<%= image_tag painting.image_url(:thumb) %>
+			<%= image_tag painting.image.variant(resize: "100x100") %>
 			<%= link_to "<i class='fi-x-circle'></i>".html_safe, admin_gallery_painting_path(@gallery, painting), method: :delete, confirm: t('painting.admin.destroy.confirm') %>
 		</div>
 	<% end %>

@@ -63,7 +63,7 @@
 	<div class="event">
 		<h2><%= @event.name %></h2>
 		<div>
-			<%= image_tag image_url @event.image_url %>
+			<%= image_tag @event.image.variant(resize: "500x300") %>
 			<%= render 'md_content', content: @event.content %>
 			<div class="clear"></div>
 		</div>

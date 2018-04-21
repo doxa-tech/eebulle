@@ -1,5 +1,5 @@
 class Painting < ApplicationRecord
   belongs_to :gallery
 
-  mount_uploader :image, PaintingsUploader
+  has_one_attached :image
 end

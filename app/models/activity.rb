@@ -9,5 +9,5 @@ class Activity < ApplicationRecord
 	validates :recurrence_id, presence: true
 	validates :image, presence: true
 
-	mount_uploader :image, ActivitiesUploader
+	has_one_attached :image
 end

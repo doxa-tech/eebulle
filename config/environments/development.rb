@@ -16,6 +16,9 @@ Rails.application.configure do
   config.action_controller.perform_caching = false
   config.cache_store = :null_store
 
+  # Store files locally.
+  config.active_storage.service = :local
+
   config.action_mailer.perform_caching = false
   config.action_mailer.default_url_options = { :host => "localhost:3000" }
   config.action_mailer.asset_host = "localhost:3000"

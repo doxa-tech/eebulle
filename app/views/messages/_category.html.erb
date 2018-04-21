@@ -1,9 +1,9 @@
 <% messages.each do |message| %>
 <div class="message">
 	<p><%= content_tag :span, message.name, class: "name" %> de <%= content_tag :span, message.speaker, class: "orator" %> <%= l message.date, format: :text %></p>
-	<audio preload="auto" controls>
-		<source src="<%= message.file.url %>" type="audio/mpeg"></source>
+	<audio preload="auto" autobuffer controls>
+		<source src="<%= url_for(message.file) %>" type="audio/mpeg"></source>
 	</audio>
-	<div><%= link_to "Télécharger", message.file.url %></div>
+	<div><%= link_to "Télécharger", rails_blob_path(message.file, disposition: "attachment") %></div>
 </div>
 <% end %>

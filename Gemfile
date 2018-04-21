@@ -63,11 +63,7 @@ gem 'jbuilder', '~> 2.6'
 gem 'will_paginate'
 
 # image uploader
-gem 'carrierwave', '~> 1.2.0'
-gem 'carrierwave-processing'
-gem 'carrierwave-i18n'
-
-gem 'fog-google'
+gem 'google-cloud-storage', "~> 1.8", require: false
 gem 'mime-types'
 
 # image manipulating
