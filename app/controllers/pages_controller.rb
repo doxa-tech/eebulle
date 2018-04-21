@@ -17,10 +17,6 @@ class PagesController < ApplicationController
 		@page = Page.find_by_name('contact')
 	end
 
-	def kidsbulle
-		@page = Page.find_by_name('kidsbulle')
-	end
-
 	def vision
 		@page = Page.find_by_name('vision')
 	end
@@ -33,13 +29,8 @@ class PagesController < ApplicationController
 		@page = Page.find_by_name('verdel8')
 	end
 
-	def a
-		@page = Page.find_by_name('a')
-	end
-
   def network
     @page = Page.find_by_name('network')
-    #render layout: 'network'
   end
 
 	def profile

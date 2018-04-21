@@ -14,8 +14,7 @@
 //= require jquery_ujs
 //= require jquery-fileupload/basic
 //= require jquery-fileupload/vendor/tmpl
-//= require jquery.form
-//= require mediaelement_rails
+//= require activestorage
 //= require snaptable
 //= require turbolinks
 //= require_tree ./sitewide
