@@ -117,3 +117,6 @@ Rails.application.configure do
   config.action_mailer.default_url_options = { :host => "https://eebulle.ch" }
   config.action_mailer.asset_host = "https://eebulle.ch"
 end
+# Monkey patch with issue of `Missing host to link to!` from mailer
+# (31.05.18)
+Rails.application.routes.default_url_options[:host] = "https://eebulle.ch"
