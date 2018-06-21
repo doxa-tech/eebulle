@@ -6,6 +6,7 @@ class Admin::StaticsController < Admin::BaseController
   end
 
   def worship
+    redirect_to Rails.application.credentials.worship_storage_url
   end
 
 end
