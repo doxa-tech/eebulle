@@ -4,7 +4,7 @@ source 'https://rubygems.org'
 gem 'rails', '~> 5.2.0'
 
 # Postgresql
-gem 'pg', '~> 0.21'
+gem 'pg', '~> 1.1'
 
 # tables
 gem 'snaptable'
