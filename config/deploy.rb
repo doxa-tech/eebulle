@@ -2,7 +2,6 @@
 lock "3.6.1"
 
 set :application, "eebulle"
-set :applications, ["eebulle", "syncedchurch"]
 set :deploy_user, "eebulle"
 
 set :ssl, true
