@@ -29,10 +29,6 @@ class PagesController < ApplicationController
 		@page = Page.find_by_name('verdel8')
 	end
 
-  def network
-    @page = Page.find_by_name('network')
-  end
-
 	def profile
 	end
 
