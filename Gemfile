@@ -20,6 +20,8 @@ gem 'uglifier'
 
 gem 'coffee-rails'
 
+gem 'sprockets', '~> 3.7.2'
+
 group :development do
   gem 'capistrano', '3.6.1'
 
