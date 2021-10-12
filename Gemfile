@@ -73,7 +73,7 @@ gem 'mini_magick'
 gem 'fancybox2-rails'
 
 # server
-gem 'puma', '~> 3.11'
+gem 'puma', '~> 4.3'
 
 gem 'simple_markdown'
 
