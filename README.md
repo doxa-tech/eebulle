@@ -1,3 +1,5 @@
+**Website is now part of the [bullentwork constellation](https://github.com/doxa-tech/bullenetwork-constellation)**
+
 http://eebulle.ch
 
 
